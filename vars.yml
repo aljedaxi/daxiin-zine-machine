@@ -6,19 +6,31 @@ conf:
 protein:
   - title: Fable
     author: Ralph Waldo Emerson
+    type: poem
     file: emerson/Ralph_Waldo_Emerson-Fable.tex
+    rights: Public Domain
   - title: Forbearance
     author: Ralph Waldo Emerson
+    type: poem
     file: emerson/Ralph_Waldo_Emerson-Forbearance.tex
+    rights: Public Domain
   - title: Give All To Love
     author: Ralph Waldo Emerson
+    type: poem
     file: emerson/Ralph_Waldo_Emerson-Give_all_to_Love.tex
+    rights: Public Domain
   - title: The Humble Bee
     author: Ralph Waldo Emerson
+    type: poem
     file: emerson/Ralph_Waldo_Emerson-Humble_Bee.tex
+    rights: Public Domain
   - title: The Rhodora
     author: Ralph Waldo Emerson
+    type: poem
     file: emerson/Ralph_Waldo_Emerson-The_Rhodora.tex
+    rights: Public Domain
   - title: The Snow-Storm
     author: Ralph Waldo Emerson
+    type: poem
     file: emerson/Ralph_Waldo_Emerson-The_Snow_Storm.tex
+    rights: Public Domain

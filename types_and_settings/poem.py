@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 import sys
+import jinja2
+from   jinja2	import Template, Environment
+from pprint import pprint
 
 side = "left"
 DEFAULT = {
@@ -9,11 +12,46 @@ DEFAULT = {
         "type"  : "poem",
         "rights": "Copyright",
 }
+ENV = Environment(
+    block_start_string	    = '\BLOCK{',
+    block_end_string		= '}',
+    variable_start_string	= '\VAR{',
+    variable_end_string	    = '}',
+    comment_start_string	= '%/*',
+    comment_end_string	    = '%*/',
+    line_comment_prefix	    = '%//',
+    line_statement_prefix	= '%%',
+    trim_blocks 			= True,
+    lstrip_blocks			= True,
+    autoescape			    = False,
+    loader				    = jinja2.FileSystemLoader("../templates/"),
+)
+TEMPLATE = "poem.tex"
 
-def main(text, meta=DEFAULT):
+def main(text, meta=DEFAULT, env=ENV):
     lines_in = [line for line in text.split("\n")]
-    lines_out = poemize(lines_in, meta)
-    return "\n".join(lines_out)
+    template = env.get_template("poem.tex")
+    lines_out = poemize_neues(lines_in, meta, env)
+    return lines_out
+
+def poemize_neues(lines, meta, env):
+    stanzas = []
+    j = 0
+    for i in range(len(lines)):
+        if lines[i] is '':
+            #creates a stanza from the last white space to this one
+            stanzas.append(lines[j:i])
+            #offset so the stanzas themselves don't have blank lines
+            j = (i + 1)
+
+    template = env.get_template(TEMPLATE)
+
+    meta['stanzas'] = stanzas
+
+    lines_out = template.render(
+        **meta,
+    )
+    return lines_out
 
 def poemize(lines, meta):
     """
@@ -55,13 +93,6 @@ def poemize(lines, meta):
     return(lines_out);
 
 if __name__ == "__main__":
-    poem = open("Ralph_Waldo_Emerson-Fable.tex").read()
-    meta = {
-        "title" : "Fable",
-        "author": "Ralph Waldo Emerson",
-        "type"  : "poem",
-        "file"  : "emerson/Ralph_Waldo_Emerson-Fable.tex",
-        "rights": "Public Domain",
-    }
-    print(main(poem, meta=meta))
+    poem = open("Ralph_Waldo_Emerson-Give_all_to_Love.tex").read()
+    print(main(poem))
         #insert each one into the index
