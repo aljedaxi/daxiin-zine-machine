@@ -1,0 +1,24 @@
+conf:
+  edition: 0
+  title  : "The Anarchist Guide to: Home"
+  author : "Permeate Calgary"
+  font   : coelacanth
+protein:
+  - title: Fable
+    author: Ralph Waldo Emerson
+    file: emerson/Ralph_Waldo_Emerson-Fable.tex
+  - title: Forbearance
+    author: Ralph Waldo Emerson
+    file: emerson/Ralph_Waldo_Emerson-Forbearance.tex
+  - title: Give All To Love
+    author: Ralph Waldo Emerson
+    file: emerson/Ralph_Waldo_Emerson-Give_all_to_Love.tex
+  - title: The Humble Bee
+    author: Ralph Waldo Emerson
+    file: emerson/Ralph_Waldo_Emerson-Humble_Bee.tex
+  - title: The Rhodora
+    author: Ralph Waldo Emerson
+    file: emerson/Ralph_Waldo_Emerson-The_Rhodora.tex
+  - title: The Snow-Storm
+    author: Ralph Waldo Emerson
+    file: emerson/Ralph_Waldo_Emerson-The_Snow_Storm.tex
