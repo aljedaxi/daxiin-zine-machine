@@ -13,329 +13,353 @@
 	%\usepackage{yfonts}
 %}
 
-%%poetica {
-%	\usepackage{fancyhdr,ifthen,keyval,poemscol}
-%	\renewenvironment{poem}[1][\linewidth]
-%	{\raggedright%
-%	\large
-%	\language=255%no hyphenation in verse
-%	\noemendyettrue%
-%	\noexplainyettrue%
-%	\setcounter{verselinenumber}{0}\setcounter{printlineindex}{0}%
-%	\nobreak\begin{pmclverse}[#1]%
-%	\inpoemtrue\nobreak\mark{\relax}%
-%	}{\end{pmclverse}%
-%	\inpoemfalse\mark{\relax}%
-%	\goodbreak\afterpoemskip%\bigskip
-%	}
-%	\setverselinemodulo{2}
-%	
-%	\pagestyle{fancy}
-%	\cfoot{}
-%%}
+%poetica {
+	\usepackage{fancyhdr,ifthen,keyval,poemscol}
+	\renewenvironment{poem}[1][\linewidth]
+	{\raggedright%
+	\large
+	\language=255%no hyphenation in verse
+	\noemendyettrue%
+	\noexplainyettrue%
+	\setcounter{verselinenumber}{0}\setcounter{printlineindex}{0}%
+	\nobreak\begin{pmclverse}[#1]%
+	\inpoemtrue\nobreak\mark{\relax}%
+	}{\end{pmclverse}%
+	\inpoemfalse\mark{\relax}%
+	\goodbreak\afterpoemskip%\bigskip
+	}
+	\setverselinemodulo{2}
+	
+	\pagestyle{fancy}
+	\cfoot{}
+%}
+\newcommand{\articletitle}[1]{
+	\section*{#1}
+}
+\newcommand{\articleauthor}[1]{
+	#1
+}
+\newcommand{\articlerights}[1]{
 
-\title{\VAR{title}
+	This article is released under #1.
+}
+
+\title{\VAR{title}}
 \author{\VAR{author}}
 
 \begin{document}
+\frontmatter
 \Large
 
-%\frontmatter
-%\includepdf{cover}
-%\topskip0pt
-%    \vspace*{\fill}
-%    \noindent
-%    \begin{poem}
-%    Dies ist kein Buch: was liegt an B\"uchern! \verseline
-%    An diesen S\"argen und Leichent\"uchern!\verseline
-%    Vergangnes ist der B\"ucher Beute:\verseline
-%    Doch hierin lebt ein ewig \emph{Heute}.
-%    \end{poem}
-%
-%    ~\\
-%
-%    {\large \noindent Creative Commons NonCommercial--ShareAlike 4.0 International \\(CC BY-NC-SA 4.0); 2018; \\jacob whitford---bender\&Friedrich Nietzsche. 
-%
-%    ~\\ \addcontentsline{toc}{section}{\makebox[16em][l]{Die fr\"oliche Wissenschaft} (1882)}\makebox[6in][r]{/x,$\beta$}
-%
-%    \noindent   dedicated to my own \emph{Salom\'e}---of sorts---\\
-%                who treats me now like the tide on a moonless night.}
-%
-%    ~\\
-%
-%    \begin{poem}
-%    This is no book: what lies within them!\verseline
-%    Within these shrouds of the cold \& condemn'd!\verseline
-%    Departed days are a Book's best prey:\verseline
-%    But herein lives an eternal \emph{today}.
-%    \end{poem}
-%    \vspace*{\fill}
-%\tableofcontents
-%\newpage
-%    \section*{Translator's note}
-%    Firstly, it is worth noting that `Keikaku' means plan.
-%
-%    Special thanks to the Nietzsche Channel, who put all the German poems in one place. That's a good place to look if you want a more literal translation. Kaufmann is also always good.
-%
-%    Generally, these are in chronological order, but i really like Prinz Vogelfrei. The best for last.
-%
-%    this ain't your everyday translation. This is meant to be \emph{poetry}: it's meant to look and feel and taste like poetry: the kind of poetry Nietzsche wrote. %for the vast majority of these,
-%    Every syllable that's stressed in German is stressed in English; every line has the same number of syllables, and every line that rhymes in German, rhymes in English.
-%
-%    Well, stress is a difficult thing to quantify. Take that first claim gently.
-%
-%    To pull this off, i had to play a bit more fast and loose with the language. There are some lines that have a---well, somewhat radically---different meaning in English than they do in German. Obviously, Nietzsche never wrote about Napalm. He wrote about gun smoke. However, the poem's overall meaning should be upheld.
-%
-%    In this sense, it should be understood that these poems are by Nietzsche, \emph{and} [alje]daxi. My job was something more than translation. I am translator, editor and, to a very real extent, writer. When i say radically different i mean Nietzsche never talked about `cloud-skin'. His poetry is often quite straightforward.
-%
-%    If you want to read something quite straightforwards, i'd recommend Kaufmann. He's very good at translating prose. But i don't want poetry in, prose out. I want to write \emph{poetry, dammit}---and i'll take liberties with the literal meanings of words if it means the actual \emph{poetry} of the poem comes out.
-%
-%    Anyways, i doubt Nietzsche would mind that i'm pumping a little life back into his old verse.
-%
-%    ---daxi.
-%\mainmatter
-%\vspace*{\fill}
-%\input{kein_buch}
-%\vspace*{\fill}
-%\addcontentsline{toc}{section}{\makebox[16em][l]{Ohne Heimath} (1859)}
-%    \rightheader{Ohne Heimath (1859)}
-%    \vspace*{\fill}
-%    \poemtitle{\textfrak{Ohne Heimath}}
-%    \begin{poem}
-%    \begin{stanza}
-%    Flücht'ge Rosse tragen\verseline
-%    mich ohn' Furcht und Zagen\verseline
-%    durch die weite Fern.\verseline
-%    Und wer mich sieht, der kennt mich,\verseline
-%    und wer mich kennt, der nennt mich\verseline
-%    den heimatlosen Herrn.\verseline
-%    Heidideldi!\verseline
-%    Verlaß mich nie,\verseline
-%    mein Glück, du heller Stern!
-%    \end{stanza}
-%    \begin{stanza}
-%    Niemand darf es wagen,\verseline
-%    mich darnach zu fragen,\verseline
-%    wo meine Heimat sei.\verseline
-%    Ich bin wohl nie gebunden\verseline
-%    an Raum und flücht'ge Stunden,\verseline
-%    bin wie der Aar so frei.\verseline
-%    Heidideldi!\verseline
-%    Verlaß mich nie,\verseline
-%    mein Glück, du holder Mai!
-%    \end{stanza}
-%    \begin{stanza}
-%    Daß ich einst soll sterben,\verseline
-%    küssen muß den herben\verseline
-%    Tod, das glaub ich kaum.\verseline
-%    Zum Grabe soll ich sinken\verseline
-%    und nimmermehr dann trinken\verseline
-%    des Lebens duft'gen Schaum?\verseline
-%    Heidideldi!\verseline
-%    Verlaß mich nie,\verseline
-%    mein Glück, du bunter Traum!
-%    \end{stanza}
-%    \end{poem}
-%    \poemtitle{Without a Home}
-%    \begin{poem}
-%    \begin{stanza}
-%    Fleeting horses carry\verseline
-%    Me, polite and carefree\verseline
-%    Through the wide afar.\verseline
-%    Who sees me now, should know me,\verseline
-%    Who knows me now, should call me:\verseline
-%    The Homeland-lacking heart.\verseline
-%    Heidideldi!\verseline
-%    Remain with me,\verseline
-%    my joy, you dazzling star!
-%    \end{stanza}
-%    \begin{stanza}
-%    None should ever dare it,\verseline
-%    To take their qualm, and air it,\verseline
-%    Just where my home might be.\verseline
-%    I've not once been committed\verseline
-%    to places or fickle minutes,\verseline
-%    I'm---as the eagle---free.\verseline
-%    Heidideldi!\verseline
-%    Remain with me,\verseline
-%    my joy, you May in glee!
-%    \end{stanza}
-%    \begin{stanza}
-%    That i should sometime die\verseline
-%    Makes kisses taste like lye\verseline
-%    Death, i doubt its scheme.\verseline
-%    Unto the Grave i'll sink\verseline
-%    and nevermore i'll drink\verseline
-%    life's most delicate cream?\verseline
-%    Heidideldi!\verseline
-%    Remain with me,\verseline
-%    my joy, you vibrant dream!
-%    \end{stanza}
-%    \end{poem}
-%    \vspace*{\fill}
-%%\include[\vspace*{\fill}]{im_basel}[\vspace*{\fill}]
-%\vspace*{\fill}
-%%\input{melancholia.tex}
-%\vspace*{\fill}
-%%\input{gewitter.tex}
-%\vspace*{\fill}\newpage
-%\vspace*{\fill}
-%\addcontentsline{toc}{section}{\makebox[16em][l]{Zarathustra's Rundgesang} (1882)}
-%\rightheader{Zarathustra's Rundgesang (1882)}
-%	\poemtitle{\textfrak{Zarathustras Rundgesang}}
-%	\begin{poem}
-%	\begin{stanza}
-%	O Mensch! Gib acht!\verseline
-%	Was spricht die tiefe Mitternacht?\verseline
-%	>>Ich schlief, ich schlief---,\verseline
-%	Aus tiefem Traum bin ich erwacht:---\verseline
-%	Die Welt ist tief,\verseline
-%	Und tiefer als der Tag gedacht.\verseline
-%	Tief ist ihr Weh---,\verseline
-%	Lust—tiefer noch als Herzeleid:\verseline
-%	Weh spricht: Vergeh!\verseline
-%	Doch alle Lust will Ewigkeit---,\verseline
-%	---will tiefe, tiefe Ewigkeit!<<
-%	\end{stanza}
-%	\end{poem}
-%	\poemtitle{Zarathustra's Chorus Song}
-%	\begin{poem}
-%	\begin{stanza}
-%	O Man! Eyes bright!\verseline
-%	What says the deepest, dead of night?\verseline
-%	>>I sleep, I sleep---,\verseline
-%	From deepest sleep, i'm set aflame:---\verseline
-%	The world is deep,\verseline
-%	And deeper than the day could claim.\verseline
-%	Deep is your pain---,\verseline
-%	Joy's deeper still than pain can be:\verseline
-%	Pain saith: Decay!\verseline
-%	But all Joy wills eternity---,\verseline
-%	---the depths, of deep eternity!<<
-%	\end{stanza}
-%	\end{poem}
-%\vspace*{\fill}\newpage
-%\vspace*{\fill}
-%\addcontentsline{toc}{section}{\makebox[16em][l]{Pinie und Blitz} (1882)}
-%\leftheader{Pinie und Blitz (1882)}
-%	\poemtitle{\textfrak{Pinie und Blitz}}
-%	\begin{poem}
-%	\begin{stanza}
-%	Hoch wuchs ich \"uber Mensch und Tier;\verseline
-%	Und sprech ich---niemand spricht mit mir.
-%	\end{stanza}
-%	\begin{stanza}
-%	Zu einsam wuchs ich und zu hoch---\verseline
-%	Ich warte: worauf wart' ich doch?
-%	\end{stanza}
-%	\begin{stanza}
-%	Zu nah ist mir der Wolken Sitz,---\verseline
-%	Ich warte auf den ersten Blitz.
-%	\end{stanza}
-%	\end{poem}
-%	\poemtitle{Lightning and Pine}
-%	\begin{poem}
-%	\begin{stanza}
-%	'Bove man and plant, I grew so high\verseline
-%	Now when I speak---none can reply.
-%	\end{stanza}
-%	\begin{stanza}
-%	I grew too lonely with my height---\verseline
-%	I wait; for what to fill my sight?
-%	\end{stanza}
-%	\begin{stanza}
-%	So close are clouds that herald storm,---\verseline
-%	A wildfire's to be born.
-%	\end{stanza}
-%	\end{poem}
-%\vspace*{\fill}
-%\newpage
-%\vspace*{\fill}
-%\addcontentsline{toc}{section}{\makebox[16em][l]{Eis} (1882)}
-%\leftheader{Eis (1882)}
-%	\poemtitle{\textfrak{Eis}}
-%	\begin{poem}
-%	Ja! Mitunter mach' ich Eis:\verseline
-%	Nützlich ist Eis zum Verdauen!\verseline
-%	Hättet ihr viel zu verdauen,\verseline
-%	Oh wie liebtet ihr mein Eis!\verseline
-%	\end{poem}
-%
-%	\poemtitle{Ice}
-%	\begin{poem}
-%	Yuh! Now, sometimes i make ice:\verseline
-%	How helpful ice is for digestion!\verseline
-%	And y'all have so much for digestion,\verseline
-%	O, how love you so, my ice!\verseline
-%	\end{poem}
-%\vspace*{\fill}
-%\newpage
-%\vspace*{\fill}
-%\addcontentsline{toc}{section}{\makebox[16em][l]{Heraklitismus} (1882)}
-%\rightheader{Heraklitismus (1882)}
-%	\poemtitle{\textfrak{Heraklitismus}}
-%	\begin{poem}
-%    Alles Glück auf Erden,\verseline
-%    Freunde, giebt der Kampf!\verseline
-%    Ja, um Freund zu werden,\verseline
-%    Braucht es Pulverdampf!\verseline
-%    Eins in Drei'n sind Freunde:\verseline
-%    Brüder vor der Noth,\verseline
-%    Gleiche vor dem Feinde,\verseline
-%    Freie—vor dem Tod!\verseline
-%	\end{poem}
-%
-%	\poemtitle{Heraclitus-ism}
-%	\begin{poem}
-%    All that's grand and earthly,\verseline
-%    Friends, give for the fight!\verseline
-%        %translating Kampf
-%    Aye, should we be friendly,\verseline
-%    It'll be by napalm light!\verseline
-%        %original: gunsmoke
-%    One in three are friendly:\verseline
-%    Brothers jointly fend,\verseline
-%    Likewise for the fiendly,\verseline
-%    Freely---'fore their end!
-%	\end{poem}
-%\vspace*{\fill}
-%%\input{wort.tex}
-%\vspace*{\fill}
-%%\input{kleine_hexe}
-%\vspace*{\fill}
-%\input{prinz_vogelfrei}\newpage
-%\vspace*{\fill}
-%\addcontentsline{toc}{section}{\makebox[16em][l]{Wer viel einst zu verk\"unden hat} (1883)}
-%\rightheader{Wer viel einst zu verk\"unden hat (1883)}
-%	\poemtitle{\textfrak{Wer viel einst zu verk\"unden hat}}
-%	\begin{poem}
-%	\begin{stanza}
-%	Wer viel einst zu verk\"unden hat,\verseline
-%	Schweigt viel in sich hinein:\verseline
-%	Wer einst den Blitz zu z\"unden hat,\verseline
-%	Mu\ss~lange---Wolke sein.
-%	\end{stanza}
-%	\end{poem}
-%	\poemtitle{When one has plenty great to tell.}
-%	\begin{poem}
-%	\begin{stanza}
-%	When one has plenty great to tell,\verseline
-%	One hones silence within:\verseline
-%	When one has lightning to dispel,\verseline
-%	One long hones a cloud's skin.
-%	\end{stanza}
-%	\end{poem}
-%\vspace*{\fill}
-%\include[\vspace*{\fill}]{geht_die}[\vspace*{\fill}]
-%\vspace*{\fill}
-%%\input{freigeist.tex}
-%\vspace*{\fill}
-%\input{an_spinoza}
-%\vspace*{\fill}
-%\newpage
-%\vspace*{\fill}
-%\input{ehere}
-%\vspace*{\fill}
-%\input{letzter_wille}
-%\vspace*{\fill}
-%\end{document}
+\maketitle
+\tableofcontents
+
+\mainmatter
+
+\BLOCK{for filename in files}
+	\include{\VAR{filename}}
+\BLOCK{endfor}
+
+\end{document}
+
+%/*
+	%\frontmatter
+	%\includepdf{cover}
+	%\topskip0pt
+	%    \vspace*{\fill}
+	%    \noindent
+	%    \begin{poem}
+	%    Dies ist kein Buch: was liegt an B\"uchern! \verseline
+	%    An diesen S\"argen und Leichent\"uchern!\verseline
+	%    Vergangnes ist der B\"ucher Beute:\verseline
+	%    Doch hierin lebt ein ewig \emph{Heute}.
+	%    \end{poem}
+	%
+	%    ~\\
+	%
+	%    {\large \noindent Creative Commons NonCommercial--ShareAlike 4.0 International \\(CC BY-NC-SA 4.0); 2018; \\jacob whitford---bender\&Friedrich Nietzsche. 
+	%
+	%    ~\\ \addcontentsline{toc}{section}{\makebox[16em][l]{Die fr\"oliche Wissenschaft} (1882)}\makebox[6in][r]{/x,$\beta$}
+	%
+	%    \noindent   dedicated to my own \emph{Salom\'e}---of sorts---\\
+	%                who treats me now like the tide on a moonless night.}
+	%
+	%    ~\\
+	%
+	%    \begin{poem}
+	%    This is no book: what lies within them!\verseline
+	%    Within these shrouds of the cold \& condemn'd!\verseline
+	%    Departed days are a Book's best prey:\verseline
+	%    But herein lives an eternal \emph{today}.
+	%    \end{poem}
+	%    \vspace*{\fill}
+	%\tableofcontents
+	%\newpage
+	%    \section*{Translator's note}
+	%    Firstly, it is worth noting that `Keikaku' means plan.
+	%
+	%    Special thanks to the Nietzsche Channel, who put all the German poems in one place. That's a good place to look if you want a more literal translation. Kaufmann is also always good.
+	%
+	%    Generally, these are in chronological order, but i really like Prinz Vogelfrei. The best for last.
+	%
+	%    this ain't your everyday translation. This is meant to be \emph{poetry}: it's meant to look and feel and taste like poetry: the kind of poetry Nietzsche wrote. %for the vast majority of these,
+	%    Every syllable that's stressed in German is stressed in English; every line has the same number of syllables, and every line that rhymes in German, rhymes in English.
+	%
+	%    Well, stress is a difficult thing to quantify. Take that first claim gently.
+	%
+	%    To pull this off, i had to play a bit more fast and loose with the language. There are some lines that have a---well, somewhat radically---different meaning in English than they do in German. Obviously, Nietzsche never wrote about Napalm. He wrote about gun smoke. However, the poem's overall meaning should be upheld.
+	%
+	%    In this sense, it should be understood that these poems are by Nietzsche, \emph{and} [alje]daxi. My job was something more than translation. I am translator, editor and, to a very real extent, writer. When i say radically different i mean Nietzsche never talked about `cloud-skin'. His poetry is often quite straightforward.
+	%
+	%    If you want to read something quite straightforwards, i'd recommend Kaufmann. He's very good at translating prose. But i don't want poetry in, prose out. I want to write \emph{poetry, dammit}---and i'll take liberties with the literal meanings of words if it means the actual \emph{poetry} of the poem comes out.
+	%
+	%    Anyways, i doubt Nietzsche would mind that i'm pumping a little life back into his old verse.
+	%
+	%    ---daxi.
+	%\mainmatter
+	%\vspace*{\fill}
+	%\input{kein_buch}
+	%\vspace*{\fill}
+	%\addcontentsline{toc}{section}{\makebox[16em][l]{Ohne Heimath} (1859)}
+	%    \rightheader{Ohne Heimath (1859)}
+	%    \vspace*{\fill}
+	%    \poemtitle{\textfrak{Ohne Heimath}}
+	%    \begin{poem}
+	%    \begin{stanza}
+	%    Flücht'ge Rosse tragen\verseline
+	%    mich ohn' Furcht und Zagen\verseline
+	%    durch die weite Fern.\verseline
+	%    Und wer mich sieht, der kennt mich,\verseline
+	%    und wer mich kennt, der nennt mich\verseline
+	%    den heimatlosen Herrn.\verseline
+	%    Heidideldi!\verseline
+	%    Verlaß mich nie,\verseline
+	%    mein Glück, du heller Stern!
+	%    \end{stanza}
+	%    \begin{stanza}
+	%    Niemand darf es wagen,\verseline
+	%    mich darnach zu fragen,\verseline
+	%    wo meine Heimat sei.\verseline
+	%    Ich bin wohl nie gebunden\verseline
+	%    an Raum und flücht'ge Stunden,\verseline
+	%    bin wie der Aar so frei.\verseline
+	%    Heidideldi!\verseline
+	%    Verlaß mich nie,\verseline
+	%    mein Glück, du holder Mai!
+	%    \end{stanza}
+	%    \begin{stanza}
+	%    Daß ich einst soll sterben,\verseline
+	%    küssen muß den herben\verseline
+	%    Tod, das glaub ich kaum.\verseline
+	%    Zum Grabe soll ich sinken\verseline
+	%    und nimmermehr dann trinken\verseline
+	%    des Lebens duft'gen Schaum?\verseline
+	%    Heidideldi!\verseline
+	%    Verlaß mich nie,\verseline
+	%    mein Glück, du bunter Traum!
+	%    \end{stanza}
+	%    \end{poem}
+	%    \poemtitle{Without a Home}
+	%    \begin{poem}
+	%    \begin{stanza}
+	%    Fleeting horses carry\verseline
+	%    Me, polite and carefree\verseline
+	%    Through the wide afar.\verseline
+	%    Who sees me now, should know me,\verseline
+	%    Who knows me now, should call me:\verseline
+	%    The Homeland-lacking heart.\verseline
+	%    Heidideldi!\verseline
+	%    Remain with me,\verseline
+	%    my joy, you dazzling star!
+	%    \end{stanza}
+	%    \begin{stanza}
+	%    None should ever dare it,\verseline
+	%    To take their qualm, and air it,\verseline
+	%    Just where my home might be.\verseline
+	%    I've not once been committed\verseline
+	%    to places or fickle minutes,\verseline
+	%    I'm---as the eagle---free.\verseline
+	%    Heidideldi!\verseline
+	%    Remain with me,\verseline
+	%    my joy, you May in glee!
+	%    \end{stanza}
+	%    \begin{stanza}
+	%    That i should sometime die\verseline
+	%    Makes kisses taste like lye\verseline
+	%    Death, i doubt its scheme.\verseline
+	%    Unto the Grave i'll sink\verseline
+	%    and nevermore i'll drink\verseline
+	%    life's most delicate cream?\verseline
+	%    Heidideldi!\verseline
+	%    Remain with me,\verseline
+	%    my joy, you vibrant dream!
+	%    \end{stanza}
+	%    \end{poem}
+	%    \vspace*{\fill}
+	%%\include[\vspace*{\fill}]{im_basel}[\vspace*{\fill}]
+	%\vspace*{\fill}
+	%%\input{melancholia.tex}
+	%\vspace*{\fill}
+	%%\input{gewitter.tex}
+	%\vspace*{\fill}\newpage
+	%\vspace*{\fill}
+	%\addcontentsline{toc}{section}{\makebox[16em][l]{Zarathustra's Rundgesang} (1882)}
+	%\rightheader{Zarathustra's Rundgesang (1882)}
+	%	\poemtitle{\textfrak{Zarathustras Rundgesang}}
+	%	\begin{poem}
+	%	\begin{stanza}
+	%	O Mensch! Gib acht!\verseline
+	%	Was spricht die tiefe Mitternacht?\verseline
+	%	>>Ich schlief, ich schlief---,\verseline
+	%	Aus tiefem Traum bin ich erwacht:---\verseline
+	%	Die Welt ist tief,\verseline
+	%	Und tiefer als der Tag gedacht.\verseline
+	%	Tief ist ihr Weh---,\verseline
+	%	Lust—tiefer noch als Herzeleid:\verseline
+	%	Weh spricht: Vergeh!\verseline
+	%	Doch alle Lust will Ewigkeit---,\verseline
+	%	---will tiefe, tiefe Ewigkeit!<<
+	%	\end{stanza}
+	%	\end{poem}
+	%	\poemtitle{Zarathustra's Chorus Song}
+	%	\begin{poem}
+	%	\begin{stanza}
+	%	O Man! Eyes bright!\verseline
+	%	What says the deepest, dead of night?\verseline
+	%	>>I sleep, I sleep---,\verseline
+	%	From deepest sleep, i'm set aflame:---\verseline
+	%	The world is deep,\verseline
+	%	And deeper than the day could claim.\verseline
+	%	Deep is your pain---,\verseline
+	%	Joy's deeper still than pain can be:\verseline
+	%	Pain saith: Decay!\verseline
+	%	But all Joy wills eternity---,\verseline
+	%	---the depths, of deep eternity!<<
+	%	\end{stanza}
+	%	\end{poem}
+	%\vspace*{\fill}\newpage
+	%\vspace*{\fill}
+	%\addcontentsline{toc}{section}{\makebox[16em][l]{Pinie und Blitz} (1882)}
+	%\leftheader{Pinie und Blitz (1882)}
+	%	\poemtitle{\textfrak{Pinie und Blitz}}
+	%	\begin{poem}
+	%	\begin{stanza}
+	%	Hoch wuchs ich \"uber Mensch und Tier;\verseline
+	%	Und sprech ich---niemand spricht mit mir.
+	%	\end{stanza}
+	%	\begin{stanza}
+	%	Zu einsam wuchs ich und zu hoch---\verseline
+	%	Ich warte: worauf wart' ich doch?
+	%	\end{stanza}
+	%	\begin{stanza}
+	%	Zu nah ist mir der Wolken Sitz,---\verseline
+	%	Ich warte auf den ersten Blitz.
+	%	\end{stanza}
+	%	\end{poem}
+	%	\poemtitle{Lightning and Pine}
+	%	\begin{poem}
+	%	\begin{stanza}
+	%	'Bove man and plant, I grew so high\verseline
+	%	Now when I speak---none can reply.
+	%	\end{stanza}
+	%	\begin{stanza}
+	%	I grew too lonely with my height---\verseline
+	%	I wait; for what to fill my sight?
+	%	\end{stanza}
+	%	\begin{stanza}
+	%	So close are clouds that herald storm,---\verseline
+	%	A wildfire's to be born.
+	%	\end{stanza}
+	%	\end{poem}
+	%\vspace*{\fill}
+	%\newpage
+	%\vspace*{\fill}
+	%\addcontentsline{toc}{section}{\makebox[16em][l]{Eis} (1882)}
+	%\leftheader{Eis (1882)}
+	%	\poemtitle{\textfrak{Eis}}
+	%	\begin{poem}
+	%	Ja! Mitunter mach' ich Eis:\verseline
+	%	Nützlich ist Eis zum Verdauen!\verseline
+	%	Hättet ihr viel zu verdauen,\verseline
+	%	Oh wie liebtet ihr mein Eis!\verseline
+	%	\end{poem}
+	%
+	%	\poemtitle{Ice}
+	%	\begin{poem}
+	%	Yuh! Now, sometimes i make ice:\verseline
+	%	How helpful ice is for digestion!\verseline
+	%	And y'all have so much for digestion,\verseline
+	%	O, how love you so, my ice!\verseline
+	%	\end{poem}
+	%\vspace*{\fill}
+	%\newpage
+	%\vspace*{\fill}
+	%\addcontentsline{toc}{section}{\makebox[16em][l]{Heraklitismus} (1882)}
+	%\rightheader{Heraklitismus (1882)}
+	%	\poemtitle{\textfrak{Heraklitismus}}
+	%	\begin{poem}
+	%    Alles Glück auf Erden,\verseline
+	%    Freunde, giebt der Kampf!\verseline
+	%    Ja, um Freund zu werden,\verseline
+	%    Braucht es Pulverdampf!\verseline
+	%    Eins in Drei'n sind Freunde:\verseline
+	%    Brüder vor der Noth,\verseline
+	%    Gleiche vor dem Feinde,\verseline
+	%    Freie—vor dem Tod!\verseline
+	%	\end{poem}
+	%
+	%	\poemtitle{Heraclitus-ism}
+	%	\begin{poem}
+	%    All that's grand and earthly,\verseline
+	%    Friends, give for the fight!\verseline
+	%        %translating Kampf
+	%    Aye, should we be friendly,\verseline
+	%    It'll be by napalm light!\verseline
+	%        %original: gunsmoke
+	%    One in three are friendly:\verseline
+	%    Brothers jointly fend,\verseline
+	%    Likewise for the fiendly,\verseline
+	%    Freely---'fore their end!
+	%	\end{poem}
+	%\vspace*{\fill}
+	%%\input{wort.tex}
+	%\vspace*{\fill}
+	%%\input{kleine_hexe}
+	%\vspace*{\fill}
+	%\input{prinz_vogelfrei}\newpage
+	%\vspace*{\fill}
+	%\addcontentsline{toc}{section}{\makebox[16em][l]{Wer viel einst zu verk\"unden hat} (1883)}
+	%\rightheader{Wer viel einst zu verk\"unden hat (1883)}
+	%	\poemtitle{\textfrak{Wer viel einst zu verk\"unden hat}}
+	%	\begin{poem}
+	%	\begin{stanza}
+	%	Wer viel einst zu verk\"unden hat,\verseline
+	%	Schweigt viel in sich hinein:\verseline
+	%	Wer einst den Blitz zu z\"unden hat,\verseline
+	%	Mu\ss~lange---Wolke sein.
+	%	\end{stanza}
+	%	\end{poem}
+	%	\poemtitle{When one has plenty great to tell.}
+	%	\begin{poem}
+	%	\begin{stanza}
+	%	When one has plenty great to tell,\verseline
+	%	One hones silence within:\verseline
+	%	When one has lightning to dispel,\verseline
+	%	One long hones a cloud's skin.
+	%	\end{stanza}
+	%	\end{poem}
+	%\vspace*{\fill}
+	%\include[\vspace*{\fill}]{geht_die}[\vspace*{\fill}]
+	%\vspace*{\fill}
+	%%\input{freigeist.tex}
+	%\vspace*{\fill}
+	%\input{an_spinoza}
+	%\vspace*{\fill}
+	%\newpage
+	%\vspace*{\fill}
+	%\input{ehere}
+	%\vspace*{\fill}
+	%\input{letzter_wille}
+	%\vspace*{\fill}
+	%\end{document}
+%*/

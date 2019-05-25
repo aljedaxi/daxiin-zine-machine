@@ -1,10 +1,11 @@
 import	jinja2 
 import  yaml
-        #this imports a module for each different type of article
-from    types_and_settings import poem
 from	jinja2		import Template, Environment
 from	subprocess	import call, Popen, PIPE, STDOUT
 from 	os			import path
+from    pprint      import pprint
+        #this imports a module for each different type of article
+from    types_and_settings import poem
 
 #template_file = ""
 
@@ -46,7 +47,7 @@ def cleanup(title, minutes):
 def rename_texput(outfile):
     call(("mv", "texput.pdf", f"{outfile}.pdf"))
 
-def fill(template_file, outfile, meeting):
+def fill(template_file, outfile, meta):
     """
         fills a given template with data.
     """
@@ -82,18 +83,24 @@ def fill(template_file, outfile, meeting):
     #if you can find a way to change what's in the middle of it, you're golden
     open(outfile, "w").write(
         template.render(
-            meeting=meeting,
+            **meta,
         )
     )
 
-    call(("latexmk", "--pdf", outfile))
+    #call(("latexmk", "--pdf", outfile))
 
 if __name__ == "__main__":
     #from sys import argv
 
     #if this is set, the program will rebuild articles that have already been processed
-    force = 0
+    force = 1
+    #turns on a ton of print statements
+    verbose = 1
 
+    meta = CONF['conf']
+
+    #compiles each article from txt into LaTeX, using the templating systems defined in types_and_settings
+    f_files = []
     for article in CONF['protein']:
         text = ""
         try:
@@ -106,7 +113,9 @@ if __name__ == "__main__":
         (directory, a_file) = article['file'].split("/")
         outfile = "/".join((directory, f"f_{a_file}"))
         if path.isfile(outfile) and not force:
-            print(f"{outfile} already exists. Skipping {article['title']}")
+            if verbose:
+                print(f"{outfile} already exists. Skipping {article['title']}")
+            f_files.append(outfile)
             continue
 
         #find the correct module to use based on the type of article
@@ -114,7 +123,21 @@ if __name__ == "__main__":
         if not function:
             raise NotImplementedError(f"Function {function} not implemented.")
         formatted_article = function.main(text, meta=article, env=ENV)
+        #TODO: put this in try except
         open(outfile, "w").write(formatted_article)
+        if verbose:
+            print(f"writing formatted {article['title']} text to {outfile}")
+        f_files.append(outfile)
+
+    meta['files'] = f_files
+    template_file = meta['template']
+    outfile = f"permeate_zine_{meta['edition']}.tex"
+
+    fill(template_file, outfile, meta)
+
+
+    
+    
 
     #the primary issue is probably going to be dealing with this stuff
 

@@ -1,8 +1,9 @@
 conf:
-  edition: 0
-  title  : "The Anarchist Guide to: Home"
-  author : "Permeate Calgary"
-  font   : coelacanth
+  edition : 0
+  title   : "The Anarchist Guide to: Home"
+  author  : "Permeate Calgary"
+  font    : coelacanth
+  template: edition_template.tex
 protein:
   - title: Fable
     author: Ralph Waldo Emerson

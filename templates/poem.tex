@@ -5,7 +5,11 @@
 \BLOCK{for stanza in stanzas}
 	\begin{stanza}
 	\BLOCK{for line in stanza}
-		\VAR{line}\verseline
+		\BLOCK{if loop.last}
+			\VAR{line}
+		\BLOCK{else}
+			\VAR{line}\verseline
+		\BLOCK{endif}
 	\BLOCK{endfor}
 	\end{stanza}
 \BLOCK{endfor}
