@@ -1,9 +1,10 @@
+#/usr/bin/env python3
+
 import	jinja2 
 import  yaml
 from	jinja2		import Template, Environment
 from	subprocess	import call, Popen, PIPE, STDOUT
 from 	os			import path
-from    pprint      import pprint
         #this imports a module for each different type of article
 from    types_and_settings import poem
 
@@ -88,20 +89,9 @@ def fill(template_file, outfile, meta):
     )
 
     #call(("latexmk", "--pdf", outfile))
-
-if __name__ == "__main__":
-    #from sys import argv
-
-    #if this is set, the program will rebuild articles that have already been processed
-    force = 1
-    #turns on a ton of print statements
-    verbose = 1
-
-    meta = CONF['conf']
-
-    #compiles each article from txt into LaTeX, using the templating systems defined in types_and_settings
+def format_articles(articles):
     f_files = []
-    for article in CONF['protein']:
+    for article in articles:
         text = ""
         try:
             text = open(article['file']).read()
@@ -115,7 +105,8 @@ if __name__ == "__main__":
         if path.isfile(outfile) and not force:
             if verbose:
                 print(f"{outfile} already exists. Skipping {article['title']}")
-            f_files.append(outfile)
+            #TeX likes its input files implicitly extended
+            f_files.append(outfile[:-4])
             continue
 
         #find the correct module to use based on the type of article
@@ -127,7 +118,28 @@ if __name__ == "__main__":
         open(outfile, "w").write(formatted_article)
         if verbose:
             print(f"writing formatted {article['title']} text to {outfile}")
-        f_files.append(outfile)
+        f_files.append(outfile[:-4])
+    return f_files
+
+if __name__ == "__main__":
+    import argparse
+    from pprint import pprint
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-v", "--verbose", help="increase output verbosity",    action="store_true")
+    parser.add_argument("-f", "--force",   help="force recreation of articles", action="store_true")
+    args = parser.parse_args()
+
+    #from sys import argv
+
+    #if this is set, the program will rebuild articles that have already been processed
+    force = args.force
+    verbose = args.verbose
+
+    meta = CONF['conf']
+
+    #compiles each article from txt into LaTeX, using the templating systems defined in types_and_settings
+    f_files = format_articles(CONF['protein'])
+    pprint(f_files)
 
     meta['files'] = f_files
     template_file = meta['template']
