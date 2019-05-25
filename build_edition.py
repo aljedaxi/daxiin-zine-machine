@@ -27,7 +27,6 @@ ENV = Environment(
     loader				    = jinja2.FileSystemLoader("./templates"),
 )
 
-
 def cleanup(title, minutes):
     """
         removes all of the files created by LaTeX, then moves the original minutes file into the archives.
@@ -88,7 +87,8 @@ def fill(template_file, outfile, meta):
         )
     )
 
-    #call(("latexmk", "--pdf", outfile))
+    call(("latexmk", "--pdf", outfile))
+
 def format_articles(articles):
     f_files = []
     for article in articles:
@@ -139,39 +139,9 @@ if __name__ == "__main__":
 
     #compiles each article from txt into LaTeX, using the templating systems defined in types_and_settings
     f_files = format_articles(CONF['protein'])
-    pprint(f_files)
 
     meta['files'] = f_files
     template_file = meta['template']
     outfile = f"permeate_zine_{meta['edition']}.tex"
 
     fill(template_file, outfile, meta)
-
-
-    
-    
-
-    #the primary issue is probably going to be dealing with this stuff
-
-    ##particular = []
-    ##while len(argv) > 1:
-    ##    particular.append(argv.pop())
-    ##if len(particular) is 0:
-    ##    exit()
-
-    #particular = argv[1::]
-    #TEMPLATE = "template.tex"
-    #ZINE_TEMPLATE = "zine_template.tex"
-
-    ##for each argument
-    #for minutes in particular:
-    #    if "z" in particular:
-    #        template_file = ZINE_TEMPLATE
-    #    else:
-    #        template_file = TEMPLATE
-    #
-    #    meeting = open(minutes).read()
-    #    outfile = f"""{minutes.split(".")[0]}_n.tex"""
-    #    title = outfile.split(".")[0]
-    #    fill(template_file, outfile, meeting)
-    #    cleanup(title, minutes)
