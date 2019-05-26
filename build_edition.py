@@ -7,6 +7,7 @@ from	subprocess	import call, Popen, PIPE, STDOUT
 from 	os			import path
         #this imports a module for each different type of article
 from    types_and_settings import poem
+from    bookletting import booklet
 
 #template_file = ""
 
@@ -142,6 +143,7 @@ if __name__ == "__main__":
 
     meta['files'] = f_files
     template_file = meta['template']
-    outfile = f"permeate_zine_{meta['edition']}.tex"
+    outfile = f"{GLOBAL_CONF['zine_title']}_zine_{meta['edition']}"
 
-    fill(template_file, outfile, meta)
+    fill(template_file, f"{outfile}.tex", meta)
+    booklet(outfile, f"{GLOBAL_CONF['zine_title']}_booklet_{meta['edition']}")
