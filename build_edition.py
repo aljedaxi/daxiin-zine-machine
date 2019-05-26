@@ -1,11 +1,15 @@
 #/usr/bin/env python3
+"""
+    This is the code that's used to build the permeate zine,
+    but i'm working on making it totally transferable between zines.
+"""
 
-import	jinja2 
-import  yaml
-from	jinja2		import Template, Environment
-from	subprocess	import call, Popen, PIPE, STDOUT
+from	subprocess	import call
 from 	os			import path
         #this imports a module for each different type of article
+import	jinja2
+import  yaml
+
 from    types_and_settings import poem
 from    bookletting import booklet
 
@@ -13,7 +17,8 @@ from    bookletting import booklet
 
 CONF = yaml.load(open('vars.yml').read())
 GLOBAL_CONF = yaml.load(open('global_vars.yml').read())
-ENV = Environment(
+#TODO: find a way to externalize this code
+ENV = jinja2.Environment(
     block_start_string	    = '\BLOCK{',
     block_end_string		= '}',
     variable_start_string	= '\VAR{',
@@ -25,12 +30,13 @@ ENV = Environment(
     trim_blocks 			= True,
     lstrip_blocks			= True,
     autoescape			    = False,
-    loader				    = jinja2.FileSystemLoader("./templates"),
+    loader				    = jinja2.FileSystemLoader("./"),
 )
 
 def cleanup(title, minutes):
     """
-        removes all of the files created by LaTeX, then moves the original minutes file into the archives.
+        removes all of the files created by LaTeX, 
+        then moves the original minutes file into the archives.
     """
     call(("rm",
          f"{title}.aux",
@@ -46,6 +52,7 @@ def cleanup(title, minutes):
           "archives/",))
 
 def rename_texput(outfile):
+    """renames autonamed LaTeX output"""
     call(("mv", "texput.pdf", f"{outfile}.pdf"))
 
 def fill(template_file, outfile, meta):
@@ -53,23 +60,7 @@ def fill(template_file, outfile, meta):
         fills a given template with data.
     """
 
-    #TODO: find a way to externalize this code
-    env = Environment(
-        block_start_string	    = '\BLOCK{',
-        block_end_string		= '}',
-        variable_start_string	= '\VAR{',
-        variable_end_string	    = '}',
-        comment_start_string	= '%/*',
-        comment_end_string	    = '%*/',
-        line_comment_prefix	    = '%//',
-        line_statement_prefix	= '%%',
-        trim_blocks 			= True,
-        lstrip_blocks			= True,
-        autoescape			    = False,
-        loader				    = jinja2.FileSystemLoader("./"),
-    )
-
-    template = env.get_template(template_file)
+    template = ENV.get_template(template_file)
 
     #etwas = Popen(("pdflatex"), stdout=PIPE, 
     #              stdin=PIPE, stderr=PIPE).communicate(
@@ -91,6 +82,11 @@ def fill(template_file, outfile, meta):
     call(("latexmk", "--pdf", outfile))
 
 def format_articles(articles):
+    """
+        takes the list of articles---as defined in vars.yml---and
+        if they haven't yet been formatted, formats them 
+        (using the code in types_and_settings/ and templates in templates/)
+    """
     f_files = []
     for article in articles:
         text = ""
@@ -103,8 +99,8 @@ def format_articles(articles):
         #generate outfile filename; test for existence
         (directory, a_file) = article['file'].split("/")
         outfile = "/".join((directory, f"f_{a_file}"))
-        if path.isfile(outfile) and not force:
-            if verbose:
+        if path.isfile(outfile) and not FORCE:
+            if VERBOSE:
                 print(f"{outfile} already exists. Skipping {article['title']}")
             #TeX likes its input files implicitly extended
             f_files.append(outfile[:-4])
@@ -117,33 +113,33 @@ def format_articles(articles):
         formatted_article = function.main(text, meta=article, env=ENV)
         #TODO: put this in try except
         open(outfile, "w").write(formatted_article)
-        if verbose:
+        if VERBOSE:
             print(f"writing formatted {article['title']} text to {outfile}")
         f_files.append(outfile[:-4])
     return f_files
 
 if __name__ == "__main__":
     import argparse
-    from pprint import pprint
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--verbose", help="increase output verbosity",    action="store_true")
     parser.add_argument("-f", "--force",   help="force recreation of articles", action="store_true")
-    args = parser.parse_args()
+    ARGS = parser.parse_args()
 
     #from sys import argv
 
     #if this is set, the program will rebuild articles that have already been processed
-    force = args.force
-    verbose = args.verbose
+    FORCE = ARGS.force
+    VERBOSE = ARGS.verbose
 
-    meta = CONF['conf']
+    META = CONF['conf']
 
-    #compiles each article from txt into LaTeX, using the templating systems defined in types_and_settings
-    f_files = format_articles(CONF['protein'])
+    #compiles each article from txt into LaTeX, 
+    #using the templating systems defined in types_and_settings
+    _f_files = format_articles(CONF['protein'])
 
-    meta['files'] = f_files
-    template_file = meta['template']
-    outfile = f"{GLOBAL_CONF['zine_title']}_zine_{meta['edition']}"
+    META['files'] = _f_files
+    TEMPLATE_FILE = META['template']
+    outfile_core = f"{GLOBAL_CONF['zine_title']}_zine_{META['edition']}"
 
-    fill(template_file, f"{outfile}.tex", meta)
-    booklet(outfile, f"{GLOBAL_CONF['zine_title']}_booklet_{meta['edition']}")
+    fill(TEMPLATE_FILE, f"{outfile_core}.tex", META)
+    booklet(outfile_core, f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
