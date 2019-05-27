@@ -3,7 +3,7 @@
 import sys
 import jinja2
 from   jinja2	import Template, Environment
-from pprint import pprint
+import rendering
 
 side = "left"
 DEFAULT = {
@@ -38,10 +38,11 @@ def main(text, meta=DEFAULT, env=ENV):
             temp_title = meta['title'].split("\n")
             meta['title'] = temp_title[0]
             meta['subtitle'] = r"\\".join(temp_title[1:])
-    lines_out = poemize_neues(lines_in, meta, env)
+    meta['stanzas'] = stanzatize(lines_in)
+    lines_out = rendering.fill(template=TEMPLATE, env=env, meta=meta)
     return lines_out
 
-def poemize_neues(lines, meta, env):
+def stanzatize(lines):
     stanzas = []
     j = 0
     for i in range(len(lines)):
@@ -50,15 +51,8 @@ def poemize_neues(lines, meta, env):
             stanzas.append(lines[j:i])
             #offset so the stanzas themselves don't have blank lines
             j = (i + 1)
+    return stanzas
 
-    template = env.get_template(TEMPLATE)
-
-    meta['stanzas'] = stanzas
-
-    lines_out = template.render(
-        **meta,
-    )
-    return lines_out
 
 #consider deleting this
 def poemize(lines, meta):
