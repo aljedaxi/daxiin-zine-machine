@@ -115,9 +115,9 @@ def main(force=False, verbose=False):
     #compiles each article from txt into LaTeX,
     #using the templating systems defined in types_and_settings
     #force and verbose are passed to main
-    F_FILES = format_articles(CONF['protein'], 
+    F_FILES = format_articles(CONF['protein'],
                               ENV,
-                              force=force, 
+                              force=force,
                               verbose=verbose,
                               defaults="failed_formattings")
 
@@ -125,11 +125,11 @@ def main(force=False, verbose=False):
     TEMPLATE_FILE = META['template']
     OUTFILE_CORE = f"{GLOBAL_CONF['zine_title']}_zine_{META['edition']}"
 
-    fill(TEMPLATE_FILE, 
+    fill(TEMPLATE_FILE,
          f"{OUTFILE_CORE}.tex",
          META,
          ENV)
-    booklet(OUTFILE_CORE, 
+    booklet(OUTFILE_CORE,
             f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
 
 if __name__ == "__main__":
@@ -139,5 +139,5 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--force",   help="force recreation of articles", action="store_true")
     ARGS = parser.parse_args()
 
-    main(force=ARGS.force, 
+    main(force=ARGS.force,
        verbose=ARGS.verbose)
