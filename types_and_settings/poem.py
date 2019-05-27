@@ -31,6 +31,13 @@ TEMPLATE = "poem.tex"
 def main(text, meta=DEFAULT, env=ENV):
     lines_in = [line for line in text.split("\n")]
     template = env.get_template("poem.tex")
+    if "\n" in meta['title']:
+        try:
+            (meta['title'], meta['subtitle']) = meta['title'].split("\n")
+        except ValueError:
+            temp_title = meta['title'].split("\n")
+            meta['title'] = temp_title[0]
+            meta['subtitle'] = r"\\".join(temp_title[1:])
     lines_out = poemize_neues(lines_in, meta, env)
     return lines_out
 
@@ -53,6 +60,7 @@ def poemize_neues(lines, meta, env):
     )
     return lines_out
 
+#consider deleting this
 def poemize(lines, meta):
     """
         string with a poem as input and formats it with LaTeX
@@ -93,6 +101,6 @@ def poemize(lines, meta):
     return(lines_out);
 
 if __name__ == "__main__":
-    poem = open("Ralph_Waldo_Emerson-Give_all_to_Love.tex").read()
+    poem = open("my_fucking_restaurant.tex").read()
     print(main(poem))
         #insert each one into the index
