@@ -13,26 +13,6 @@ import  yaml
 from    types_and_settings import poem
 from    bookletting import booklet
 
-#template_file = ""
-
-#where to write formatted things when they don't
-DEFAULTS = "failed_formattings.tex"
-#TODO: find a way to externalize this code
-ENV = jinja2.Environment(
-    block_start_string   =r'\BLOCK{',
-    block_end_string     ='}',
-    variable_start_string=r'\VAR{',
-    variable_end_string  ='}',
-    comment_start_string ='%/*',
-    comment_end_string   ='%*/',
-    line_comment_prefix  ='%//',
-    line_statement_prefix='%%',
-    trim_blocks          =True,
-    lstrip_blocks        =True,
-    autoescape           =False,
-    loader               =jinja2.FileSystemLoader("./templates"),
-)
-
 def cleanup(title, minutes):
     """
         removes all of the files created by LaTeX,
@@ -81,7 +61,7 @@ def fill(template_file, outfile, meta):
 
     call(("latexmk", "--pdf", outfile))
 
-def format_articles(articles, force=False, verbose=False):
+def format_articles(articles, force=False, verbose=False, defaults="failed_formattings.tex"):
     """
         takes the list of articles---as defined in vars.yml---and
         if they haven't yet been formatted, formats them
@@ -113,9 +93,9 @@ def format_articles(articles, force=False, verbose=False):
         formatted_article = function.main(text, meta=article, env=ENV)
         try:
             open(outfile, "w").write(formatted_article)
-        except:
-            print(f"writing to {outfile} failed. Writing to {DEFAULTS} instead.")
-            open(DEFAULTS, "a").write(formatted_article)
+        except IOError as e:
+            print(f"writing to {outfile} failed. Writing to {defaults} instead.\n{e}\n")
+            open(defaults, "a").write(formatted_article)
 
         if verbose:
             print(f"writing formatted {article['title']} text to {outfile}")
@@ -123,8 +103,16 @@ def format_articles(articles, force=False, verbose=False):
     return f_files
 
 def main(force=False, verbose=False):
+    """
+        exactly what you expect a main to do.
+    """
     CONF = yaml.load(open('vars.yml').read())
     GLOBAL_CONF = yaml.load(open('global_vars.yml').read())
+    #TODO: do this better
+    global ENV
+    ENV = jinja2.Environment(
+        **GLOBAL_CONF['jinja2_env'],
+    )
 
     META = CONF['conf']
 
