@@ -14,7 +14,7 @@ ENV = Environment(
 
 def main(text, meta=DEFAULTS['META'], env=ENV):
     lines_in = [line for line in text.split("\n")]
-    template = env.get_template("poem.tex")
+    template = env.get_template("prose.tex")
     if "\n" in meta['title']:
         try:
             (meta['title'], meta['subtitle']) = meta['title'].split("\n")
@@ -22,22 +22,11 @@ def main(text, meta=DEFAULTS['META'], env=ENV):
             temp_title = meta['title'].split("\n")
             meta['title'] = temp_title[0]
             meta['subtitle'] = r"\\".join(temp_title[1:])
-    meta['stanzas'] = stanzatize(lines_in)
+    meta['text'] = text
     lines_out = rendering.fill(template=DEFAULTS['TEMPLATE'], env=env, meta=meta)
     return lines_out
 
-def stanzatize(lines):
-    stanzas = []
-    j = 0
-    for i in range(len(lines)):
-        if lines[i] is '':
-            #creates a stanza from the last white space to this one
-            stanzas.append(lines[j:i])
-            #offset so the stanzas themselves don't have blank lines
-            j = (i + 1)
-    return stanzas
-
 if __name__ == "__main__":
-    poem = open("my_fucking_restaurant.tex").read()
-    print(main(poem))
+    prose = open("my_fucking_restaurant.tex").read()
+    print(main(prose))
         #insert each one into the index
