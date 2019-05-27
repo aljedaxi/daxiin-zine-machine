@@ -2,7 +2,7 @@
 """
     this is the primary bookletting system.
 """
-CONFILE = "config.yml"
+_CONFILE = "config.yml"
 
 def booklet(title, out_file):
     """
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     from sys import argv
     import yaml
 
-    CONF = yaml.load(open(CONFILE).read())
+    CONF = yaml.load(open(_CONFILE).read())
     EDITION = CONF["edition"]
 
     IN_FILE = argv.pop()

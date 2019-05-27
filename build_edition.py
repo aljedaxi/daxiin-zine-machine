@@ -35,12 +35,12 @@ def rename_texput(outfile):
     """renames autonamed LaTeX output"""
     call(("mv", "texput.pdf", f"{outfile}.pdf"))
 
-def fill(template_file, outfile, meta):
+def fill(template_file, outfile, meta, env):
     """
         fills a given template with data.
     """
 
-    template = ENV.get_template(template_file)
+    template = env.get_template(template_file)
 
     #etwas = Popen(("pdflatex"), stdout=PIPE,
     #              stdin=PIPE, stderr=PIPE).communicate(
@@ -51,8 +51,6 @@ def fill(template_file, outfile, meta):
     #                                        )
     #rename_texput(outfile)
 
-    #this is the only thing that really changes from instance to instance
-    #if you can find a way to change what's in the middle of it, you're golden
     open(outfile, "w").write(
         template.render(
             **meta,
@@ -61,7 +59,7 @@ def fill(template_file, outfile, meta):
 
     call(("latexmk", "--pdf", outfile))
 
-def format_articles(articles, force=False, verbose=False, defaults="failed_formattings.tex"):
+def format_articles(articles, env, force=False, verbose=False, defaults="failed_formattings.tex"):
     """
         takes the list of articles---as defined in vars.yml---and
         if they haven't yet been formatted, formats them
@@ -90,7 +88,7 @@ def format_articles(articles, force=False, verbose=False, defaults="failed_forma
         function = globals().copy().get(article['type'])
         if not function:
             raise NotImplementedError(f"Function {function} not implemented.")
-        formatted_article = function.main(text, meta=article, env=ENV)
+        formatted_article = function.main(text, meta=article, env=env)
         try:
             open(outfile, "w").write(formatted_article)
         except IOError as e:
@@ -108,8 +106,6 @@ def main(force=False, verbose=False):
     """
     CONF = yaml.load(open('vars.yml').read())
     GLOBAL_CONF = yaml.load(open('global_vars.yml').read())
-    #TODO: do this better
-    global ENV
     ENV = jinja2.Environment(
         **GLOBAL_CONF['jinja2_env'],
     )
@@ -118,14 +114,23 @@ def main(force=False, verbose=False):
 
     #compiles each article from txt into LaTeX,
     #using the templating systems defined in types_and_settings
-    F_FILES = format_articles(CONF['protein'], force=force, verbose=verbose)
+    #force and verbose are passed to main
+    F_FILES = format_articles(CONF['protein'], 
+                              ENV,
+                              force=force, 
+                              verbose=verbose,
+                              defaults="failed_formattings")
 
     META['files'] = F_FILES
     TEMPLATE_FILE = META['template']
     OUTFILE_CORE = f"{GLOBAL_CONF['zine_title']}_zine_{META['edition']}"
 
-    fill(TEMPLATE_FILE, f"{OUTFILE_CORE}.tex", META)
-    booklet(OUTFILE_CORE, f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
+    fill(TEMPLATE_FILE, 
+         f"{OUTFILE_CORE}.tex",
+         META,
+         ENV)
+    booklet(OUTFILE_CORE, 
+            f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
 
 if __name__ == "__main__":
     import argparse
@@ -134,4 +139,5 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--force",   help="force recreation of articles", action="store_true")
     ARGS = parser.parse_args()
 
-    main(force=ARGS.force, verbose=ARGS.verbose)
+    main(force=ARGS.force, 
+       verbose=ARGS.verbose)

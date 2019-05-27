@@ -1,6 +1,8 @@
 zine_title: permeate
 zine_author: Permeate Calgary
 
+defaults: failed_formattings.tex
+
 jinja2_env:
   autoescape: false
   block_end_string: '}'

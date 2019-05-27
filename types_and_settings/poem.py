@@ -7,10 +7,10 @@ from pprint import pprint
 
 side = "left"
 DEFAULT = {
-        "title" : "Untitled",
-        "author": "Anonymous",
-        "type"  : "poem",
-        "rights": "Copyright",
+    "title" : "Untitled",
+    "author": "Anonymous",
+    "type"  : "poem",
+    "rights": "Copyright",
 }
 ENV = Environment(
     block_start_string	    = '\BLOCK{',
