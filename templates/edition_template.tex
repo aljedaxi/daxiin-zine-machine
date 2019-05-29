@@ -3,6 +3,7 @@
     \usepackage{newclude}
 	%\usepackage[paper=letter,DIV=10,BCOR=5mm]{typearea}
 	\usepackage[headinclude=false,footinclude=false,paper=letter,DIV=15]{typearea}
+	\usepackage{tocloft}
 %fonts {
 	\usepackage[normalem]{ulem}
 	\usepackage{microtype}
@@ -15,6 +16,7 @@
 
 %images {
 	\usepackage{graphicx}
+	\usepackage{float}
 %}
 
 %poetica {
@@ -37,6 +39,13 @@
 	\pagestyle{fancy}
 	\cfoot{}
 %}
+
+\newlength{\tocwidth}
+\setlength{\tocwidth}{12em}
+
+\newcommand{\daxiincontent}[2]{
+	\addcontentsline{toc}{section}{\makebox[\tocwidth]{#1\dotfill}--- #2}
+}
 \newcommand{\articletitle}[1]{
 	\section*{#1}
 }
