@@ -42,15 +42,6 @@ def fill(template_file, outfile, meta, env):
 
     template = env.get_template(template_file)
 
-    #etwas = Popen(("pdflatex"), stdout=PIPE,
-    #              stdin=PIPE, stderr=PIPE).communicate(
-    #                                                   input=bytes(
-    #                                                         template.render(
-    #                                                   ), "utf-8"
-    #                                             )
-    #                                        )
-    #rename_texput(outfile)
-
     open(outfile, "w").write(
         template.render(
             **meta,
@@ -88,11 +79,21 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
         if article['author'] in bios.keys():
             article['bio'] = bios[article['author']]
 
+        #check if title has subtitle in it
+        if "\n" in meta['title']:
+            try:
+                (meta['title'], meta['subtitle']) = meta['title'].split("\n")
+            except ValueError:
+                temp_title = meta['title'].split("\n")
+                meta['title'] = temp_title[0]
+                meta['subtitle'] = r"\\".join(temp_title[1:])
+
         #find the correct module to use based on the type of article
         function = globals().copy().get(article['type'])
         if not function:
             raise NotImplementedError(f"Function {function} not implemented.")
         formatted_article = function.main(text, meta=article, env=env)
+
         try:
             open(outfile, "w").write(formatted_article)
         except IOError as e:

@@ -1,36 +1,36 @@
 #!/usr/bin/env python3
+"""
+    this file deals with any poem that comes in.
 
-import sys
-import jinja2
-from   jinja2	import Template, Environment
+    If you want to change the way the poems actually look,
+    i'd recommend looking at the edition template.
+"""
 
-def fill(template="dab", env="dab", meta="dab"):
-    template = env.get_template(template)
-
-    lines_out = template.render(
-        **meta,
-    )
-    return lines_out
+from   jinja2 import Environment
+from  .render import fill
 
 def main(text, meta={}, env=Environment()):
+    """
+        this is the driver for poem typesetting.
+        text is the text of the poem.
+        meta is metadata, eg, author, title, bio.
+        env is a jinja2 environment.
+    """
     lines_in = [line for line in text.split("\n")]
-    template = env.get_template("poem.tex")
-    if "\n" in meta['title']:
-        try:
-            (meta['title'], meta['subtitle']) = meta['title'].split("\n")
-        except ValueError:
-            temp_title = meta['title'].split("\n")
-            meta['title'] = temp_title[0]
-            meta['subtitle'] = r"\\".join(temp_title[1:])
     meta['stanzas'] = stanzatize(lines_in)
+    print(meta['stanzas'])
+    exit()
     lines_out = fill("poem.tex", env=env, meta=meta)
     return lines_out
 
 def stanzatize(lines):
+    """
+        this takes the lines of the poem and splits them into stanzas.
+    """
     stanzas = []
     j = 0
-    for i in range(len(lines)):
-        if lines[i] is '':
+    for i, line in enumerate(lines):
+        if line == '':
             #creates a stanza from the last white space to this one
             stanzas.append(lines[j:i])
             #offset so the stanzas themselves don't have blank lines
@@ -38,6 +38,6 @@ def stanzatize(lines):
     return stanzas
 
 if __name__ == "__main__":
-    poem = open("my_fucking_restaurant.tex").read()
-    print(main(poem))
+    POEM = open("my_fucking_restaurant.tex").read()
+    print(main(POEM))
         #insert each one into the index
