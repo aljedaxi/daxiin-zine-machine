@@ -10,7 +10,7 @@ from 	os			import path
 import	jinja2
 import  yaml
 
-from    types_and_settings import poem
+from    types_and_settings import poem, prose
 from    bookletting import booklet
 
 def cleanup(title, minutes):
@@ -59,7 +59,7 @@ def fill(template_file, outfile, meta, env):
 
     call(("latexmk", "--pdf", outfile))
 
-def format_articles(articles, env, force=False, verbose=False, defaults="failed_formattings.tex"):
+def format_articles(articles, env, force=False, verbose=False, bios={}, defaults="failed_formattings.tex"):
     """
         takes the list of articles---as defined in vars.yml---and
         if they haven't yet been formatted, formats them
@@ -83,6 +83,10 @@ def format_articles(articles, env, force=False, verbose=False, defaults="failed_
             #TeX likes its input files implicitly extended
             f_files.append(outfile[:-4])
             continue
+
+        #attach bio to author
+        if article['author'] in bios.keys():
+            article['bio'] = bios[article['author']]
 
         #find the correct module to use based on the type of article
         function = globals().copy().get(article['type'])
@@ -119,7 +123,8 @@ def main(force=False, verbose=False):
                               ENV,
                               force=force,
                               verbose=verbose,
-                              defaults="failed_formattings")
+                              bios=GLOBAL_CONF['author_bios'],
+                              defaults="failed_formattings.tex")
 
     META['files'] = F_FILES
     TEMPLATE_FILE = META['template']

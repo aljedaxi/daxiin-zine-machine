@@ -1,7 +1,9 @@
-zine_title: permeate
-zine_author: Permeate Calgary
-
 defaults: failed_formattings.tex
+
+author_bios:
+  Ralph Waldo Emerson: Ralph Waldo Emerson was a transcendentalist American poet, who lived from 1803 to 1882. A staunch opponent of the south in the civil war, Emerson championed a strong relationship with the land, in all its flora and fauna.
+  Kathy Acker: Kathy Acker is an American novelist, most famous for her work ``Blood and Guts in High School''.
+  aljedaxi: aljedaxi is an experimental poet and short storietist; the second incarnation of the wide valley; the editor in chief of the permeate zine. 
 
 jinja2_env:
   autoescape: false
@@ -19,3 +21,28 @@ jinja2_env:
   trim_blocks: true
   variable_end_string: '}'
   variable_start_string: \VAR{
+
+META:
+  title: "Untitled"
+  author: "Anonymous"
+  type: "poem"
+  rights: "Copyright"
+
+ENV:
+  autoescape: false
+  block_end_string: '}'
+  block_start_string: \BLOCK{
+  comment_end_string: '%*/'
+  comment_start_string: '%/*'
+  line_comment_prefix: '%//'
+  line_statement_prefix: '%%'
+  loader: !!python/object:jinja2.loaders.FileSystemLoader
+    encoding: utf-8
+    followlinks: false
+    searchpath: [../templates]
+  lstrip_blocks: true
+  trim_blocks: true
+  variable_end_string: '}'
+  variable_start_string: \VAR{
+zine_title: permeate
+zine_author: Permeate Calgary

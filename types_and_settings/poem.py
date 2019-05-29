@@ -3,16 +3,16 @@
 import sys
 import jinja2
 from   jinja2	import Template, Environment
-import rendering
 
-side = "left"
-DEFILE = "defaults.yml"
-DEFAULTS = yaml.load(open(DEFILE).read())
-ENV = Environment(
-    **DEFAULTS['ENV']
-)
+def fill(template="dab", env="dab", meta="dab"):
+    template = env.get_template(template)
 
-def main(text, meta=DEFAULTS['META'], env=ENV):
+    lines_out = template.render(
+        **meta,
+    )
+    return lines_out
+
+def main(text, meta={}, env=Environment()):
     lines_in = [line for line in text.split("\n")]
     template = env.get_template("poem.tex")
     if "\n" in meta['title']:
@@ -23,7 +23,7 @@ def main(text, meta=DEFAULTS['META'], env=ENV):
             meta['title'] = temp_title[0]
             meta['subtitle'] = r"\\".join(temp_title[1:])
     meta['stanzas'] = stanzatize(lines_in)
-    lines_out = rendering.fill(template=DEFAULTS['TEMPLATE'], env=env, meta=meta)
+    lines_out = fill("poem.tex", env=env, meta=meta)
     return lines_out
 
 def stanzatize(lines):
