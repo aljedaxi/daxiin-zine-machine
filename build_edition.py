@@ -10,7 +10,7 @@ from 	os			import path
 import	jinja2
 import  yaml
 
-from    types_and_settings import poem, prose
+from    types_and_settings import poem, prose, image
 from    bookletting import booklet
 
 def cleanup(title, minutes):
@@ -61,13 +61,18 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
         text = ""
         try:
             text = open(article['file']).read()
+        except UnicodeDecodeError:
+            if verbose:
+                print(f"{article['file']} is an image lol")
+            text = "this is an image edit this template"
         except FileNotFoundError:
             print(f"article {article['title']}'s file {article['file']} doesn't exist!")
             continue
 
         #generate outfile filename; test for existence
         (directory, a_file) = article['file'].split("/")
-        outfile = "/".join((directory, f"f_{a_file}"))
+        #the outfile is going to be .tex, even if the infile is an image
+        outfile = "/".join((directory, f"f_{a_file[:-4]}.tex"))
         if path.isfile(outfile) and not force:
             if verbose:
                 print(f"{outfile} already exists. Skipping {article['title']}")

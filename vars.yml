@@ -5,6 +5,11 @@ conf:
   font    : coelacanth
   template: edition_template.tex
 protein:
+  - title: Test Test
+    author: aljedaxi
+    type: image
+    file: test/test.jpg
+    rights: Public Domain
   - title: Fable
     author: Ralph Waldo Emerson
     type: poem
