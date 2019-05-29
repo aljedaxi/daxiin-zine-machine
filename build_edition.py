@@ -110,7 +110,7 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
         f_files.append(outfile[:-4])
     return f_files
 
-def main(force=False, verbose=False):
+def main(force=False, verbose=False, booklet=False):
     """
         exactly what you expect a main to do.
     """
@@ -140,15 +140,18 @@ def main(force=False, verbose=False):
          f"{OUTFILE_CORE}.tex",
          META,
          ENV)
-    booklet(OUTFILE_CORE,
-            f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
+    if booklet:
+        booklet(OUTFILE_CORE,
+                f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
 
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--verbose", help="increase output verbosity",    action="store_true")
     parser.add_argument("-f", "--force",   help="force recreation of articles", action="store_true")
+    parser.add_argument("-b", "--booklet", help="also booklet the pdf",         action="store_true")
     ARGS = parser.parse_args()
 
     main(force=ARGS.force,
-       verbose=ARGS.verbose)
+       verbose=ARGS.verbose,
+       booklet=ARGS.booklet)
