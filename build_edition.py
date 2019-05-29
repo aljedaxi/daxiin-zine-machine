@@ -80,7 +80,7 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
             article['bio'] = bios[article['author']]
 
         #check if title has subtitle in it
-        if "\n" in meta['title']:
+        if "\n" in article['title']:
             try:
                 (meta['title'], meta['subtitle']) = meta['title'].split("\n")
             except ValueError:

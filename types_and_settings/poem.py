@@ -18,8 +18,6 @@ def main(text, meta={}, env=Environment()):
     """
     lines_in = [line for line in text.split("\n")]
     meta['stanzas'] = stanzatize(lines_in)
-    print(meta['stanzas'])
-    exit()
     lines_out = fill("poem.tex", env=env, meta=meta)
     return lines_out
 
