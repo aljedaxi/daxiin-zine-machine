@@ -10,6 +10,14 @@ protein:
     type: image
     file: test/test.jpg
     rights: Public Domain
+  - title: Readings
+    author: permeate
+    type: custom
+    file: permeate/readings.tex
+    rights: Peer Production License
+    readings:
+      - Meme book
+      - "Dab On the Haters: how i dabbed on 25 haters in 23 seconds"
   - title: Fable
     author: Ralph Waldo Emerson
     type: poem

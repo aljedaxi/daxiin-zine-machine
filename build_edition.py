@@ -110,7 +110,7 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
         f_files.append(outfile[:-4])
     return f_files
 
-def main(force=False, verbose=False, booklet=False):
+def main(force=False, verbose=False, booklet_p=False):
     """
         exactly what you expect a main to do.
     """
@@ -140,7 +140,7 @@ def main(force=False, verbose=False, booklet=False):
          f"{OUTFILE_CORE}.tex",
          META,
          ENV)
-    if booklet:
+    if booklet_p:
         booklet(OUTFILE_CORE,
                 f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
 
@@ -154,4 +154,4 @@ if __name__ == "__main__":
 
     main(force=ARGS.force,
        verbose=ARGS.verbose,
-       booklet=ARGS.booklet)
+     booklet_p=ARGS.booklet)

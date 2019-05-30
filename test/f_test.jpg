@@ -1,0 +1,14 @@
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{test/test.jpg}
+	\caption{
+		\articletitle{Test Test}
+
+		\articleauthor{aljedaxi}
+
+
+
+		\articlebio{aljedaxi is an experimental poet and short storietist; the second incarnation of the wide valley; the editor in chief of the permeate zine.}
+		\articlerights{Public Domain}
+	}
+\end{figure}

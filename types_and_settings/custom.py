@@ -14,8 +14,13 @@ def main(text, meta={}, env=Environment()):
         meta is metadata, eg, author, title, bio.
         env is a jinja2 environment.
     """
-    meta['text'] = text
-    lines_out = fill("custom.tex", env=env, meta=meta)
+    if "\BLOCK" in text or "\VAR" in text:
+        lines_out = env.from_string(text).render(
+            **meta,
+        )
+    else:
+        meta['text'] = text
+        lines_out = fill("custom.tex", env=env, meta=meta)
     return lines_out
 
 if __name__ == "__main__":
