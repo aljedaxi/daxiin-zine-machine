@@ -57,6 +57,7 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
         (using the code in types_and_settings/ and templates in templates/)
     """
     f_files = []
+    #TODO: define set "c_authors"
     for article in articles:
         text = ""
         try:
@@ -107,7 +108,9 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
 
         if verbose:
             print(f"writing formatted {article['title']} text to {outfile}")
+        #TODO: c_authors.append()
         f_files.append(outfile[:-4])
+    #TODO: return dict with c_authors and f_files
     return f_files
 
 def main(force=False, verbose=False, booklet_p=False):
@@ -125,6 +128,7 @@ def main(force=False, verbose=False, booklet_p=False):
     #compiles each article from txt into LaTeX,
     #using the templating systems defined in types_and_settings
     #force and verbose are passed to main
+    #TODO: get dict containing F_FILES and C_AUTHORS
     F_FILES = format_articles(CONF['protein'],
                               ENV,
                               force=force,
