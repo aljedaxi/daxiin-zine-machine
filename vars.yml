@@ -4,6 +4,11 @@ conf:
   author  : "Permeate Calgary"
   font    : coelacanth
   template: edition_template.tex
+  editorial team:
+    editor in chief: aljedaxi
+    visual director: [emberlynn]
+    ray of sunshine: [valerie]
+    
 protein:
   - title: Test Test
     author: aljedaxi

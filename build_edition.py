@@ -57,7 +57,7 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
         (using the code in types_and_settings/ and templates in templates/)
     """
     f_files = []
-    #TODO: define set "c_authors"
+    c_authors = set()
     for article in articles:
         text = ""
         try:
@@ -108,10 +108,12 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
 
         if verbose:
             print(f"writing formatted {article['title']} text to {outfile}")
-        #TODO: c_authors.append()
+
+        c_authors.add(article['author'])
         f_files.append(outfile[:-4])
     #TODO: return dict with c_authors and f_files
-    return f_files
+    return {'c_authors': c_authors,
+            'f_files':   f_files}
 
 def main(force=False, verbose=False, booklet_p=False):
     """
@@ -128,15 +130,15 @@ def main(force=False, verbose=False, booklet_p=False):
     #compiles each article from txt into LaTeX,
     #using the templating systems defined in types_and_settings
     #force and verbose are passed to main
-    #TODO: get dict containing F_FILES and C_AUTHORS
-    F_FILES = format_articles(CONF['protein'],
+    formats = format_articles(CONF['protein'],
                               ENV,
                               force=force,
                               verbose=verbose,
                               bios=GLOBAL_CONF['author_bios'],
                               defaults="failed_formattings.tex")
 
-    META['files'] = F_FILES
+    META['files'] = formats['f_files']
+    META['contributors'] = formats['c_authors']
     TEMPLATE_FILE = META['template']
     OUTFILE_CORE = f"{GLOBAL_CONF['zine_title']}_zine_{META['edition']}"
 
