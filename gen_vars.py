@@ -2,6 +2,8 @@
     quickly create a vars file so you don't have to write out all those file paths.
 """
 
+import yaml
+
 extensions = {
     "tex": "prose",
     "txt": "prose",
@@ -28,3 +30,5 @@ def main():
                 "author": "Anonymous",
                 "rights": "Peer Production License",
                 "title" : "Untitled",} for path, kind in zip(paths, types)]
+
+    print(yaml.dump(protein))
