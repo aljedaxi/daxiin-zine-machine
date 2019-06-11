@@ -10,7 +10,7 @@ from 	os			import path
 import	jinja2
 import  yaml
 
-from    types_and_settings import poem, prose, image, custom
+from    types_and_settings import poem, prose, image, custom, yml_prose
 from    bookletting import booklet
 
 def cleanup(title, minutes):
@@ -97,6 +97,8 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
         #find the correct module to use based on the type of article
         function = globals().copy().get(article['type'])
         if not function:
+            print(article['type'])
+            print("if the file exists, make sure it's being imported")
             raise NotImplementedError(f"Function {function} not implemented.")
         formatted_article = function.main(text, meta=article, env=env)
 

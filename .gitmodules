@@ -1,0 +1,3 @@
+[submodule "utilities/yml_to_tex"]
+	path = utilities/yml_to_tex
+	url = https://github.com/aljedaxi/yml_to_tex

@@ -21,8 +21,12 @@ protein:
     file: permeate/readings.tex
     rights: Peer Production License
     readings:
-      - Meme book
-      - "Dab On the Haters: how i dabbed on 25 haters in 23 seconds"
+      - "Dab on the haters: how i dabbed on 17 haters in 17 days"
+  - title: A Statement of Principles
+    author: i dunno
+    type: yml_prose
+    file: permeate/principles.yml
+    rights: Copyright
   - title: Fable
     author: Ralph Waldo Emerson
     type: poem
