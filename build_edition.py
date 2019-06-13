@@ -13,6 +13,25 @@ import  yaml
 from    types_and_settings import poem, prose, image, custom, yml_prose, pdf
 from    bookletting import booklet
 
+def test():
+    GLOBAL_CONF = yaml.load(open('global_vars.yml').read())
+    ENV = jinja2.Environment(
+        **GLOBAL_CONF['jinja2_env'],
+    )
+    print(
+    prose.main(
+        "i will dab on you",
+        {
+        "title":  "Test Test",
+        "author": "aljedaxi",
+        "type":   "image",
+        "file":   "test/test.jpg",
+        "rights": "Public Domain",
+        },
+        ENV
+    )
+    )
+
 def cleanup(title, minutes):
     """
         removes all of the files created by LaTeX,
@@ -113,7 +132,6 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
 
         c_authors.add(article['author'])
         f_files.append(outfile[:-4])
-    #TODO: return dict with c_authors and f_files
     return {'c_authors': c_authors,
             'f_files':   f_files}
 
@@ -158,7 +176,12 @@ if __name__ == "__main__":
     parser.add_argument("-v", "--verbose", help="increase output verbosity",    action="store_true")
     parser.add_argument("-f", "--force",   help="force recreation of articles", action="store_true")
     parser.add_argument("-b", "--booklet", help="also booklet the pdf",         action="store_true")
+    parser.add_argument("-t", "--test",    help="runs the function 'test' instead of 'main'",         action="store_true")
     ARGS = parser.parse_args()
+
+    if ARGS.test:
+        test()
+        exit()
 
     main(force=ARGS.force,
        verbose=ARGS.verbose,

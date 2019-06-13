@@ -13,8 +13,12 @@ def main(text, meta={}, env=Environment()):
         meta is metadata, eg, author, title, bio.
         env is a jinja2 environment.
     """
+    #generate template name from filename
+    template = __file__.split("/")[-1].split(".")[0]
+    template = f"{template}.tex"
+
     meta['text'] = text
-    lines_out = fill("prose.tex", env=env, meta=meta)
+    lines_out = fill(template, env=env, meta=meta)
     return lines_out
 
 if __name__ == "__main__":
