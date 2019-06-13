@@ -1,1 +1,5 @@
-\include{\VAR{file}}
+\BLOCK{if pages}
+	\includepdf[pages={\VAR{pages}}]{\VAR{file}}
+\BLOCK{else}
+	\includepdf[pages=-]\VAR{file}
+\BLOCK{endif}

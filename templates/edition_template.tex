@@ -67,7 +67,12 @@
 \frontmatter
 \Large
 
-\maketitle
+\BLOCK{if frontcover}
+	\includepdf{\VAR{frontcover}}
+\BLOCK{else}
+	\maketitle
+\BLOCK{endif}
+
 \tableofcontents
 
 \mainmatter
@@ -76,6 +81,9 @@
 	\include{\VAR{filename}}
 \BLOCK{endfor}
 
+\BLOCK{if backcover}
+	\includepdf{\VAR{backcover}}
+\BLOCK{endif}
 \end{document}
 
 %/*

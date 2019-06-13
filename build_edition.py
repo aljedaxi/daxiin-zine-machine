@@ -10,7 +10,7 @@ from 	os			import path
 import	jinja2
 import  yaml
 
-from    types_and_settings import poem, prose, image, custom, yml_prose
+from    types_and_settings import poem, prose, image, custom, yml_prose, pdf
 from    bookletting import booklet
 
 def cleanup(title, minutes):

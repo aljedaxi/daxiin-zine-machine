@@ -4,6 +4,8 @@ conf:
   author  : "Permeate Calgary"
   font    : coelacanth
   template: edition_template.tex
+  #backcover: test/backcover.pdf
+  #frontcover: test/frontcover.pdf
   editorial team:
     editor in chief: aljedaxi
     visual director: [emberlynn]
