@@ -54,6 +54,8 @@ def rename_texput(outfile):
     """renames autonamed LaTeX output"""
     call(("mv", "texput.pdf", f"{outfile}.pdf"))
 
+    
+
 def fill(template_file, outfile, meta, env):
     """
         fills a given template with data.
@@ -79,12 +81,23 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
     c_authors = set()
     for article in articles:
         text = ""
+
+        if article['type'] == "skip":
+            c_authors.add(article['author'])
+
+            if verbose:
+                print(f"writing formatted {article['title']} text to {outfile}")
+                print(c_authors)
+
+            f_files.append(f"skipped: {article['title']}")
+            continue
+            
         try:
             text = open(article['file']).read()
         except UnicodeDecodeError:
             if verbose:
                 print(f"{article['file']} is an image lol")
-            text = "this is an image edit this template"
+            text = r"\Large this is an image edit this template"
         except FileNotFoundError:
             print(f"article {article['title']}'s file {article['file']} doesn't exist!")
             continue
@@ -127,10 +140,12 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
             print(f"writing to {outfile} failed. Writing to {defaults} instead.\n{e}\n")
             open(defaults, "a").write(formatted_article)
 
+        c_authors.add(article['author'])
+
         if verbose:
             print(f"writing formatted {article['title']} text to {outfile}")
+            print(c_authors)
 
-        c_authors.add(article['author'])
         f_files.append(outfile[:-4])
     return {'c_authors': c_authors,
             'f_files':   f_files}
@@ -159,8 +174,35 @@ def main(force=False, verbose=False, booklet_p=False):
 
     META['files'] = formats['f_files']
     META['contributors'] = formats['c_authors']
-    TEMPLATE_FILE = META['template']
-    OUTFILE_CORE = f"{GLOBAL_CONF['zine_title']}_zine_{META['edition']}"
+    #TODO: make a section for all special things
+    if META['contributors']:
+        #specials = [i, v for i, v in enumerate(META['files']) if "skipped" in v][0]
+        for i, article in enumerate(META['files']):
+            if "skipped" in article:
+                article = article.split("skipped: ")[-1]
+                outfile = f"specials/f_{article}.tex"
+                if path.isfile(outfile) and not force:
+                    if verbose:
+                        print(f"{outfile} already exists. Skipping {article['title']}")
+                    #TeX likes its input files implicitly extended
+                    META['files'][i] = outfile[:-4]
+                    continue
+                a_meta = META['special pages'][article]
+                template = ENV.get_template(a_meta['template'])
+                open(outfile, "w").write(
+                    template.render(
+                        **META,
+                        **a_meta
+                    )
+                )
+                META['files'][i] = outfile[:-4]
+
+
+
+    print(META['files'])
+
+    TEMPLATE_FILE = META['g_template']
+    OUTFILE_CORE = f"{GLOBAL_CONF['zine_title']}_zine_{META['g_edition']}"
 
     fill(TEMPLATE_FILE,
          f"{OUTFILE_CORE}.tex",
@@ -176,13 +218,13 @@ if __name__ == "__main__":
     parser.add_argument("-v", "--verbose", help="increase output verbosity",    action="store_true")
     parser.add_argument("-f", "--force",   help="force recreation of articles", action="store_true")
     parser.add_argument("-b", "--booklet", help="also booklet the pdf",         action="store_true")
-    parser.add_argument("-t", "--test",    help="runs the function 'test' instead of 'main'",         action="store_true")
     ARGS = parser.parse_args()
 
-    if ARGS.test:
-        test()
-        exit()
+    #if ARGS.test:
+    #    test()
+    #    exit()
 
     main(force=ARGS.force,
        verbose=ARGS.verbose,
-     booklet_p=ARGS.booklet)
+     booklet_p=ARGS.booklet,
+          )

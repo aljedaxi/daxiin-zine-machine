@@ -1,11 +1,18 @@
 conf:
-  edition : 0
-  title   : "The Anarchist Guide to: Home"
-  author  : "Permeate Calgary"
-  font    : coelacanth
-  template: edition_template.tex
+  g_edition : 0
+  g_title   : "The Anarchist Guide to: Home"
+  g_author  : "Permeate Calgary"
+  g_font    : coelacanth
+  g_template: edition_template.tex
   #backcover: test/backcover.pdf
   #frontcover: test/frontcover.pdf
+  special pages:
+    contributors: &contributors
+      title: contributors
+      author: Permeate
+      template: contributors.tex
+      type: skip
+      rights: Peer Production License
   editorial team:
     editor in chief: aljedaxi
     visual director: [emberlynn]
@@ -29,6 +36,12 @@ protein:
     type: yml_prose
     file: permeate/principles.yml
     rights: Copyright
+  - title: Contact
+    author: Permeate
+    type: custom
+    file: permeate/contact.tex
+    rights: Copyright
+  - *contributors
   - title: Fable
     author: Ralph Waldo Emerson
     type: poem

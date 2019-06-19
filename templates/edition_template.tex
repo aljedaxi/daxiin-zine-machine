@@ -9,7 +9,7 @@
 	\usepackage{microtype}
 	%\usepackage[cmintegrals,cmbraces]{newtxmath}
 	%\usepackage{ebgaramond-maths}
-	\usepackage{\VAR{font}}
+	\usepackage{\VAR{g_font}}
 	\usepackage[T1]{fontenc}
 	%\usepackage{yfonts}
 %}
@@ -40,28 +40,34 @@
 	\cfoot{}
 %}
 
-\newlength{\tocwidth}
-\setlength{\tocwidth}{12em}
+%permeate formatting {
+	\newlength{\tocwidth}
+	\setlength{\tocwidth}{12em}
 
-\newcommand{\daxiincontent}[2]{
-	\addcontentsline{toc}{section}{\makebox[\tocwidth]{#1\dotfill}--- #2}
-}
-\newcommand{\articletitle}[1]{
-	\section*{#1}
-}
-\newcommand{\articleauthor}[1]{
-	#1
-}
-\newcommand{\articlebio}[1]{
-	#1
-}
-\newcommand{\articlerights}[1]{
+	\newcommand{\daxiincontent}[2]{
+		\addcontentsline{toc}{section}{
+			\makebox[\tocwidth]{#1\dotfill}--- #2
+		}
+	}
+	\newcommand{\articletitle}[1]{
+		\section*{#1}
+	}
+	\newcommand{\articleauthor}[1]{
+		#1
+	}
+	\newcommand{\articlebio}[1]{
+		#1
+	}
+	\newcommand{\articlerights}[1]{
 
-	This article is released under #1.
-}
+		This article is released under #1.
+	}
+%}
 
-\title{\VAR{title}}
-\author{\VAR{author}}
+%Jinja2 variables {
+	\title{\VAR{g_title}}
+	\author{\VAR{g_author}}
+%}
 
 \begin{document}
 \frontmatter
@@ -84,8 +90,8 @@
 \BLOCK{if backcover}
 	\includepdf{\VAR{backcover}}
 \BLOCK{endif}
-\end{document}
 
+\end{document}
 %/*
 	%\frontmatter
 	%\includepdf{cover}
