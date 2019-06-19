@@ -10,7 +10,7 @@ from 	os			import path
 import	jinja2
 import  yaml
 
-from    types_and_settings import poem, prose, image, custom, yml_prose, pdf
+from    types_and_settings import mb, poem, prose, image, custom, yml_prose, pdf
 from    bookletting import booklet
 
 def test():
@@ -126,12 +126,17 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
                 meta['subtitle'] = r"\\".join(temp_title[1:])
 
         #find the correct module to use based on the type of article
-        function = globals().copy().get(article['type'])
-        if not function:
-            print(article['type'])
-            print("if the file exists, make sure it's being imported")
-            raise NotImplementedError(f"Function {function} not implemented.")
-        formatted_article = function.main(text, meta=article, env=env)
+        try:
+            formatted_article = getattr(mb, article['type'])(text, meta=article, env=env, fill=fill)
+        except AttributeError:
+            module = globals().copy().get(article['type'])
+
+            if not module:
+                print(article['type'])
+                print("if the file exists, make sure it's being imported")
+                raise NotImplementedError(f"Function {module} not implemented.")
+
+            formatted_article = module.main(text, meta=article, env=env)
 
         try:
             open(outfile, "w").write(formatted_article)
@@ -211,8 +216,6 @@ def main(force=False, verbose=False, booklet_p=False):
                 f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
 
 if __name__ == "__main__":
-    test()
-    exit()
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--verbose", help="increase output verbosity",    action="store_true")
