@@ -54,8 +54,6 @@ def rename_texput(outfile):
     """renames autonamed LaTeX output"""
     call(("mv", "texput.pdf", f"{outfile}.pdf"))
 
-    
-
 def fill(template_file, outfile, meta, env):
     """
         fills a given template with data.
@@ -174,32 +172,26 @@ def main(force=False, verbose=False, booklet_p=False):
 
     META['files'] = formats['f_files']
     META['contributors'] = formats['c_authors']
-    #TODO: make a section for all special things
-    if META['contributors']:
-        #specials = [i, v for i, v in enumerate(META['files']) if "skipped" in v][0]
-        for i, article in enumerate(META['files']):
-            if "skipped" in article:
-                article = article.split("skipped: ")[-1]
-                outfile = f"specials/f_{article}.tex"
-                if path.isfile(outfile) and not force:
-                    if verbose:
-                        print(f"{outfile} already exists. Skipping {article['title']}")
-                    #TeX likes its input files implicitly extended
-                    META['files'][i] = outfile[:-4]
-                    continue
-                a_meta = META['special pages'][article]
-                template = ENV.get_template(a_meta['template'])
-                open(outfile, "w").write(
-                    template.render(
-                        **META,
-                        **a_meta
-                    )
-                )
+
+    for i, article in enumerate(META['files']):
+        if "skipped" in article:
+            article = article.split("skipped: ")[-1]
+            outfile = f"specials/f_{article}.tex"
+            if path.isfile(outfile) and not force:
+                if verbose:
+                    print(f"{outfile} already exists. Skipping {article['title']}")
+                #TeX likes its input files implicitly extended
                 META['files'][i] = outfile[:-4]
-
-
-
-    print(META['files'])
+                continue
+            a_meta = META['special pages'][article]
+            template = ENV.get_template(a_meta['template'])
+            open(outfile, "w").write(
+                template.render(
+                    **META,
+                    **a_meta
+                )
+            )
+            META['files'][i] = outfile[:-4]
 
     TEMPLATE_FILE = META['g_template']
     OUTFILE_CORE = f"{GLOBAL_CONF['zine_title']}_zine_{META['g_edition']}"
