@@ -19,17 +19,18 @@ def test():
         **GLOBAL_CONF['jinja2_env'],
     )
     print(
-    prose.main(
-        "i will dab on you",
-        {
-        "title":  "Test Test",
-        "author": "aljedaxi",
-        "type":   "image",
-        "file":   "test/test.jpg",
-        "rights": "Public Domain",
-        },
-        ENV
-    )
+        prose.main(
+            "i will dab on you",
+            {
+            "title":  "Test Test",
+            "author": "aljedaxi",
+            "type":   "image",
+            "file":   "test/test.jpg",
+            "rights": "Public Domain",
+            },
+            ENV,
+            fill=fill,
+        )
     )
 
 def cleanup(title, minutes):
@@ -206,6 +207,8 @@ def main(force=False, verbose=False, booklet_p=False):
                 f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
 
 if __name__ == "__main__":
+    test()
+    exit()
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--verbose", help="increase output verbosity",    action="store_true")

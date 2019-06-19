@@ -4,9 +4,8 @@
 """
 
 from   jinja2 import Environment
-from  .render import fill
 
-def main(text, meta={}, env=Environment()):
+def main(text, meta={}, env=Environment(), fill=(lambda x, y, z : f"error with arguments {x} {y} {z}")):
     """
         this is the driver for prose typesetting.
         text is the text of the prose.
