@@ -54,20 +54,16 @@ def rename_texput(outfile):
     """renames autonamed LaTeX output"""
     call(("mv", "texput.pdf", f"{outfile}.pdf"))
 
-def fill(template_file, outfile, meta, env):
+def fill(template_file, meta, env):
     """
         fills a given template with data.
     """
 
     template = env.get_template(template_file)
 
-    open(outfile, "w").write(
-        template.render(
-            **meta,
-        )
+    return template.render(
+        **meta,
     )
-
-    call(("latexmk", "--pdf", outfile))
 
 def format_articles(articles, env, force=False, verbose=False, bios={}, defaults="failed_formattings.tex"):
     """
@@ -194,12 +190,17 @@ def main(force=False, verbose=False, booklet_p=False):
             META['files'][i] = outfile[:-4]
 
     TEMPLATE_FILE = META['g_template']
-    OUTFILE_CORE = f"{GLOBAL_CONF['zine_title']}_zine_{META['g_edition']}"
+    OUTFILE_CORE  = f"{GLOBAL_CONF['zine_title']}_zine_{META['g_edition']}"
+    OUTFILE_TEX   = f"{OUTFILE_CORE}.tex"
 
-    fill(TEMPLATE_FILE,
-         f"{OUTFILE_CORE}.tex",
-         META,
-         ENV)
+    open(OUTFILE_TEX, "w").write(
+        fill(TEMPLATE_FILE,
+             META,
+             ENV)
+    )
+
+    call(("latexmk", "--pdf", OUTFILE_TEX))
+
     if booklet_p:
         booklet(OUTFILE_CORE,
                 f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
