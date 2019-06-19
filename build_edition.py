@@ -98,7 +98,11 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
             continue
 
         #generate outfile filename; test for existence
-        (directory, a_file) = article['file'].split("/")
+        try:
+            (directory, a_file) = article['file'].split("/")
+        except:
+            a_file = article
+
         #the outfile is going to be .tex, even if the infile is an image
         outfile = "/".join((directory, f"f_{a_file[:-4]}.tex"))
         if path.isfile(outfile) and not force:
