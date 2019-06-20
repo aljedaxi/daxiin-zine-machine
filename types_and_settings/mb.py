@@ -12,13 +12,54 @@ def fill(template="prose.tex", env=Environment(), meta={}):
     )
     return lines_out
 
-def generic(template="default.tex"):
-    def f(text, meta={}, env="dong", fill=(lambda x, y, z : f"error with arguments {x} {y} {z}"), template=template):
-        if not template == "default.tex":
+def jinja2_p(text):
+    if "\BLOCK" in text or "\VAR" in text:
+        return True
+    else:
+        return False
+
+def stanzatize(meta):
+    """
+        this takes the lines of the poem and splits them into stanzas.
+    """
+    lines = [line for line in meta['text'].split("\n")]
+    stanzas = []
+    j = 0
+    for i, line in enumerate(lines):
+        if line == '':
+            #creates a stanza from the last white space to this one
+            stanzas.append(lines[j:i])
+            #offset so the stanzas themselves don't have blank lines
+            j = (i + 1)
+
+    meta['stanzas'] = stanzas
+
+def ymly_tex(meta):
+    from .yml_to_tex import yml_to_tex
+    meta['text'] = yml_to_tex(meta['text'])
+
+def generic(template="default.tex", 
+            preprocessor=None):
+    def f(text, 
+          meta={}, 
+          env="dong", 
+          fill=(lambda x, y, z : f"error with arguments {x} {y} {z}"), 
+          template=template, 
+          preprocessor=preprocessor,
+          ):
+        """
+            this is the whackiest thing i've ever done and am mostly doing it for fun.
+        """
+
+        if template == "default.tex":
             #generate template name from filename
             template = f"{meta['type']}.tex"
 
         meta['text'] = text
+
+        if preprocessor:
+            preprocessor(meta)
+
         lines_out = fill(template, env=env, meta=meta)
         return lines_out
     return f
@@ -26,6 +67,8 @@ def generic(template="default.tex"):
 prose = generic(template="prose.tex")
 image = generic(template="image.tex")
 pdf   = generic(template="pdf.tex")
+poem  = generic(template="poem.tex", preprocessor=stanzatize)
+yml_prose  = generic(template="prose.tex", preprocessor=ymly_tex)
 
 def custom(text, meta={}, env=Environment(), fill=fill):
     """
@@ -43,49 +86,14 @@ def custom(text, meta={}, env=Environment(), fill=fill):
         lines_out = fill("custom.tex", env=env, meta=meta)
     return lines_out
 
-#def pdf(text, meta={}, env=Environment()):
+#def yml_prose(text, meta={}, env=Environment(), fill=fill):
 #    """
-#        this is the driver for poem typesetting.
-#        text is the text of the poem.
+#        this is the driver for prose typesetting.
+#        text is the text of the prose.
 #        meta is metadata, eg, author, title, bio.
 #        env is a jinja2 environment.
 #    """
-#    lines_out = fill("pdf.tex", env=env, meta=meta)
+#    from .yml_to_tex import yml_to_tex
+#    meta['text'] = yml_to_tex(text)
+#    lines_out = fill("prose.tex", env=env, meta=meta)
 #    return lines_out
-
-def poem(text, meta={}, env=Environment(), fill=fill):
-    """
-        this is the driver for poem typesetting.
-        text is the text of the poem.
-        meta is metadata, eg, author, title, bio.
-        env is a jinja2 environment.
-    """
-    def stanzatize(lines):
-        """
-            this takes the lines of the poem and splits them into stanzas.
-        """
-        stanzas = []
-        j = 0
-        for i, line in enumerate(lines):
-            if line == '':
-                #creates a stanza from the last white space to this one
-                stanzas.append(lines[j:i])
-                #offset so the stanzas themselves don't have blank lines
-                j = (i + 1)
-        return stanzas
-    lines_in = [line for line in text.split("\n")]
-    meta['stanzas'] = stanzatize(lines_in)
-    lines_out = fill("poem.tex", env=env, meta=meta)
-    return lines_out
-
-def yml_prose(text, meta={}, env=Environment(), fill=fill):
-    """
-        this is the driver for prose typesetting.
-        text is the text of the prose.
-        meta is metadata, eg, author, title, bio.
-        env is a jinja2 environment.
-    """
-    from .yml_to_tex import yml_to_tex
-    meta['text'] = yml_to_tex(text)
-    lines_out = fill("prose.tex", env=env, meta=meta)
-    return lines_out
