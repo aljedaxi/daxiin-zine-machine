@@ -1,0 +1,1887 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.6.1
+% see http://writer2latex.sourceforge.net for more info
+\documentclass{article}
+\usepackage[ascii]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{graphicx}
+% footnotes configuration
+\makeatletter
+\renewcommand\thefootnote{\arabic{footnote}}
+\makeatother
+% Text styles
+\newcommand\textstyleInternetlink[1]{#1}
+\newcommand\textstyleSourceText[1]{\texttt{\textmd{#1}}}
+\newcommand\textstylesourcefootnote[1]{\texttt{\textmd{#1}}}
+% Outline numbering
+\setcounter{secnumdepth}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+\setlength\tabcolsep{1mm}
+\renewcommand\arraystretch{1.3}
+% List styles
+\newcommand\liststyleLi{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLii{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLiii{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLiv{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLv{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLvi{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLvii{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLviii{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLix{%
+\renewcommand\theenumi{\arabic{enumi}}
+\renewcommand\theenumii{\arabic{enumii}}
+\renewcommand\theenumiii{\arabic{enumiii}}
+\renewcommand\theenumiv{\arabic{enumiv}}
+\renewcommand\labelenumi{\theenumi.}
+\renewcommand\labelenumii{\theenumii.}
+\renewcommand\labelenumiii{\theenumiii.}
+\renewcommand\labelenumiv{\theenumiv.}
+}
+\newcommand\liststyleLx{%
+\renewcommand\theenumi{\arabic{enumi}}
+\renewcommand\theenumii{\arabic{enumii}}
+\renewcommand\theenumiii{\arabic{enumiii}}
+\renewcommand\theenumiv{\arabic{enumiv}}
+\renewcommand\labelenumi{\theenumi.}
+\renewcommand\labelenumii{\theenumii.}
+\renewcommand\labelenumiii{\theenumiii.}
+\renewcommand\labelenumiv{\theenumiv.}
+}
+\newcommand\liststyleLxi{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLxii{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLxiii{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLxiv{%
+\renewcommand\labelitemi{{\textbullet}}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{{\textbullet}}
+}
+\newcommand\liststyleLxv{%
+\renewcommand\labelitemi{{\textbullet}}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{{\textbullet}}
+}
+\newcommand\liststyleLxvi{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\newcommand\liststyleLxvii{%
+\renewcommand\labelitemi{${\bullet}$}
+\renewcommand\labelitemii{${\circ}$}
+\renewcommand\labelitemiii{${\blacksquare}$}
+\renewcommand\labelitemiv{${\bullet}$}
+}
+\title{}
+\author{}
+\date{2018-08-24}
+\begin{document}
+{\centering\sffamily\bfseries
+User's manual for
+\par}
+
+{\centering   [Warning: Image ignored] % Unhandled or unsupported graphics:
+%\includegraphics[width=10.978cm,height=2.064cm]{w2llogo.png}
+ \par}
+{\centering\sffamily\bfseries
+Writer2LaTeX, Writer2BibTeX, Writer2xhtml and Calc2xhtml
+\par}
+
+{\centering\sffamily\bfseries
+version 1.6.1
+\par}
+
+{\centering\sffamily\bfseries
+{\textcopyright} 2002--2018 Henrik Just
+\par}
+
+\setcounter{tocdepth}{2}
+\renewcommand\contentsname{Table of Contents}
+\tableofcontents
+\section{Introduction}
+\subsection{What is Writer2LaTeX?}
+{\mdseries
+Writer2LaTeX is a utility to convert \emph{OpenDocument} text and spreadsheet documents\footnote{In addition, Writer2LaTeX supports the old file formats for OpenOffice.org 1.x Writer and Calc.} -- in particular documents containing formulas -- into other formats.}
+
+{\mdseries
+Actually it is a collection of four converters:}
+
+\liststyleLi
+\begin{itemize}
+\item \textbf{Writer2LaTeX} converts OpenDocument text documents to LaTeX 2e, and works together with...
+\item \textbf{Writer2BibTeX} which extracts bibliographic data from an OpenDocument text document and converts it to BibTeX format.
+\item \textbf{Writer2xhtml} converts OpenDocument text documents to XHTML 1.0 strict, XHTML 1.1, XHTML 1.1 + MathML 2.0, HTML5, EPUB 2or EPUB 3 using CSS2 to convert style information.
+\item \textbf{Calc2xhtml} converts OpenDocument spreadsheet documents to XHTML 1.0 strict, XHTML 1.1 or HTML5, using CSS2 to convert style information.
+\end{itemize}
+{\mdseries
+Although Writer2LaTeX is a general OpenDocument converter, it is primarily designed for use with LibreOffice\footnote{It should also work with Apache OpenOffice}. You can use Writer2LaTeX}
+
+\liststyleLii
+\begin{itemize}
+\item ...as an \emph{extension} for LibreOffice.
+\item ...as a \emph{command line utility}, independent of LibreOffice.
+\item ...as a \emph{Java library} providing conversions from OpenDocument for other Java programs.
+\end{itemize}
+{\mdseries
+Writer2LaTeX is a Java application, and thus should work on any platform that supports Java. You need a Java Runtime environment, \textbf{version 8} or later. Writer2LaTeX is developed and tested using OpenJDK (\textstyleInternetlink{http://openjdk.java.net/})}
+
+{\mdseries
+This user's manual will explain how to install and use Writer2LaTeX.}
+
+{\mdseries
+\emph{Note}: In this manual LO is used as an abbreviation of LibreOffice..}
+
+\subsection{More about Writer2LaTeX and Writer2BibTeX}
+{\mdseries
+Writer2LaTeX is quite flexible: It can take advantage of several LaTeX packages, such as \textstyleSourceText{hyperref}, \textstyleSourceText{pifont}, \textstyleSourceText{ulem}. It can create customized LaTeX code based on the styles and text in the document. Also it supports more than 25 different languages, latin, greek and cyrillic scripts and 8 input-encodings.}
+
+{\mdseries
+The flexibility makes it possible to use Writer2LaTeX from several philosophies:}
+
+\liststyleLiii
+\begin{itemize}
+\item You can use LaTeX as a typesetting engine for your LO documents: Writer2LaTeX can be configured to create a LaTeX document with as much formatting as possible preserved. Note that the resulting LaTeX source will be readable, but not very clean.
+
+Be aware that even though Writer2LaTeX tries hard to cope with any document, you will only get good results for well structured documents, ie. documents that are formatted using \emph{styles}. For other documents you will find that Writer2LaTeX uses the principle \emph{garbage in -- garbage out}!
+\item If you need to continue the work on your document in LaTeX your primary interest may be the content rather than the formatting. Writer2LaTeX can instructed to produce a LaTeX document which strips most of the formatting and hence produces a clean LaTeX source from \emph{any} source document.
+\item Traditionally, LaTeX documents are written by hand using a text editor. Using a graphical frontend like LyX provides a more user friendly alternative. The Writer2LaTeX extension features a toolbar, which provides the basic functionality for using LO as a graphical frontend for LaTeX.
+\end{itemize}
+\subsection{More about Writer2xhtml and Calc2xhtml}
+{\mdseries
+The primary goal for Writer2xhtml and Calc2xhtml is to provide \emph{standards compliant} XHTML documents which can be customized to your specific needs.}
+
+\liststyleLiv
+\begin{itemize}
+\item Standards compliance is necessary to ensure consistent results when the document is viewed in different browsers. It is also vital to ensure that the created document can be processed further by other tools.
+\item Customization means that you can control important aspects about the conversion. In particular you can control the style of the document:
+
+\begin{itemize}
+\item You can let Writer2xhtml convert the style information in the source document and thus get an XHTML document that has the same general appearance as the original, but is adapted to an online environment.
+\item You can create a document that adapts the style of the document to your own CSS style sheet.
+\end{itemize}
+\end{itemize}
+\section{Using the extensions}
+\subsection{Installing of the extension}
+{\mdseries
+Writer2LaTeX can work as an extension for LibreOffice Writer.}
+
+{\mdseries
+Two LO extensions are provided:}
+
+\liststyleLv
+\begin{itemize}
+\item \textbf{writer2latex.oxt} installs support for LaTeX and BibTeX export in Writer
+\item \textbf{writer2xhtml.oxt} installs support for XHTML and EPUB export in Writer and Calc
+\end{itemize}
+{\mdseries
+The two extensions are independent, you can install one or both depending on your needs.}
+
+{\mdseries
+\emph{Note}: Before you install the extensions, you need to set up LO to use Java. You can configure this in LO under \textbf{Tools -- Options}. Of course this requires that you have installed a Java runtime environment on your system.}
+
+{\mdseries
+The extensions are installed and uninstalled using the Extension Manager in LO. If you need instructions about using the Extension Manager, see}
+
+\textstyleInternetlink{https://help.libreoffice.org/Common/Extension\_Manager}
+
+{\mdseries
+In case of installation troubles, please see the FAQ on Writer2LaTeXs web page:}
+
+{\mdseries
+\textstyleInternetlink{http://writer2latex.sourceforge.net}.}
+
+\subsection{Using the extensions}
+The usage of the extensions is described in the help files: Help -- LO Help -- Writer2LaTeX/Writer2xhtml.
+
+\subsection{Exporting from the command line}
+You can also use the extensions to export to LaTeX, XHTML or EPUB from the command line. For example to export to HTML5, use the command line
+
+\begin{verbatim}
+soffice --headless --convert-to html:org.openoffice.da.writer2xhtml5 document.odt
+\end{verbatim}
+Note that this does not work if LO is already running.
+
+The paramter is the file extension followed by a colon, followed by a filter name. The possible filter names are detailed in the table below.
+
+If you are using LO version 4.3.2 or later, you can also pass options to the filter. For example to export to LaTeX with pdfTeX as the backend using latin1 as the input encoding, use the command line
+
+\begin{verbatim}
+soffice --headless --convert-to tex:org.openoffice.da.writer2latex:backend=pdftex,inputencoding=latin1 document.odt
+\end{verbatim}
+The options must be supplied after an additional colon as a comma separated list. Each item should have the form \textstyleSourceText{name=value}. See section \ref{bkm:RefHeading45691948605489} for information about the available options.
+
+\begin{center}
+\begin{tabular}{|l|l|}
+
+\hline
+\multicolumn{1}{|c|}{\bfseries\itshape Format} & \multicolumn{1}{c|}{\bfseries\itshape FilterName}\\\hline
+LaTeX & \textstyleSourceText{org.openoffice.da.writer2latex}\\\hline
+BibTeX & \textstyleSourceText{org.openoffice.da.writer2bibtex}\\\hline
+XHTML (text document) & \textstyleSourceText{org.openoffice.da.writer2xhtml}\\\hline
+XHTML 1.1 (text document) & \textstyleSourceText{org.openoffice.da.writer2xhtml11}\\\hline
+XHTML (spreadsheet) & \textstyleSourceText{org.openoffice.da.calc2xhtml}\\\hline
+XHTML 1.1 (spreadsheet) & \textstyleSourceText{org.openoffice.da.calc2xhtml11}\\\hline
+XHTML + MathML & \textstyleSourceText{org.openoffice.da.writer2xhtml.mathml}\\\hline
+HTML5 (text document) & \textstyleSourceText{org.openoffice.da.writer2xhtml5}\\\hline
+HTML5 (spreadsheet) & \textstyleSourceText{org.openoffice.da.calc2xhtml5}\\\hline
+EPUB & \textstyleSourceText{org.openoffice.da.writer2xhtml.epub}\\\hline
+EPUB 3 & \textstyleSourceText{org.openoffice.da.writer2xhtml.epub3}\\\hline
+\end{tabular}
+\end{center}
+\subsection{Custom configuration}
+\label{ref:customconfig}{\mdseries
+Each of the exports provides the possibility to use a custom format/style. To edit this, choose \textbf{Tools -- Options -- Writer2LaTeX} resp. \textbf{Writer2xhtml.} }
+
+{\mdseries
+All three exporters uses a configuration file in the user installation folder for LO.}
+
+\liststyleLvi
+\begin{itemize}
+\item On unix-like systems this folder will usually be something like
+
+\textstyleSourceText{home directory/.config/libreoffce/4/user}
+\item On Windows it will usually be something like
+
+\textstyleSourceText{C:{\textbackslash}Documents and Settings{\textbackslash}username{\textbackslash}OpenOffice.org2{\textbackslash}user}
+
+or
+
+\textstyleSourceText{C:{\textbackslash}Documents and Settings{\textbackslash}username{\textbackslash} Application Data{\textbackslash}LibreOffice{\textbackslash}4{\textbackslash}user}
+
+(Note that this directory may be hidden.)
+\end{itemize}
+{\mdseries
+Writer2LaTeX uses a file named \textstyleSourceText{writer2latex.xml}, and Writer2xhtml and Calc2xhtml shares a file named \textstyleSourceText{writer2xhtml.xml}. These files are created automatically the first time you use the custom configuration.}
+
+{\mdseries
+See section \ref{ref:latexconfig} for the structure of the configuration file.}
+
+\subsection{Configuration packages}
+\label{ref:configpackages}{\mdseries
+Advanced users may add further formats/styles to the lists in the export dialog. This is done using \emph{configuration packages}, which are custom extensions to LO containing further configurations for Writer2LaTeX or Writer2xhtml.}
+
+{\mdseries
+A configuration package can contain:}
+
+\liststyleLvii
+\begin{itemize}
+\item A configuration file for Writer2LaTeX or Writer2xhtml, see section \ref{ref:latexconfig}.
+\item An XHTML template (Writer2xhtml only).
+\item An LO template.
+\item An LO registry file to glue the parts together.
+\end{itemize}
+{\mdseries
+The Writer2LaTeX distribution contains a sample configuration package \textbf{xhtml-con}\textbf{fig-sample.oxt} that demonstrates this.}
+
+{\mdseries
+As a demonstration of the principles of configuration packages, you can install this into LO using the Extension Manager:}
+
+\liststyleLviii
+\begin{itemize}
+\item If you export to XHTML, the dialog will show an additional entry \textbf{Sample custom style} in the Style list.
+\item If you open \textbf{Templates and Documents} in LO you will find a new folder \textbf{xhtml-sample-config}. This folder contains a Writer template. If you create a document based on this template, \textbf{Sample custom style} will be preselected when you export to XHTML.
+\end{itemize}
+{\mdseries
+You can create your own configuration package based on this sample. Use a zip utility to unpack the extension. The following explains the individual parts of the sample configuration package.}
+
+\subsubsection{The file description.xml}
+{\mdseries
+This files identifies the extension in LO. For your own configuration package you should choose a unique name for the identifier and a version number, eg.}
+
+\begin{verbatim}
+<?xml version="1.0" encoding="UTF-8"?>
+<description
+  xmlns="http://openoffice.org/extensions/description/2006"
+  xmlns:d="http://openoffice.org/extensions/description/2006">
+  <identifier value="MyConfigPackage" />
+  <version value="1.0" />
+</description> 
+\end{verbatim}
+\subsubsection{The files META-INF/manifest.xml and Paths.xcu}
+{\mdseries
+These files should be left unchanged.}
+
+\subsubsection{The folder template}
+{\mdseries
+Put your LO Writer template in this folder (it is recommended to use a subfolder with a descriptive name). You may add more that one templates, and if you don't want to include a Writer template you may leave it empty (do not delete the folder).}
+
+\subsubsection{The folder config}
+{\mdseries
+Put your Writer2LaTeX/Writer2xhtml configuration in this folder. If you are using Writer2xhtml, you should also put your XHTML template here.}
+
+\subsubsection{The file Options.xcu}
+{\mdseries
+This is the central configuration file that glues together the content of the configuration package. See the following example for an explanation of the structure.}
+
+\begin{verbatim}
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data oor:name="Options"
+\end{verbatim}
+{\mdseries
+For LaTeX, Writer2xhtml should be replaced by Writer2LaTeX here:}
+
+\begin{verbatim}
+  oor:package="org.openoffice.da.Writer2xhtml"
+  xml:lang="en-US"
+  xmlns:oor="http://openoffice.org/2001/registry"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+\end{verbatim}
+{\mdseries
+XhtmlOptions may be replaced by XhtmlOptionsCalc or LaTeXOptions:}
+
+\begin{verbatim}
+    <node oor:name="XhtmlOptions">
+        <node oor:name="Configurations">
+\end{verbatim}
+{\mdseries
+The configuration needs a unique name (you may define several configurations in the same package):}
+
+\begin{verbatim}
+            <node oor:name="myconfig1" oor:op="replace">
+\end{verbatim}
+{\mdseries
+You can define options which are normally set in the filter dialog. In that case you can lock (disable) the corresponding parts of the dialogs. To do so, add a comma separated list of options as value here. See below for the options that can be locked for each of the three filters.}
+
+\begin{verbatim}
+                <prop oor:name="LockedOptions" oor:type="xs:string">
+                    <value></value>
+                </prop>
+\end{verbatim}
+{\mdseries
+The DisplayName is the name displayed in the style/format list in the filter dialog.}
+
+\begin{verbatim}
+                <prop oor:name="DisplayName" oor:type="xs:string" oor:localized="true">
+                    <value>My Config Package</value>
+                </prop>
+\end{verbatim}
+{\mdseries
+This path points to the configuration within the extension, you want to use:}
+
+\begin{verbatim}
+                <prop oor:name="ConfigURL" oor:type="xs:string">
+                    <value>%origin%/config/myconfig.xml</value>
+                </prop>
+\end{verbatim}
+{\mdseries
+This property (XHTML only) points to the XHTML template within the extension, you want to use:}
+
+\begin{verbatim}
+                <prop oor:name="TargetTemplateURL" oor:type="xs:string">
+                    <value>%origin%/config/mytemplate.xhtml</value>
+                </prop>
+\end{verbatim}
+{\mdseries
+This property (XHTML only) points to style sheet within the extension, you want to include (for EPUB export):}
+
+\begin{verbatim}
+                <prop oor:name="StyleSheetURL" oor:type="xs:string">
+                    <value>%origin%/config/mytemplate.xhtml</value>
+                </prop>
+            </node>
+        </node>
+\end{verbatim}
+{\mdseries
+The next section defines the LO template you wish to connect with your configuration:}
+
+\begin{verbatim}
+        <node oor:name="Templates">
+\end{verbatim}
+{\mdseries
+The entry needs a unique name:}
+
+\begin{verbatim}
+            <node oor:name="mytemplate1" oor:op="replace">
+                <prop oor:name="TemplateName" oor:type="xs:string">
+\end{verbatim}
+{\mdseries
+The name of the LO template is defined here (leave out .odt).}
+
+\begin{verbatim}
+                    <value>MyWriterTemplate</value>
+                </prop>
+                <prop oor:name="ConfigName" oor:type="xs:string">
+\end{verbatim}
+{\mdseries
+The configuration to link to is defined here.}
+
+\begin{verbatim}
+                    <value>myconfig1</value>
+                </prop>
+            </node>
+        </node>
+    </node>
+</oor:component-data>
+\end{verbatim}
+\subsubsection{About locked options}
+{\mdseries
+The options you can specify for the LockedOptions property depends on the filter. The following list details which options are available to lock for each filter (see section \ref{ref:latexconfig}).}
+
+{\sffamily\mdseries\itshape
+Writer2LaTeX}
+
+{\mdseries
+\textstyleSourceText{backend, inputencoding, multilingual, font, greek\_math, additional\_symbols\footnotemark{}, use\_bibtex, bibtex\_style, wrap\_lines\_after, split\_linked\_sections, split\_toplevel\_sections, save\_images\_in\_subdir, notes, metadata, display\_hidden\_text, original\_image\_size, simple\_table\_limit, float\_tables, float\_figures, float\_options, ignore\_hard\_page\_breaks, ignore\_hard\_line\_breaks, ignore\_empty\_paragraphs, ignore\_double\_spaces}\footnotetext{This is a pseudo-option which locks all the options \textstylesourcefootnote{use\_pifont}, \textstylesourcefootnote{use\_ifsym}, \textstylesourcefootnote{use\_wasysym}, \textstylesourcefootnote{use\_eurosym} and \textstylesourcefootnote{use\_tipa}.}
+}
+
+{\sffamily\mdseries\itshape
+Writer2xhtml (XHTML export)}
+
+{\mdseries
+\textstyleSourceText{scaling, column\_scaling, convert\_to\_px, image\_size, notes, use\_dublin\_core, ignore\_hard\_line\_breaks, ignore\_empty\_paragraphs, ignore\_double\_spaces, split\_level, repeat\_levels, save\_images\_in\_subdir}}
+
+{\sffamily\mdseries\itshape
+Writer2xhtml (EPUB export)}
+
+\textstyleSourceText{scaling, column\_scaling, relative\_font\_size, font\_scaling, use\_default\_font, default\_font\_name, convert\_to\_px, image\_size, ignore\_hard\_line\_breaks, ignore\_empty\_paragraphs, ignore\_double\_spaces, display\_hidden\_text, notes, split\_level, page\_break\_split, split\_after, image\_split, cover\_image, external\_toc\_depth, external\_toc\_depth\_marks, index\_links, include\_toc, include\_ncx, avoid\_html5}
+
+{\sffamily\mdseries\itshape
+Calc2xhtml}
+
+{\mdseries
+\textstyleSourceText{scaling, column\_scaling, convert\_to\_px, image\_size, notes, use\_dublin\_core, display\_hidden\_sheets, display\_hidden\_rows\_cols, display\_filtered\_rows\_cols, apply\_print\_ranges, use\_title\_as\_heading, }\textstyleSourceText{use\_sheetnames\_as\_headings, calc\_split, save\_images\_in\_subdir}}
+
+\section{Using the command line utility}
+\subsection{How to install Writer2LaTeX for command line usage}
+{\mdseries
+Writer2LaTeX can work as a standalone command line utility (an installation of LO is not required).}
+
+{\mdseries
+\emph{Limitation}: The export filters support conversion of embedded objects and graphics to a suitable format. The command line utility can only handle graphics in the original format.}
+
+\subsubsection{Installation for Microsoft Windows}
+{\mdseries
+To install Writer2LaTeX under Microsoft Windows follow these instructions:}
+
+\liststyleLix
+\begin{enumerate}
+\item Unzip \textstyleSourceText{writer2latex161.zip} into some directory. This will create a subdirectory \textstyleSourceText{writer2latex16}.
+\item Add this directory to your PATH environment variable (optional but re\-com\-men\-ded).
+\end{enumerate}
+{\mdseries
+In some cases you may have to edit \textstyleSourceText{w2l.bat} slightly: The batch file assumes that the java executable is in your path. To verify this, open a command prompt and type \textstyleSourceText{java -version}.  If this test fails (or if you have several Java versions installed and want to use a specific version): Open the file \textstyleSourceText{w2l.bat} with a text editor and edit the approriate line to contain the full path to the Java executable, eg.}
+
+\begin{verbatim}
+set JAVAEXE="C:\j2sdk1.7.0_67\bin\java?
+\end{verbatim}
+\subsubsection{Installation for Unix and friends}
+\liststyleLx
+\begin{enumerate}
+\item Unzip \textstyleSourceText{writer2latex161.zip} into some directory. This will create a subdirectory \textstyleSourceText{writer2latex16}.
+\item Add this directory to your PATH environment variable (optional but recommended).
+\item Add execute permissions to \textstyleSourceText{w2l} as follows:
+
+\begin{verbatim}
+chmod +x w2l
+\end{verbatim}
+\end{enumerate}
+{\mdseries
+In some cases you may have to edit the script slightly:}
+
+{\mdseries
+If you place w2l and writer2latex.jar in different directories, or if you choose to create a symbolic link to the script: Open the file \textstyleSourceText{w2l} with a text editor and replace the path at the top of the file with the full path to Writer2LaTeX, eg.}
+
+\begin{verbatim}
+W2LPATH="/home/username/writer2latex15"
+\end{verbatim}
+{\mdseries
+Also, the script assumes that the java executable is in your path, or that the JAVA\_HOME variable points to the locations. To verify the former, open a command shell and type \textstyleSourceText{java -version}. To verify the latter, type \textstyleSourceText{env.} If neither is the case or you have several Java versions installed you should edit this line to contain the full path to the Java executable, ie.}
+
+\begin{verbatim}
+set MYJAVAEXE="/path/to/java/executable/?
+\end{verbatim}
+\subsection[Using the command line utility]{Using the command line utility}
+{\mdseries
+To invoke the command line utility, use the command line}
+
+\begin{verbatim}
+w2l <options> <source document/path> [<target document/path>]
+\end{verbatim}
+{\mdseries
+The available options are}
+
+\begin{center}
+\begin{tabular}{|m{1.548cm}m{4.3cm}m{10.565001cm}}
+
+\hline
+\multicolumn{1}{|m{1.548cm}|}{\centering{\bfseries\itshape Group}} &
+\multicolumn{1}{m{4.3cm}|}{\centering{\bfseries\itshape Option}} &
+\multicolumn{1}{m{10.565001cm}|}{\centering\arraybslash{\bfseries\itshape Explanation}}\\\hline
+{\mdseries Format} &
+\multicolumn{2}{m{15.065001cm}}{\hspace*{-\tabcolsep}\begin{tabular}{|l|l|}
+
+\mdseries \textstyleSourceText{{}-latex} & \mdseries Convert to LaTeX (default)\\\hline
+\mdseries \textstyleSourceText{{}-bibtex} & \mdseries Convert to BibTeX\\\hline
+\mdseries \textstyleSourceText{{}-xhtml} & \mdseries Convert to XHTML 1.0 strict\\\hline
+\mdseries \textstyleSourceText{{}-xhtml11} & \mdseries Convert to XHTML 1.1\\\hline
+\mdseries \textstyleSourceText{{}-xhtml+mathml} & \mdseries Convert to XHTML + MathML\\\hline
+\mdseries \textstyleSourceText{{}-html5} & Convert to HTML5\\\hline
+\mdseries \textstyleSourceText{{}-epub} & \mdseries Convert to EPUB\\\hline
+\textstyleSourceText{{}-epub3} & Convert to EPUB 3\\\hline
+\end{tabular}\hspace*{-\tabcolsep}
+}\\\hhline{-~~}
+{\mdseries Config} &
+\multicolumn{2}{m{15.065001cm}}{\hspace*{-\tabcolsep}\begin{tabular}{|l|l|}
+
+\mdseries \textstyleSourceText{{}-config <file>} & \mdseries Load configuration file (see section \ref{ref:latexconfig})\\\hline
+\mdseries \textstyleSourceText{{}-ultraclean} & \mdseries Load the LaTeX format \emph{ultraclean}\\\hline
+\mdseries \textstyleSourceText{{}-clean} & \mdseries Load the LaTeX format \emph{clean}\\\hline
+\mdseries \textstyleSourceText{{}-pdfprint} & \mdseries Load the LaTeX format \emph{pdfprint} \\\hline
+\mdseries \textstyleSourceText{{}-pdfscreen} & \mdseries Load the LaTeX format \emph{pdfscreen}\\\hline
+\mdseries \textstyleSourceText{{}-cleanxhtml} & \mdseries Load the XHTML format \emph{cleanxhtml}\\\hline
+\end{tabular}\hspace*{-\tabcolsep}
+}\\\hhline{-~~}
+{\mdseries xhtml} &
+\multicolumn{2}{m{15.065001cm}}{\hspace*{-\tabcolsep}\begin{tabular}{|l|l|}
+
+\mdseries \textstyleSourceText{{}-template <file>} & \mdseries Load an XHTML template\\\hline
+\mdseries \textstyleSourceText{{}-stylesheet <file>} & \mdseries Load a custom style sheet for inclusion in the document (EPUB export only)\\\hline
+\mdseries \textstyleSourceText{{}-recurse} & \mdseries Recurse into subdirectories (batch conversion)\\\hline
+\end{tabular}\hspace*{-\tabcolsep}
+}\\\hhline{-~~}
+\multicolumn{1}{|m{1.548cm}|}{{\mdseries Options}} &
+\multicolumn{1}{m{4.3cm}|}{{\mdseries \textstyleSourceText{{}-<option> <value>}}} &
+\multicolumn{1}{m{10.565001cm}|}{{\mdseries Set a configuration options (see section \ref{ref:latexconfig})}}\\\hline
+\end{tabular}
+\end{center}
+{\mdseries
+Some of the options are explained in more detail in the examples below.}
+
+\subsubsection{Examples converting to LaTeX}
+{\mdseries
+The command line}
+
+\begin{verbatim}
+w2l mydocument.odt mypath/myoutputdocument.tex
+\end{verbatim}
+{\mdseries
+will convert the document \textstyleSourceText{mydocument.odt} in the current directory, and save the result in the subdirectory \textstyleSourceText{mypath} in the document \textstyleSourceText{myoutputdocument.tex}.}
+
+{\mdseries
+The command line}
+
+\begin{verbatim}
+w2l -config myconfig.xml mydocument.odt
+\end{verbatim}
+{\mdseries
+will convert the document using the configuration file \textstyleSourceText{myconfig.xml} (You can read more about configuration in section \ref{ref:latexconfig}). As no output file is specified, Writer2LaTeX will use the same name as the original document, but change the extension to \textstyleSourceText{.tex}.}
+
+{\mdseries
+You can also specify any simple option described in section \ref{ref:latexconfig} directly on the command line. Eg. to produce a file suitable for processing with pdfLaTeX:}
+
+\begin{verbatim}
+w2l -backend pdftex mydocument.odt
+\end{verbatim}
+{\mdseries
+Instead of giving your own configuration file, you can use one of the standard configurations. For example to produce a clean LaTeX file (ie. ignoring most of the formatting from the source document):}
+
+\begin{verbatim}
+w2l -clean mydocument.odt
+\end{verbatim}
+\subsubsection{Examples converting to BibTeX from the command line}
+{\mdseries
+Writer2BibTeX extracts bibliography data to a BibTeX file. For example}
+
+\begin{verbatim}
+w2l -bibtex mydocument.odt
+\end{verbatim}
+{\mdseries
+will extract all bibliographic references from the document and store them in a file named \textstyleSourceText{mydocument.bib}. You can also extract the data as part of the conversion to LaTeX, see section \ref{ref:latexconfig}.}
+
+\subsubsection{Examples converting to XHTML from the command line}
+{\mdseries
+The command line}
+
+\begin{verbatim}
+w2l -xhtml+mathml mydocument.odt
+\end{verbatim}
+{\mdseries
+will convert the document to XHTML+MathML, using the filename \textstyleSourceText{mydocument.xhtml}.}
+
+{\mdseries
+Likewise the commandline}
+
+\begin{verbatim}
+w2l -xhtml -config myconfig.xml mydocument.odt myresult.html
+\end{verbatim}
+{\mdseries
+will convert into XHTML using the specified configuration and file name.}
+
+{\mdseries
+To produce a \emph{clean} xhtml file (see section \ref{ref:xhtmlfrontend}), for example:}
+
+\begin{verbatim}
+w2l -cleanxhtml mydocument.odt mypath/myoutputdoc.html
+\end{verbatim}
+\subsubsection{Examples converting to EPUB from the command line}
+{\mdseries
+The command line}
+
+\begin{verbatim}
+w2l -epub -split_level 2 mydocument.odt
+\end{verbatim}
+{\mdseries
+will convert to EPUB, divding the document at sections of level 2}
+
+{\mdseries
+Likewise the command line}
+
+\begin{verbatim}
+w2l -epub -stylesheet mystyles.css -cleanxhtml -split_level 2
+\end{verbatim}
+{\mdseries
+will create an EPUB file using the custom style sheet \textstyleSourceText{mystyles.css} for formatting.}
+
+\section{Configuration}
+\label{ref:latexconfig}\label{bkm:RefHeading45691948605489}\subsection{Writer2LaTeX configuration}
+\label{bkm:RefHeading45711948605489}{\mdseries
+LaTeX export can be configured with a configuration file. The location of the configuration depends on how you use Writer2LaTeX: Please see the sections on the export filter and the command line application.}
+
+{\mdseries
+The configuration is a file in xml format. Here is a sample configuration file for producing a document of class \textstyleSourceText{book}, converting only basic formatting and optimizing for pdfTeX.}
+
+\begin{verbatim}
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+  <option name="backend" value="pdftex" />
+  <option name="documentclass" value="book" />
+  <option name="inputencoding" value="latin1" />
+  <option name="use_pifont" value="false" />
+  <option name="use_bibtex" value="false" />
+  <option name="bibtex_style" value="plain" />
+  <option name="formatting" value="convert_basic" />
+  <option name="page_formatting" value="convert_all" />
+  <heading-map max-level="4">
+    <heading-level-map writer-level="1" name="chapter" level="0" />
+    <heading-level-map writer-level="2" name="section" level="1" />
+    <heading-level-map writer-level="3" name="subsection"
+      level="2" />
+    <heading-level-map writer-level="4" name="subsubsection"
+      level="3" />
+  </heading-map>
+  <custom-preamble />
+  <style-map name="Quotations" family="paragraph"
+    before="\begin{quote}" after=\end{quote} />
+  <string-replace input="LaTeX" latex-code="{\LaTeX}" />
+</config>
+\end{verbatim}
+{\mdseries
+Writer2LaTeX comes with five standard configuration files:}
+
+\liststyleLxi
+\begin{itemize}
+\item \textstyleSourceText{ultraclean.xml} to produce a \emph{clean} LaTeX file, ie. almost all the formatting is ignored.
+\item \textstyleSourceText{clean.xml} is a less radical version; preserves hyperlinks, color and some character formatting.
+\item \textstyleSourceText{pdfscreen.xml} to produce a LaTeX file which is optimized for screen viewing using the package \textstyleSourceText{pdfscreen.sty}.
+\item \textstyleSourceText{pdfprint.xml} to produce a LaTeX file which is optimized for printing with pdfTeX.
+\end{itemize}
+{\mdseries
+In addition, you can find a sample configuration file suitable for documents originating from Google Docs in the directry \textstyleSourceText{samples/config}.}
+
+{\mdseries
+The following subsections explains the available options. The options written in italics can be set using the dialog if you use Writer2LaTeX as an export filter.}
+
+\subsubsection{General options}
+{\mdseries
+These options are used to control general aspects of the generated LaTeX document.}
+
+\begin{center}
+\begin{tabular}{|m{3.425cm}|m{13.188cm}|}
+
+\hline
+{\mdseries \textstyleSourceText{documentclass}} &
+{\mdseries This options defines the name of the LaTeX documentclass to use (default is \textstyleSourceText{article}).}\\\hline
+{\mdseries \textstyleSourceText{global\_options}} &
+{\mdseries This option is a list of global options to add to the documentclass (the default value is an empty string).}\\\hline
+{\mdseries \textstyleSourceText{\emph{backend}}} &
+{\mdseries This option can have any of the values \textstyleSourceText{generic}, \textstyleSourceText{dvips}, \textstyleSourceText{pdftex} (default), \textstyleSourceText{xetex} and \textstyleSourceText{unspecified}. This will create LaTeX files suitable for any backend/dvi driver, dvips, pdfTeX or XeTeX respectively. The last value does not assume any specific backend. This value of the option affects export of graphics: Only file types than can be handled by the backend are included. If you use the filter, other graphics will be converted to a suitable format. If you use the command line application, other types will be commented out. If you use \textstyleSourceText{unspecified}, no graphics will be commented out, nor converted.}\\\hline
+{\mdseries \textstyleSourceText{\emph{inputencoding}}} &
+{\mdseries The option \textstyleSourceText{inputencoding} can have any of the values \textstyleSourceText{ascii} (default), \textstyleSourceText{latin1}, \textstyleSourceText{latin2}, \textstyleSourceText{iso-8859-7}, \textstyleSourceText{cp1250}, \textstyleSourceText{cp1251}, \textstyleSourceText{koi8-r} or \textstyleSourceText{utf8}. This option has no effect if the backend is XeTeX, in this case the encoding is always utf-8.}\\\hline
+{\mdseries \textstyleSourceText{\emph{multilingual}}} &
+{\mdseries If this option is set to \textstyleSourceText{true} (default), Writer2LaTeX will export all language information in the document. If \textstyleSourceText{backend} is \textstyleSourceText{xetex}, the package \textstyleSourceText{polyglossia.sty} will be used, otherwise the package \textstyleSourceText{babel.sty}.}
+
+{\mdseries If the option is set to \textstyleSourceText{false}, Writer2LaTeX will assume that the document is written in one language only. If \textstyleSourceText{backend} is \textstyleSourceText{xetex}, no language information will be exported, otherwise the language used for the majority of the text in the document will be exported using \textstyleSourceText{babel.sty}.}\\\hline
+\textstyleSourceText{font} &
+This option is used to select a font scheme. Supported values are \textstyleSourceText{default}, \textstyleSourceText{cmbright}, \textstyleSourceText{ccfonts}, \textstyleSourceText{ccfonts-euler}, \textstyleSourceText{iwona}, \textstyleSourceText{kurier}, \textstyleSourceText{anttor}, \textstyleSourceText{kmath-kerkis}, \textstyleSourceText{fouriernc}, \textstyleSourceText{pxfonts}, \textstyleSourceText{mathpazo}, \textstyleSourceText{mathpple}, \textstyleSourceText{txfonts}, \textstyleSourceText{mathptmx}, \textstyleSourceText{arev}, \textstyleSourceText{charter-mathdesign}, \textstyleSourceText{utopia-mathdesign}, \textstyleSourceText{fourier}.\\\hline
+{\mdseries \textstyleSourceText{\emph{greek\_math}}} &
+{\mdseries This option can have the values \textstyleSourceText{true} (default) or \textstyleSourceText{false}. This means that greek letters in latin or cyrillic text are rendered in math mode. This behaviour assumes that greek letters are used as symbols in this context, and has the advantage that greek text fonts are not required. It is \emph{not} used in greek text, where it would be look awful. This option has no effect if the \textstyleSourceText{backend} is set to \textstyleSourceText{xetex}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{use\_pifont}}} &
+{\mdseries Setting this option to \textstyleSourceText{true} enables the use of \emph{Zapf Dingbats} using the LaTeX package \textstyleSourceText{pifont.sty}. Default is \textstyleSourceText{false}.  This option and the following five font options has no effect if the backend is XeTeX.}\\\hline
+{\mdseries \textstyleSourceText{\emph{use\_ifsym}}} &
+{\mdseries Setting this option to \textstyleSourceText{true} enables the use of the \emph{ifsym} symbol font using the LaTeX package \textstyleSourceText{ifsym.sty}. Default is \textstyleSourceText{false}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{use\_wasysym}}} &
+{\mdseries Setting this option to \textstyleSourceText{true} enables the use of the wasy symbol font using the LaTeX package \textstyleSourceText{wasysym.sty}. Default is \textstyleSourceText{false}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{use\_bbding}}} &
+{\mdseries Setting this option to \textstyleSourceText{true} enables the use of the \emph{bbding} symbol font (a clone of Zapf Dingbats) using the LaTeX package \textstyleSourceText{bbding.sty}. Default is \textstyleSourceText{false}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{use\_eurosym}}} &
+{\mdseries Setting this option to \textstyleSourceText{true} enables the use of  the \textstyleSourceText{eurosym} font using the LaTeX package \textstyleSourceText{eurosym.sty}. Default is \textstyleSourceText{false}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{use\_tipa}}} &
+{\mdseries Setting this option to \textstyleSourceText{true} enables the use of phonetic symbols using the LaTeX packages \textstyleSourceText{tipa.sty} and \textstyleSourceText{tipx.sty}. Default is \textstyleSourceText{false}.}\\\hline
+{\mdseries \textstyleSourceText{use\_ooomath}} &
+{\mdseries This option can  have the values \textstyleSourceText{true} or \textstyleSourceText{false} (default). This enables the use of the LaTeX package ooo\textstyleSourceText{math.sty} (see section \ref{bkm:RefHeading45831948605489}). This package defines  number of LaTeX macros used to convert formulas from LO to LaTeX. If this package is not used, the necessary definitions will be included in the LaTeX preamble, which may become quite long -- so using ooo\textstyleSourceText{math.sty} is recommended for documents with formulas.}\\\hline
+{\mdseries \textstyleSourceText{use\_lastpage}} &
+{\mdseries This option can have the values \textstyleSourceText{true} or \textstyleSourceText{false} (default). This enables use of the package \textstyleSourceText{lastpage.sty} to represent the page count.}\\\hline
+\end{tabular}
+\end{center}
+\subsubsection{Options for bibliography (BibTeX)}
+{\mdseries
+These options controls the handling of the bibliography.}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+
+\hline
+\mdseries \textstyleSourceText{\emph{use\_bibtex}} & \mdseries Setting this option to \textstyleSourceText{true} enables the use of BibTeX for bibliography generation. If it is set to \textstyleSourceText{false} (default), the bibliography is included as static text.\\\hline
+\mdseries \textstyleSourceText{\emph{bibtex\_style}} & \mdseries This option can have any BibTeX style as value (default is \textstyleSourceText{plain}). This is the BibTeX style to be used in the LaTeX document.\\\hline
+\mdseries \textstyleSourceText{\emph{use\_natbib}} & \mdseries Setting this option to true loads the LaTeX package \textstyleSourceText{natbib.sty}.\\\hline
+\mdseries \textstyleSourceText{\emph{natbib\_options}} & \mdseries Use this option to provide options to \textstyleSourceText{natbib.sty}.\\\hline
+\mdseries \textstyleSourceText{external\_bibtex\_files} & \mdseries Use this option to give a list of external BibTeX files. If the list is non-empty, bibliographic references in the document will be interpreted as keys in these files. If it is empty (default), the bibliographic references will be exported to a BibTeX file (provided \textstyleSourceText{use\_bibtex} is set to \textstyleSourceText{true}).\\\hline
+\textstyleSourceText{bibtex\_encoding} & Use this option to define the encoding for the external BibTeX files. The default value is \textstyleSourceText{document}, which means that the BibTeX files use the same encoding as the TeX document. Otherwise the same values as for \textstyleSourceText{inputencoding} are supported. This setting has no effect if the backend is XeTeX.\\\hline
+\mdseries \textstyleSourceText{zotero\_bibtex\_files} & \mdseries Use this option to give a list of external BibTeX files. If the list is non-empty and \textstyleSourceText{use\_bibtex} is set to \textstyleSourceText{true}, Zotero references in the document will be interpreted as keys in these files. Also the Zotero bibliography, if any, will be exported as a LaTeX bibliography. This will take advantage of the LaTeX package \textstyleSourceText{natbib.sty}. If \textstyleSourceText{use\_natbib} is set to \textstyleSourceText{true}. Otherwise (default), Zotero references and bibliography will be exported as text.\\\hline
+\mdseries \textstyleSourceText{jabref\_bibtex\_files} & \mdseries Use this option to give a list of external BibTeX files. If the list is non-empty and \textstyleSourceText{use\_bibtex} is set to \textstyleSourceText{true}, JabRef references in the document will be interpreted as keys in these files. Also the JabRef bibliography, if any, will be exported as a LaTeX bibliography. This will take advantage of the LaTeX package \textstyleSourceText{natbib.sty}. If \textstyleSourceText{use\_natbib} is set to \textstyleSourceText{true}. Otherwise (default), JabRef references and bibliography will be exported as text.\\\hline
+\mdseries \textstyleSourceText{include\_original\_citations} & \mdseries If you convert Zotero or JabRef references, you can set this option to \textstyleSourceText{true} (default is \textstyleSourceText{false}) to include the original citation inserted by Zotero/JabRef as a comment in the LaTeX source.\\\hline
+\end{tabular}
+\end{center}
+\subsubsection{File options}
+{\mdseries
+These options controls the creation of files associated with the main LaTeX document.}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+
+\hline
+\mdseries \textstyleSourceText{\emph{wrap\_lines\_after}} & \mdseries The option specifies that Writer2LaTeX should try to break lines in the LaTeX source as soon as possible after this number of characters. Default is \textstyleSourceText{72}. If you use a text editor which supports wrapping of long lines, you may want to set this option to \textstyleSourceText{0}: In this case Writer2LaTeX will not wrap lines.\\\hline
+\mdseries \textstyleSourceText{\emph{split\_linked\_sections}} & \mdseries This option specifies that a linked section should be exported to a separate LaTeX-file. Default is \textstyleSourceText{false}.\\\hline
+\mdseries \textstyleSourceText{\emph{split\_toplevel\_sections}} & \mdseries This option specifies that all sections should be exported to a separate LaTeX-file, excluding nested sections. Default is \textstyleSourceText{false}.\\\hline
+\mdseries \textstyleSourceText{\emph{save\_images\_in\_subdir}} & \mdseries Images contained in the document are normally placed in the same directory as the LaTeX document. If the document contains a large number of images, it may be more convenient to put the images in a subdirectory. Set this option to \textstyleSourceText{true} to do this.\\\hline
+\end{tabular}
+\end{center}
+\subsubsection{Options for special content}
+\begin{center}
+\begin{tabular}{|m{2.128cm}|m{14.484cm}|}
+
+\hline
+{\mdseries \textstyleSourceText{\emph{notes}}} &
+{\mdseries This option can have any of the values \textstyleSourceText{comment} (default), \textstyleSourceText{ignore}, \textstyleSourceText{marginpar}, \textstyleSourceText{pdfannotation}. This specifies what to do with notes (annotations) in the document: They can be ignored, converted to LaTeX comments, converted to \textstyleSourceText{{\textbackslash}marginpar} or converted to pdf annotations (which will default to \textstyleSourceText{{\textbackslash}marginpar} if the document is not processed with pdfLaTeX).}
+
+{\mdseries In addition, you can give any LaTeX command (inluding the backslash), and the notes will be exported as \textstyleSourceText{{\textbackslash}yourcommand\{the note\}}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{metadata}}} &
+{\mdseries If you set his option to \textstyleSourceText{true} (default), Writer2LaTeX will export the title, author and date of the document as found under \textbf{File -- Properties}. Furthermore, if you have chosen pdf as the backend, the title, author, subject and keywords will be exported to the pdf document and will be viewable if the pdf viewer supports it. If the option is \textstyleSourceText{false} , only the title will be exported.}\\\hline
+\end{tabular}
+\end{center}
+\subsubsection{Figure and table options}
+{\mdseries
+The first options are used to control the handling og floating or non-floating figures and tables.}
+
+\begin{center}
+\begin{tabular}{|m{4.906cm}|m{11.706cm}|}
+
+\hline
+{\mdseries \textstyleSourceText{\emph{float\_figures}}} &
+{\mdseries Use this option to specify that you want to include graphics and text boxes in a floating \textstyleSourceText{figure} environment. Default is \textstyleSourceText{false}.}
+
+{\mdseries This option has no effect on graphics and text boxes that are anchored \emph{as character}. These are always considered to be part of the normal text flow. If you want a figure to float, anchor it \emph{to paragraph} or \emph{to character}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{float\_tables}}} &
+{\mdseries Use this option to specify that you want to include tables in a floating \textstyleSourceText{table} environment. Default is \textstyleSourceText{false}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{float\_options}}} &
+{\mdseries Use this to give placement options to the figure and table floats, eg. \textstyleSourceText{h} for \emph{here}. Default is empty (default placement).}\\\hline
+{\mdseries \textstyleSourceText{align\_frames}} &
+{\mdseries Use this option to specify, that all graphics and text boxes should be centered. If you don't want that, set this option to \textstyleSourceText{false}. Default is \textstyleSourceText{true.}}\\\hline
+{\mdseries \textstyleSourceText{use\_caption}} &
+{\mdseries Use this option if you want to take advantage of the LaTeX package \textstyleSourceText{caption.sty}. Currently Writer2LaTeX only uses the support for non-floating captions from this package.}\\\hline
+{\mdseries \textstyleSourceText{figure\_sequence\_name}} &
+{\mdseries This option can be set to a sequence name in the source document. OpenDocument has a very weak sense of figure captions: A figure caption is a paragraph containing a sequence number. If you use LO's defaults, Writer2LaTeX can guess which sequence name to use. If it fails, you can give the name in this option (default is empty).}\\\hline
+{\mdseries \textstyleSourceText{table\_sequence\_name}} &
+{\mdseries This is a similar option for tables.}\\\hline
+\end{tabular}
+\end{center}
+{\mdseries
+These options controls the export of tables:}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+
+\hline
+\mdseries \textstyleSourceText{\emph{simple\_table\_limit}} & \mdseries You can set this option to any non-negative integer (default is~\textstyleSourceText{0}). Table cells in LO can contain any number of paragraphs, so normally Writer2LaTeX exports tables with \textstyleSourceText{p} columns. For simple tables where all cells only contains a single line it is better to use \textstyleSourceText{l}, \textstyleSourceText{c} and \textstyleSourceText{r} columns. If all cells in a table contains at most one paragraph, and the \emph{total} width of the table is less than this number of characters, the table will be exported with \textstyleSourceText{l}, \textstyleSourceText{c} and \textstyleSourceText{r} columns. This option has no effect on tables using \textstyleSourceText{tabulary}.\\\hline
+\mdseries \textstyleSourceText{use\_longtable} & \mdseries This option is used to specify that \textstyleSourceText{longtable.sty} should be used to export tables which may break across pages. Default is \textstyleSourceText{false}.\\\hline
+\mdseries \textstyleSourceText{use\_supertabular} & \mdseries This option is used to specify that \textstyleSourceText{supertabular.sty} should be used to export tables which may break across pages. Default is \textstyleSourceText{true}. (You should only set one of the options \textstyleSourceText{use\_longtable} and \textstyleSourceText{use\_supertabular} to \textstyleSourceText{true}).\\\hline
+\mdseries \textstyleSourceText{use\_tabulary} & \mdseries This option is used to specify that \textstyleSourceText{tabulary.sty} should be used to export tables. Default is \textstyleSourceText{false}.\\\hline
+\mdseries \textstyleSourceText{use\_colortbl} & \mdseries This option is used, if you want to apply background color to tables using the package \textstyleSourceText{colortbl.sty}. The value can be \textstyleSourceText{true} or \textstyleSourceText{false} (default). This option has no effect unless you also set the option \textstyleSourceText{use\_color} to \textstyleSourceText{true}.\\\hline
+\mdseries \textstyleSourceText{table\_first\_head\_style} & \mdseries This option is used to produce advanced tables, that are not supported in Writer. You can set this option to the name of a paragraph style. If the first paragraph of the first cell in a row is formatted with this paragraph style, the row in question will be used for the first head in a multipage table.\\\hline
+\mdseries \textstyleSourceText{table\_head\_style} & \mdseries Likewise this option specifies a paragraph style that identifies a repeating head in a multipage table (like a normal table head in Writer).\\\hline
+\mdseries \textstyleSourceText{table\_foot\_style} & \mdseries This option specifies a paragraph style that identifies a repeating foot in a multipage table.\\\hline
+\mdseries \textstyleSourceText{table\_last\_foot\_style} & \mdseries This option specifies a paragraph style that identifies the last foot in a multipage table.\\\hline
+\end{tabular}
+\end{center}
+{\mdseries
+These options controls the export of figures:}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+
+\hline
+\mdseries \textstyleSourceText{\emph{original\_image\_size}} & \mdseries Often images in a Writer document are scaled up or down from their original size. Normally the same scaling will be used in the LaTeX document, but if you set this option\footnotemark{} to \textstyleSourceText{true}, the original (unscaled) image size will be used. The default value is \textstyleSourceText{false}.\\\hline
+\mdseries \textstyleSourceText{remove\_graphics\_extension} & \mdseries This option can be used to specify, that the file extension on graphics files should be removed. You will thus get eg. \textstyleSourceText{{\textbackslash}includegraphics\{myimage\}} rather than \textstyleSourceText{{\textbackslash}includegraphics\{myimage.png\}}.\\\hline
+\mdseries \textstyleSourceText{image\_options} & \mdseries This option can be used to specify some options that should be applied to all images (ie. all \textstyleSourceText{{\textbackslash}includegraphics} commands). For example \textstyleSourceText{"width={\textbackslash}linewidth"}. Default is empty (no options).\\\hline
+\end{tabular}
+\end{center}
+\footnotetext{In previous versions, this option was called \textstyleSourceText{keep\_image\_size}, but has been renamed to avoid confusion (the old name is still supported).}
+\subsubsection[AutoCorrect options]{AutoCorrect options}
+\begin{center}
+\begin{tabular}{|l|l|}
+
+\hline
+\mdseries \textstyleSourceText{\emph{ignore\_hard\_page\_breaks}} & \mdseries This option can have the values \textstyleSourceText{true} or \textstyleSourceText{false} (default).  Setting the option to \textstyleSourceText{true} will instruct Writer2LaTeX to ignore hard page breaks (but not soft page breaks specified in paragraph styles).\\\hline
+\mdseries \textstyleSourceText{\emph{ignore\_hard\_line\_breaks}} & \mdseries This option can have the values \textstyleSourceText{true} or \textstyleSourceText{false} (default). Setting the option to \textstyleSourceText{true} will instruct Writer2LaTeX to ignore hard line breaks (shift-Enter).\\\hline
+\mdseries \textstyleSourceText{\emph{ignore\_empty\_paragraphs}} & \mdseries This option can have the values \textstyleSourceText{true} (default) or \textstyleSourceText{false}. Setting the option to \textstyleSourceText{true} will instruct Writer2LaTeX to ignore empty paragraphs; otherwise they are converted to a \textstyleSourceText{{\textbackslash}bigskip}.\\\hline
+\mdseries \textstyleSourceText{\emph{ignore\_double\_spaces}} & \mdseries This option can have the values \textstyleSourceText{true} (default) or \textstyleSourceText{false}. Setting the option to \textstyleSourceText{true} will instruct Writer2LaTeX to ignore double spaces, otherwise they are converted to \textstyleSourceText{{\textbackslash}~}.\\\hline
+\end{tabular}
+\end{center}
+\subsubsection*{Formatting options}
+{\mdseries
+In Writer, formatting is controlled by styles. You can control how much formatting is exported using the following options. Note that these options has a major impact on the structure of the LaTeX document created.}
+
+\begin{center}
+\begin{tabular}{|m{3.8479998cm}|m{12.765cm}|}
+
+\hline
+{\mdseries \textstyleSourceText{formatting}} &
+{\mdseries The option \textstyleSourceText{formatting} can have any of these values:}
+
+\liststyleLxii
+\begin{itemize}
+\item \textstyleSourceText{ignore\_all} will instruct Writer2LaTeX to ignore \emph{all} character, paragraph, heading, list and footnote formatting contained in the document.
+\item \textstyleSourceText{ignore\_most} will preserve basic character formatting.
+\item \textstyleSourceText{convert\_basic} (default) will preserve basic character formatting, paragraph justification and all numberings (lists, headings, footnotes).
+\item \textstyleSourceText{convert\_most} will convert all supported formatting, except that paragraph formatting and font size is only converted if it is set by a style. To be able to preserve formatting, an environment is created for all paragraph styles, custom lists are used for listings, headings are reformatted using the \textstyleSourceText{{\textbackslash}@startsection} command etc.
+\item \textstyleSourceText{convert\_all} will preserve \emph{all} supported formatting.
+\end{itemize}
+\\\hline
+{\mdseries \textstyleSourceText{page\_formatting}} &
+{\mdseries This option can have any of the values}
+
+{\mdseries \textstyleSourceText{ignore\_all}, \textstyleSourceText{convert\_header\_footer}, \textstyleSourceText{convert\_all}}
+
+{\mdseries This will ignore all page formatting, convert the header and footer (using custom page styles) or convert all supported formatting, including page geometry and footnote rule.}\\\hline
+{\mdseries \textstyleSourceText{use\_geometry}} &
+{\mdseries Setting this option to \textstyleSourceText{true} specifies that the package \textstyleSourceText{geometry.sty} should be used to export the geometry of the page (page size, margins etc.). Default is \textstyleSourceText{false}, which will export the geometry using the low level LaTeX commands.}\\\hline
+{\mdseries \textstyleSourceText{use\_fancyhdr}} &
+{\mdseries Setting this option to \textstyleSourceText{true} specifies that the package \textstyleSourceText{fancyhdr.sty} should be used to export the header and footer of the page. Default is \textstyleSourceText{false}, which will export the header and footer using the low level LaTeX page style commands.}\\\hline
+{\mdseries \textstyleSourceText{use\_color}} &
+{\mdseries This option can have the values \textstyleSourceText{true} (default) or \textstyleSourceText{false}. This enables use of the package \textstyleSourceText{color.sty} to apply color in the LaTeX document.}\\\hline
+{\mdseries \textstyleSourceText{use\_ulem}} &
+{\mdseries This option can have the values \textstyleSourceText{true} or \textstyleSourceText{false} (default). This enables use of the package \textstyleSourceText{ulem.sty} to support underlining and crossing out in the LaTeX document.}\\\hline
+{\mdseries \textstyleSourceText{use\_hyperref}} &
+{\mdseries This option can have the values \textstyleSourceText{true} (default) or \textstyleSourceText{false}. This enables use of the package \textstyleSourceText{hyperref.sty} to include hyperlinks in the LaTeX document.}\\\hline
+{\mdseries \textstyleSourceText{tabstop}} &
+{\mdseries This option is used to specify what to do with tabulator stops in the document. Normally these are converted to spaces, but with this option you can specify any LaTeX code, that should be used instead. For example "\textstyleSourceText{{\textbackslash}quad\{\}}" or "\textstyleSourceText{{\textbackslash}hspace\{2em\}}"}\\\hline
+{\mdseries \textstyleSourceText{use\_endnotes}} &
+{\mdseries This option can have the values \textstyleSourceText{true} or \textstyleSourceText{false} (default). This enables use of the package \textstyleSourceText{endnotes.sty} to format the endnotes in the LaTeX document. If set to \textstyleSourceText{false}, endnotes will be converted to footnotes.}\\\hline
+\end{tabular}
+\end{center}
+\subsubsection{Options for including or excluding content}
+{\mdseries
+The following options can be used to control which content to export.}
+
+\begin{center}
+\begin{tabular}{|m{3.425cm}|m{13.188cm}|}
+
+\hline
+{\mdseries \textstyleSourceText{no\_preamble}} &
+{\mdseries If this option is set to \textstyleSourceText{true}, (default is \textstyleSourceText{false}), Writer2LaTeX will not create the a LaTeX preamble, nor include \textstyleSourceText{{\textbackslash}begin\{document\}} and \textstyleSourceText{{\textbackslash}end\{document\}}. This is useful if the document is to be included in another LaTeX document. Note that in this case you will have to make sure that all packages/definitions needed are available in the master LaTeX document.}\\\hline
+{\mdseries \textstyleSourceText{no\_index}} &
+{\mdseries If this option is set to \textstyleSourceText{true}, (default is \textstyleSourceText{false}), Writer2LaTeX will not export indexes (e.g. table of contents, bibliopgrahy). This option is also intended for the case that the document is to be part of a larger LaTeX document, which may contain global indexes.}\\\hline
+{\mdseries \textstyleSourceText{other\_styles}} &
+{\mdseries This option can all have the values \textstyleSourceText{accept} (default), \textstyleSourceText{ignore}, \textstyleSourceText{warning} and \textstyleSourceText{error}. This controls how to export paragraph and text content, for which there is no style map (see below).}
+
+{\mdseries If the value of this option is \textstyleSourceText{accept}, the content is handled as normal. If the value is \textstyleSourceText{ignore}, the content is ignored silently. The values \textstyleSourceText{warning} and \textstyleSourceText{error} issues a message on the terminal resp. in the generated LaTeX code. This option thus lets you control that only content with accepted styles is exported.}\\\hline
+{\mdseries \textstyleSourceText{image\_content}} &
+{\mdseries This option has the same values, and is used to exclude image content.}\\\hline
+{\mdseries \textstyleSourceText{table\_content}} &
+{\mdseries This option also has the same values and is used to exclude table content.}\\\hline
+{\mdseries \textstyleSourceText{display\_hidden\_text}} &
+{\mdseries If this option is set to \textstyleSourceText{true} (default is \textstyleSourceText{false}), paragraphs and text portions marked as hidden will be exported. Otherwise they will be ignored.}\\\hline
+\end{tabular}
+\end{center}
+\subsubsection{Compatibility options}
+\begin{flushleft}
+\begin{tabular}{|l|l|}
+
+\hline
+\textstyleSourceText{old\_math\_colors} & This option (default \textstyleSourceText{false}) can be set to \textstyleSourceText{true} if you are converting documents created with LO 4.3 or earlier. This enables the use of the old color scheme for formulas (using dark variants of red, blue, cyan and magenta).\\\hline
+\end{tabular}
+\end{flushleft}
+\subsubsection{Headings}
+{\mdseries
+The \textstyleSourceText{heading\_map} section specifies how headings in LO should map to LaTeX. Eg. the first line in the sample above specifies that the toplevel heading (\textbf{Heading 1}) should map to \textstyleSourceText{{\textbackslash}chapter}, which is of level 0 in LaTeX. Up to 10~levels are supported (the same number as in LO).}
+
+\subsubsection{Style maps}
+{\mdseries
+In addition you can specify maps from styles in Writer to your own LaTeX styles in the configuration. Currently this is possible for text styles, paragraph styles and list styles. In addition a few direct formatting attributes can be mapped to LaTeX code. The following examples are from the standard configuration file \textstyleSourceText{article.xml}.}
+
+{\mdseries
+This is a simple rule, that maps text formatted with the text style \textbf{Emphasis} to the LaTeX code \textstyleSourceText{{\textbackslash}emph\{...\}}:}
+
+\begin{verbatim}
+<style-map name="Emphasis" family="text" before="\emph{" after="}" />
+\end{verbatim}
+{\mdseries
+This is another simple rule, that maps paragraphs formatted with the paragraph style \textbf{part} to the LaTeX code \textstyleSourceText{{\textbackslash}part\{...\}}. The attribute \textstyleSourceText{line-break} ensures that no line breaks are inserted between the code and the text.}
+
+\begin{verbatim}
+<style-map name="part" family="paragraph" before="\part{" after="}" line-break="false" />
+\end{verbatim}
+{\mdseries
+This is a rule, that maps paragraphs formatted with style \textbf{Preformatted Text} to the LaTeX environment \textstyleSourceText{verbatim}. The attribute \textstyleSourceText{verbatim} ensures that the content of the paragraph is exported verbatim (this implies that characters not available in the \textstyleSourceText{inputenc} are converted to question marks and that other content is discarded, eg. footnotes). The \textstyleSourceText{paragraph-block} entry specifies code to go before and after an entire block of paragraphs. The \textstyleSourceText{name} attribute specifies the style of the first paragraph; the \textstyleSourceText{next} attribute specifies the style(s) of subsequent paragraphs in the block.}
+
+\begin{verbatim}
+  <style-map name="Preformatted Text" family="paragraph-block" next="Preformatted Text" before="\begin{verbatim}" after="\end{verbatim}" />
+<style-map name="Preformatted Text" family="paragraph" before="" after="" verbatim="true" />
+\end{verbatim}
+{\mdseries
+This is a more elaborate set of rules, that maps paragraphs formatted with styles \textbf{Title}, \textbf{author} and \textbf{date} (in any order) to \textstyleSourceText{{\textbackslash}maketitle} in LaTeX.}
+
+\begin{verbatim}
+<style-map name="Title" family="paragraph" before="\title{" after="}" line-break="false" />
+  <style-map name="author" family="paragraph" before="\author{" after="}" line-break="false" />
+  <style-map name="date" family="paragraph" before="\date{" after="}" line-break="false" />
+  <style-map name="Title" family="paragraph-block" next="author;date" before="" after="\maketitle" />
+  <style-map name="author" family="paragraph-block" next="Title;date" before="" after="\maketitle" />
+  <style-map name="date" family="paragraph-block" next="Title;author" before="" after="\maketitle" />
+\end{verbatim}
+{\mdseries
+This will produce code like this:}
+
+\begin{verbatim}
+\title{Configuration}
+\author{Henrik Just}
+\date{2006}
+\maketitle
+\end{verbatim}
+{\mdseries
+The next example maps a paragraph formatted with the \textbf{theorem} list style to a LaTeX environment named \textstyleSourceText{theorem}. Note that there are two entries for a list style: The first one to specify the LaTeX code to put before and after the entire list. The second one to specify the LaTeX code to put before and after each list item.}
+
+\begin{verbatim}
+<style-map name="theorem" family="paragraph" before="" after="" />
+ <style-map name="theorem" family="list" before="" after="" />
+ <style-map name="theorem" family="listitem" before="\begin{theorem}" after="\end{theorem}" />
+\end{verbatim}
+{\mdseries
+When you override a style, all formatting specified in the original document will be igored.}
+
+{\mdseries
+Finally an example using direct formatting attributes:}
+
+\begin{verbatim}
+<style-map name="italic" family="text-attribute" before="\emph{" after="}" />
+\end{verbatim}
+{\mdseries
+Currently the only supported names are \textstyleSourceText{italic}, \textstyleSourceText{bold}, \textstyleSourceText{small-caps}, \textstyleSourceText{superscript} and \textstyleSourceText{subscript}. }
+
+\subsubsection[String replace]{String replace}
+{\mdseries
+Often LaTeX requires special care to typeset certain constructions. For example according to German typographical rules, an abbreviation like z.B. should be typeset with a small space before the B. You can specify this in the configuration:}
+
+\begin{verbatim}
+<string-replace input="z.B." latex-code="z.\,B." />
+\end{verbatim}
+{\mdseries
+The \textstyleSourceText{input} is the text in the LO document, the \textstyleSourceText{latex-code} is the LaTeX code to export for this text.}
+
+{\mdseries
+Another example is French quotations marks ({\guillemotleft}~Je parle fran\c{c}ais~{\guillemotright}) which should be converted to the LaTeX macros {\textbackslash}fg and {\textbackslash}og. This can be achieved using this rule:}
+
+\begin{verbatim}
+<string-replace input="&#xAB;&#xA0;" latex-code="\fg " />
+<string-replace input="&#xA0;&#xBB;" latex-code="\og " />
+\end{verbatim}
+{\mdseries
+The final example ensures that the LaTeX logo is typeset correctly}
+
+\begin{verbatim}
+<string-replace input="LaTeX" latex-code="{\LaTeX}" />
+\end{verbatim}
+\subsubsection{Math symbols}
+{\mdseries
+In LO Math you can add user-defined symbols. Writer2LaTeX already understands the predefined symbols such as \textstyleSourceText{\%alpha}. If you define your own symbols, you can add an entry in the configuration that specifies LaTeX code to use. The \textstyleSourceText{math-symbol-map} element is used for this:}
+
+\begin{verbatim}
+<math-symbol-map name=?ddarrow? latex=?\Downarrow? />
+\end{verbatim}
+{\mdseries
+This example will map the symbol\textstyleSourceText{ \%ddarrow} to the LaTeX code \textstyleSourceText{{\textbackslash}Downarrow}.}
+
+\subsubsection{Custom preamble}
+{\mdseries
+The text you specify in the element \textstyleSourceText{custom-preamble} will be copied verbatim into the LaTeX preamble. For example:}
+
+\begin{verbatim}
+<custom-preamble>\usepackage{palatino}</custom-preamble>
+\end{verbatim}
+{\mdseries
+to typeset your document using the postscript font palatino.}
+
+\subsection{Writer2xhtml and Calc2xhtml configuration}
+{\mdseries
+Also the XHTML export can be configured with a configuration file in xml format. This is a sample configuration file:}
+
+\begin{verbatim}
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <option name="custom_stylesheet" value="/mystyle.css" />
+  <option name="ignore_styles" value="false" />
+  <option name="use_dublin_core" value="true" />
+  <option name="convert_to_px" value="true" />
+  <option name="split_level" value="1" />
+  <xhtml-style-map name="mystyle" family="paragraph" element="p" css="mycssclass" />
+</config>
+\end{verbatim}
+{\mdseries
+The following subsections explains the available options. The options written in italics can be set using the dialog if you use Writer2xhtml as an export filter.}
+
+\subsubsection[Style options]{Style options}
+{\mdseries
+You can control some general aspects of the generated XHTML documents using these technical options.}
+
+\begin{center}
+\begin{tabular}{|m{4.906cm}|m{11.706cm}|}
+
+\hline
+{\mdseries \textstyleSourceText{template\_ids}} &
+{\mdseries This option is used to specifiy the id's used for XHTML templates. These should be provided as a comma separated list defining the id for content,header,footer and panel in that order. The list can be truncated if you don't need them all.}
+
+{\mdseries The default is empty, which is equivalent to \textstyleSourceText{content,header,footer,panel}.}\\\hline
+{\mdseries \textstyleSourceText{pretty\_print}} &
+{\mdseries Set this option to \textstyleSourceText{false} (default is \textstyleSourceText{true}) if you don't want ``pretty print'' (using indentations and line breaks) in the XHTML output.}\\\hline
+{\mdseries \textstyleSourceText{no\_doctype}} &
+{\mdseries If you set this options to \textstyleSourceText{true} (default is \textstyleSourceText{false}), Writer2xhtml will not include the \textstyleSourceText{!DOCTYPE} declaration in the converted document. The \textstyleSourceText{!DOCTYPE} is required for a valid XHTML document: This option should only be used if you need to process the document further.}\\\hline
+{\mdseries \textstyleSourceText{encoding }} &
+{\mdseries This option is used to specify the character encoding to use for the XHTML document. Currently supported encodings are \textstyleSourceText{UTF-8} (default), \textstyleSourceText{UTF-16}, \textstyleSourceText{ISO-8859-1} and \textstyleSourceText{US-ASCII}. Characters not supported by the encoding are exported as numeric character entities.}\\\hline
+{\mdseries \textstyleSourceText{hexadecimal\_entities}} &
+{\mdseries When this option is set to \textstyleSourceText{true} (default) numeric character entities are exported using hexadecimal numbers, otherwise decimal numbers are used}\\\hline
+{\mdseries \textstyleSourceText{use\_named\_entities}} &
+{\mdseries If you set this options to \textstyleSourceText{true} (default is \textstyleSourceText{false}), Writer2xhtml will use named character entities as defined by (X)HTML. If you export to XHTML+MathML, also named MathML entities will be used.}\\\hline
+{\mdseries \textstyleSourceText{add\_bom}} &
+{\mdseries In rare cases, it may be required to ad a BOM (Byte Order Mark) to the XHTML document. Most applications will not need this, but you can set this options to \textstyleSourceText{true} to enable this (default is \textstyleSourceText{false}).}\\\hline
+{\mdseries \textstyleSourceText{multilingual}} &
+{\mdseries Set this to \textstyleSourceText{false} (default is \textstyleSourceText{true}) to remove language information from the file (except on the root element)}\\\hline
+{\mdseries \textstyleSourceText{separate\_stylesheet}} &
+{\mdseries Set this to true (default is false) to generate a separate CSS file if the XHTML document is split over several files (thus avoiding repeating the style information in every file).}\\\hline
+{\mdseries \textstyleSourceText{custom\_stylesheet}} &
+{\mdseries Use this option to give an URL to your own, external CSS stylesheet. If the value is empty or the option is not specified, no external stylesheet will be used.}
+
+{\mdseries For more advanced solutions (eg. different style sheets for screen viewing and printing) you can use an XHTML template -- see below.}\\\hline
+\end{tabular}
+\end{center}
+{\mdseries
+The following options are used to control the conversion of the formatting in the source document. If you use an external CSS style sheet, this is important to define.}
+
+\begin{center}
+\begin{tabular}{|m{5.78cm}|m{10.833cm}|}
+
+\hline
+{\mdseries \textstyleSourceText{formatting}} &
+{\mdseries The option \textstyleSourceText{formatting} is used to specify how much text formatting (character, paragraph and list formatting) to export\footnotemark{}. Possible values are}
+
+{\mdseries \textstyleSourceText{convert\_all} (default): Convert all formatting to CSS.}
+
+{\mdseries \textstyleSourceText{ignore\_styles}: Convert hard formatting but not formatting by styles. Use this value if you use a custom stylesheet, but still want to be able to add some hard formatting (eg. a centered paragraph, some bold text etc.)}
+
+{\mdseries \textstyleSourceText{ignore\_hard}: Convert formatting by styles, but no hard formatting (except as given by attribute style maps, see below). Use this if the document is well structured using styles, so that any hard formatting should be considered an error.}
+
+{\mdseries \textstyleSourceText{ignore\_all}: Convert no formatting at all. Use this value if you use a custom stylesheet \emph{and} the document is well structured using styles, so that any hard formatting should be considered an error.}\\\hline
+{\mdseries \textstyleSourceText{frame\_formatting}} &
+{\mdseries Used for the same purpose for frame formatting.}\\\hline
+{\mdseries \textstyleSourceText{section\_formatting}} &
+{\mdseries Used for the same purpose for section formatting. (But note that LO does not offer section styles currently).}\\\hline
+{\mdseries \textstyleSourceText{table\_formatting}} &
+{\mdseries Used for the same purpose for table formatting. (But note that LO does not offer table styles currently).}\\\hline
+{\mdseries \textstyleSourceText{table\_size\footnotemark{}}} &
+{\mdseries This option defines how to export table dimension. The possible values are:}
+
+{\mdseries \textstyleSourceText{none}: Do not export table dimensions (table width, column width and row height), leaving the layout of the tables to the browser.}
+
+{\mdseries \textstyleSourceText{auto} (default): Convert the dimensions in the source document using relative or absolute values as defined.}
+
+{\mdseries \textstyleSourceText{relative}: Convert the dimensions in the source document, but always using relative values for table width and column width.}\\\hline
+{\mdseries \textstyleSourceText{list\_formatting}} &
+{\mdseries This option determines how list formatting is exported. Possible values are\footnotemark{}:}
+
+{\mdseries \textstyleSourceText{css1}: List formatting is exported using CSS1. This only provides basic support for list labels, and currently the browsers default indentations are used.}
+
+{\mdseries \textstyleSourceText{css1\_hack}: This value is used to fix a problem with continued lists. Writer2xhtml will export a list that continues on level 2 or below like}
+
+{\mdseries \textstyleSourceText{<ol><ol><li>...</li></ol></ol>}}
+
+{\mdseries This is \emph{not} valid in XHTML, but works in browsers. Also two deprecated attributes are used to continue numbering.}
+
+{\mdseries \textstyleSourceText{hard\_labels}: If you use this value, list labels are exported as part of the text. This adds full support for list labels (e.g. labels of the form 1.2.3). Unlike the other values indentations of the list are exported as well.}\\\hline
+{\mdseries \textstyleSourceText{max\_width}} &
+This option is used to specifiy the maximum width of the text (XHTML and text documents only). The default value is \textstyleSourceText{800px}. An empty value means that a maximum width is not set.\\\hline
+{\mdseries \textstyleSourceText{tabstop\_style}} &
+{\mdseries Used this option to specify a style used for tabstops. Normally tabstops are exported as spaces, but with this option the space will be contained in a \textstyleSourceText{span} element, eg.}
+
+{\mdseries \textstyleSourceText{<span class="tabstop"> </span>}}
+
+{\mdseries You can then define a CSS rule like eg.}
+
+{\mdseries \textstyleSourceText{tabstop \{ width: 2em; \}}}\\\hline
+{\mdseries \textstyleSourceText{use\_default\_font}} &
+{\mdseries Set this option to \textstyleSourceText{true} (default is \textstyleSourceText{false}) to ignore all font information in the document and use a default font for the entire exported document.}\\\hline
+{\mdseries \textstyleSourceText{default\_font\_name}} &
+{\mdseries Use this option to supply a font name to use if the option \textstyleSourceText{use\_default\_font} is set to \textstyleSourceText{true.} A blank value will not insert ant font information.}\\\hline
+\end{tabular}
+\end{center}
+\addtocounter{footnote}{-3}
+\stepcounter{footnote}\footnotetext{This and the following options replaces the former option \textstyleSourceText{ignore\_styles}.}
+\stepcounter{footnote}\footnotetext{This option replaces the former option \textstylesourcefootnote{ignore\_table\_dimensions}. (The former values correspond to the values \textstylesourcefootnote{none} and \textstylesourcefootnote{auto}).}
+\stepcounter{footnote}\footnotetext{In previous versions, this option was called \textstylesourcefootnote{list\_hack}, but was renamed to support the new value \textstylesourcefootnote{hard\_labels}. (The old name is still supported.)}
+{\mdseries
+In addition, a number of options defines how dimensions in the source document should be handled.}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+
+\hline
+\mdseries \textstyleSourceText{\emph{convert\_to\_px}} & \mdseries When this option is \textstyleSourceText{true} (default), Writer2xhtml will convert all units to px, otherwise the original units are used. The resolution is assumed to be 96ppi, you can change this with the \textstyleSourceText{scaling} option. Eg. a scaling of \textstyleSourceText{75\%} will change the resolution to 72ppi. For EPUB export this option will export font sizes as percentages (and use px for other dimensions).\\\hline
+\mdseries \textstyleSourceText{\emph{scaling}} & \mdseries Use this option to specify a scaling of all formatting, ie. to get a different text size than the original document. The value must be a percentage, default is \textstyleSourceText{100\%}.\\\hline
+\mdseries \textstyleSourceText{\emph{column\_scaling}} & \mdseries Use this option to specify an additional scaling for table colums. The value must be a percentage, default is \textstyleSourceText{100\%}.\\\hline
+\mdseries \textstyleSourceText{\emph{image\_size}\footnotemark{}} & \mdseries Use this option to specify how to export the size of images and text boxes: Possible values are \textstyleSourceText{absolute} or \textstyleSourceText{auto} (default, export absolute size), \textstyleSourceText{relative} (export the size as a percentage of the current text width) and \textstyleSourceText{none} or \textstyleSourceText{original\_image\_size} (do not export size information; hence the browser or reader will use the original (unscaled) image size).\\\hline
+\mdseries \textstyleSourceText{relative\_font\_size} & \mdseries Set this option to \textstyleSourceText{true} (default) \textstyleSourceText{false} to export all font sizes as percentages rather than using absolute dimensions. The font size is calculated relative to the default font size in the document.\\\hline
+\mdseries \textstyleSourceText{font\_scaling} & \mdseries Use this option to specify a scaling for all font sizes if \textstyleSourceText{relative\_font\_size} is set to \textstyleSourceText{true}. Default is \textstyleSourceText{100\%}.\\\hline
+\end{tabular}
+\end{center}
+\footnotetext{This option replaces old options \textstyleSourceText{keep\_image\_size} and \textstylesourcefootnote{original\_image\_size} (the old names are still supported).}
+\subsubsection[Options for special content]{Options for special content}
+\begin{center}
+\begin{tabular}{|m{5.092cm}|m{11.521cm}|}
+
+\hline
+{\mdseries \textstyleSourceText{formulas}} &
+{\mdseries If you are not exporting to XHTML+MathML or HTML5, this option defines how formulas are treated. The possible values are \textstyleSourceText{starmath} (default) to export the formula in StarMath notation, \textstyleSourceText{latex} to export the formula in LaTeX notation, \textstyleSourceText{image+starmath} and \textstyleSourceText{image+latex} to export the formula as an image, with an \textstyleSourceText{alt} attribute giving the formula in StarMath or LaTeX notation.}\\\hline
+{\mdseries \textstyleSourceText{use\_mathjax}} &
+{\mdseries If you export to XHTML+MathML or HTML5, you can set this option to \textstyleSourceText{true} (default is \textstyleSourceText{false}) to load the \textstyleInternetlink{MathJax} library on pages with fomulas. This will ensure that formulas are viewable on all modern browsers, even if they do not support MathML natively\footnotemark{}.}\\\hline
+{\mdseries \textstyleSourceText{embed\_svg}} &
+{\mdseries If you export to HTML5, you can set this option to \textstyleSourceText{true} to export vector graphics embedded in the HTML documents as SVG (scalable vector graphics). If set to \textstyleSourceText{false} (default), external SVG image files will be used.}\\\hline
+\textstyleSourceText{embed\_img} &
+If you set this option to \textstyleSourceText{true} (default is \textstyleSourceText{false}), all images will be embedded directly in the HTML document (base64 encoded). This is not recommended for documents with large images.\\\hline
+{\mdseries \textstyleSourceText{endnotes\_heading}} &
+{\mdseries In LO the endnotes are set on a separate page at the end of the document. It is not possible to give this page a heading, but you can use this option to add a heading. In EPUB export this heading will also appear in the navigation table. Default is empty (no heading).}\\\hline
+{\mdseries \textstyleSourceText{footnotes\_heading}} &
+{\mdseries In LO the footnotes may be set on a separate page at the end of the document (if configured to do so). It is not possible to give this page a heading, but you can use this option to add a heading. In EPUB export this heading will also appear in the navigation table. Default is empty (no heading).}\\\hline
+{\mdseries \textstyleSourceText{\emph{use\_dublin\_core}}} &
+{\mdseries Use this option to specify if Dublin Core Meta data should be exported.}
+
+{\mdseries For the XHTML export, the format will be as specified in \textstyleInternetlink{http://dublincore.org/documents/dcq-html/}).}
+
+{\mdseries For the EPUB export this option has no effect.}
+
+{\mdseries If the value is \textstyleSourceText{false}, it will not be exported (default is \textstyleSourceText{true}).}\\\hline
+{\mdseries \textstyleSourceText{\emph{notes}}} &
+{\mdseries If this option is set to \textstyleSourceText{true} (default), notes in the document will be exported as XHTML comments. These are not directly visible in the browser. If you don't want to include notes, set this option to \textstyleSourceText{false.}}\\\hline
+{\mdseries \textstyleSourceText{\emph{display\_hidden\_text}}} &
+{\mdseries If this option is set to \textstyleSourceText{true} (default is \textstyleSourceText{false}), paragraphs and text portions marked as hidden will be exported. Otherwise they will be ignored.}\\\hline
+\textstyleSourceText{\emph{index\_links}} &
+This option is specific for EPUB export. If this option is set to \textstyleSourceText{true} (default), the EPUB navigation table will include entries for any alphabetical index and user index.\\\hline
+{\mdseries \textstyleSourceText{\emph{include\_toc}}} &
+{\mdseries If this option is set to \textstyleSourceText{true} (default), the table of contents is exported. If it is set to \textstyleSourceText{false}, the table of contents is ignored. The latter possibility is mainly intended for EPUB, which also provides an external navigation table.}\\\hline
+\textstyleSourceText{\emph{include\_ncx}} &
+This option is specific for EPUB export. If the target format is EPUB 3 and this option is set to \textstyleSourceText{true} (default is \textstyleSourceText{false}), a navigation document in the old NCX format is included together with the EPUB 3 Navigation Document.\\\hline
+\textstyleSourceText{\emph{avoid\_html5}} &
+This options is also specific for EPUB format. If this option is \textstyleSourceText{true} (default is \textstyleSourceText{false}) and the target format is EPUB 3, elements specific for HTML5 will be avoided. This is to ensure better compatibility with EPUB readers which does note fully support \\\hline
+\end{tabular}
+\end{center}
+\footnotetext{This replaces the output format (available until Writer2LaTeX 1.2) using an XSLT style sheet for the same purpose.}
+\subsubsection{AutoCorrect options}
+\begin{center}
+\begin{tabular}{|l|l|}
+
+\hline
+\mdseries \textstyleSourceText{\emph{ignore\_double\_spaces}} & \mdseries This options can have the values \textstyleSourceText{true} (default) or \textstyleSourceText{false}. Setting the option to \textstyleSourceText{true} will instruct Writer2xhtml to ignore double spaces, otherwise they are converted to non-breaking spaces.\\\hline
+\mdseries \textstyleSourceText{\emph{ignore\_empty\_paragraphs}} & \mdseries This option can have the values \textstyleSourceText{true} (default) or \textstyleSourceText{false}. Setting the option to \textstyleSourceText{true} will instruct Writer2xhtml to ignore empty paragraphs..\\\hline
+\mdseries \textstyleSourceText{\emph{ignore\_hard\_line\_breaks}} & \mdseries This option can have the values \textstyleSourceText{true} or \textstyleSourceText{false} (default). Setting the option to \textstyleSourceText{true} will instruct Writer2xhtml to ignore hard line breaks (Shift-Enter in LO).\\\hline
+\end{tabular}
+\end{center}
+\subsubsection[File options]{File options}
+\begin{center}
+\begin{tabular}{|m{5.991cm}|m{10.621cm}|}
+
+\hline
+{\mdseries \textstyleSourceText{\emph{external\_toc\_depth}}} &
+{\mdseries In addition to the text content, an EPUB document contains a table of contents, which can be used for navigation in the reader. This table is generated by Writer2xhtml from the headings in your document. This option is used to specify the number of levels to include in the table. The default value is \textstyleSourceText{auto}, which determines the depth from the option \textstyleSourceText{split\_value}. If you want to set the depth independent from \textstyleSourceText{split\_value}, set this option to a non-negative integer.}\\\hline
+\textstyleSourceText{\emph{external\_toc\_depth\_marks}} &
+The EPUB table of content can also be constructed from index marks. This options determines the number of levels to include in the table (which is thus independent of the heading level).\\\hline
+{\mdseries \textstyleSourceText{\emph{split\_level}}} &
+{\mdseries This option is used to specify that the Writer documents should be split in several documents and the outline level at which the splitting should happen (the default \textstyleSourceText{0} means no split). This is convenient for long documents. Each output document will get a simple navigation panel in the header and the footer (with labels in the same language as the document).}\\\hline
+{\mdseries \textstyleSourceText{\emph{repeat\_levels}}} &
+{\mdseries If you split the document, you can use this option to specify that headings of higher levels should be repeated on page breaks. This may help the user to identify the current position in the document. Default is \textstyleSourceText{5} (all levels are repeated).}\\\hline
+{\mdseries \textstyleSourceText{page\_break\_split}} &
+{\mdseries An alternative method to split the document is to use the original page breaks. Possible values are}
+
+{\mdseries \textstyleSourceText{none} (default): Do not split at page breaks.}
+
+{\mdseries \textstyleSourceText{styles}: Split at page breaks which are defined in styles.}
+
+{\mdseries \textstyleSourceText{explicit}: Split at all explicit page breaks (page breaks defined in styles and manual page breaks)}
+
+{\mdseries \textstyleSourceText{all}: Split at all page breaks. Automatic page breaks may occur within a paragraph, list or table, but Writer2xhtml will not split until this structure has ended.}
+
+{\mdseries Also in this case, each output document will get a simple navigation panel in the header and the footer.}\\\hline
+{\mdseries \textstyleSourceText{split\_after}} &
+{\mdseries This option (which only has effect for EPUB export) is used to automatic split long documents. When a single file exceeds the number of characters defined by this option (in 1000s), the document will be split at the first possible break point. The value 0 disables automatic split.}\\\hline
+{\mdseries \textstyleSourceText{image\_split}} &
+{\mdseries This option (which only has effect for EPUB export) is used to convert large images to "full screen" images. The value of the option can be either \textstyleSourceText{none} or a percentage. If set to a percentage, an image which is wider than this percentage and has an aspect ratio of at least 3:4 is placed in a separate file.}\\\hline
+{\mdseries \textstyleSourceText{cover\_image}} &
+{\mdseries If you set this option to \textstyleSourceText{true} (default is \textstyleSourceText{false}), the first image in the document is used as cover image in EPUB export.}\\\hline
+{\mdseries \textstyleSourceText{\emph{save\_images\_in\_subdir}}} &
+{\mdseries Images contained in the document are normally placed in the same directory as the XHTML document. If the document contains a large number of images, it may be more convenient to put the images in a subdirectory. Set this option to \textstyleSourceText{true} to do this.}\\\hline
+{\mdseries \textstyleSourceText{uplink}} &
+{\mdseries This option is used to specify a link which brings the user up in a page hierarchy. For example \textstyleSourceText{"../index.html"}.}\\\hline
+\end{tabular}
+\end{center}
+\subsubsection{Options specific for spreadsheet documents}
+\begin{center}
+\begin{tabular}{|m{6.7850003cm}|m{9.828cm}|}
+
+\hline
+{\mdseries \textstyleSourceText{\emph{calc\_split}}} &
+{\mdseries Set this option to \textstyleSourceText{true} if you want spreadsheet documents should be split in several documents (one for each sheet). This is convenient for large spreadsheets. Each output document will get a simple navigation panel in the header and the footer.}
+
+{\mdseries The default value is \textstyleSourceText{false}, which means that the entire spreadsheet will be converted to a singe XHTML document.}\\\hline
+{\mdseries \textstyleSourceText{\emph{display\_hidden\_sheets}}} &
+{\mdseries Set this option to \textstyleSourceText{true} if you want to export sheets that are defined as hidden. Default is \textstyleSourceText{false}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{display\_hidden\_rows\_cols}}} &
+{\mdseries Set this option to \textstyleSourceText{true} if you want to export rows or columns that are defined as hidden. Default is \textstyleSourceText{false}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{display\_filtered\_rows\_cols}}} &
+{\mdseries Set this option to \textstyleSourceText{true} if you want to export rows or columns that are not visible due to a filter. Default is \textstyleSourceText{false}.}\\\hline
+{\mdseries \textstyleSourceText{\emph{apply\_print\_ranges}}} &
+{\mdseries I you set this option to \textstyleSourceText{true}, the print ranges defined in the document will be used. The content of the result will thus be identical to the content of printed output. If you set the option to \textstyleSourceText{false} (default), the content of the output will be identical to the content that you can see when editing the document.}\\\hline
+{\mdseries \textstyleSourceText{\emph{use\_title\_as\_heading}}} &
+{\mdseries If you set this option to \textstyleSourceText{true} (default), the title of the document will be included in the XHTML document as a heading.}\\\hline
+{\mdseries \textstyleSourceText{\emph{use\_sheet\_names\_as\_headings}}} &
+{\mdseries If you set this option to \textstyleSourceText{true} (default), the sheet name will be added as a heading above each table in the XHTML document.}\\\hline
+\end{tabular}
+\end{center}
+\subsubsection{Options for batch conversion}
+\begin{center}
+\begin{tabular}{|l|l|}
+
+\hline
+\mdseries \textstyleSourceText{directory\_icon} & \mdseries Used to specify an URL for an (icon) image that represents a directory. This is used when Writer2xhtml creates index pages for a directory.\\\hline
+\mdseries \textstyleSourceText{document\_icon} & \mdseries Used to specify an URL for an (icon) image that represents a document. This is used when Writer2xhtml creates index pages for a directory.\\\hline
+\end{tabular}
+\end{center}
+\subsubsection{Style maps}
+{\mdseries
+In addition to the options, you can specify that certain styles in Writer should be mapped to specific XHTML elements and CSS style classes. Here are some examples showing how to use some of the built-in Writer styles to create XHTML elements:}
+
+\begin{verbatim}
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <!-- map LO paragraph styles to xhtml elements -->
+  <xhtml-style-map name="Text body" family="paragraph"   
+           element="p" css="(none)" />  
+  <xhtml-style-map name="Sender" family="paragraph"
+           element="address" css="(none)" />
+  <xhtml-style-map name="Quotations" family="paragraph"
+           block-element="blockquote" block-css="(none)"
+           element="p" css="(none)" />
+  <!-- map LO text styles to xhtml elements -->
+  <xhtml-style-map name="Citation" family="text"
+           element="cite" css="(none)" />
+  <xhtml-style-map name="Emphasis" family="text"
+           element="em" css="(none)" />
+  <!-- map hard formatting attributes to xhtml elements -->
+  <xhtml-style-map name="bold" family="attribute"
+           element="b" css="(none)" />
+  <xhtml-style-map name="italics" family="attribute"
+           element="i" css="(none)" />
+</config>
+\end{verbatim}
+{\mdseries
+An extended version of this is distributed with Writer2LaTeX, please see the file \textstyleSourceText{cleanxhtml.xml}.}
+
+{\mdseries
+The attributes of the \textstyleSourceText{xhtml-style-map} element are used as follows:}
+
+\liststyleLxiii
+\begin{itemize}
+\item \textstyleSourceText{name} specifies the name of the Writer style.
+\item \textstyleSourceText{family}\footnote{Previously this attribute was called class.} specifies the style family in Writer; this can either be \textstyleSourceText{text}, \textstyleSourceText{paragraph}, \textstyleSourceText{heading}, \textstyleSourceText{frame}, \textstyleSourceText{list} or \textstyleSourceText{attribute}. The last value does not specify a real style, but refers to hard formatting attributes. The possible names in this case are \textstyleSourceText{bold}, \textstyleSourceText{italics}, \textstyleSourceText{fixed} (for fixed pitch fonts), \textstyleSourceText{superscript}, \textstyleSourceText{subscript}, \textstylesourcefootnote{underline} and \textstyleSourceText{overstrike}.
+\item \textstyleSourceText{element} specifies the XHTML element to use when converting this style. This is not used for frame and list styles.
+\item \textstyleSourceText{css} specifies the CSS style class to use when converting this style. If it is not specified or the value is \textstyleSourceText{``(none)''}, no CSS class will be used.
+\item \textstyleSourceText{block-element} only has effect for paragraph and heading styles. For paragraphs it is used to specify a block XHTML element, that should surround several exported paragraphs with this style. For headings it is used to specify the element containing the entire heading (the \textstyleSourceText{element} is used for the text content only, excluding the label).
+\item \textstyleSourceText{block-css} specifies the CSS style class to be used for this block element. If it is not specified or the value is \textstyleSourceText{``(none)''}, no CSS class will be used.
+\item \textstyleSourceText{before} and \textstyleSourceText{after} only has effect for paragraph and heading styles. This attribute defines a fixed text to add before/after the text of all paragraphs formatted with this style. This is similar to the pseudo-elements \textstyleSourceText{::before} and \textstyleSourceText{::after} in CSS.
+\end{itemize}
+{\mdseries
+For example the rules above produces code like this:}
+
+\begin{verbatim}
+<p>This paragraph is Text body</p>
+<address>This paragraph is Sender</address>
+<blockquote>
+  <p>This paragraph is Quotations</p>
+  <p>This paragraph is also Quotations</p>
+</blockquote>
+<p>This paragraph is also Text body and has some <em>text with emphasis style</em> and uses some <b>hard formatting</b>.</p>
+\end{verbatim}
+{\mdseries
+You can use your own Writer styles together with your own CSS style sheet to create further style mappings, for example:}
+
+\begin{verbatim}
+<xhtml-style-map name="Some LO style" family="paragraph"
+           block-element="div" block-css="block_style"
+           element="p" css="par_style" />
+\end{verbatim}
+{\mdseries
+to produce output like this:}
+
+\begin{verbatim}
+<div class=?block_style?>
+  <p class=?par_style?>Paragraph with Some LO style</p>
+  <p class=?par_style?>Yet another</p>
+</div>
+\end{verbatim}
+{\mdseries
+Note that the rules for hard formatting are only used when \textstyleSourceText{formatting} is set to \textstyleSourceText{ignore\_hard} or \textstyleSourceText{ignore\_all}. It is not recommended to rely on these rules, using real text styles is preferable. They are included because the use of hard character formatting is very common even in otherwise well-structured documents.}
+
+{\sffamily\mdseries\itshape
+XHTML templates}
+
+{\mdseries
+You can use your own XHTML document as a template for the generated XHTML documents. This should be an ordinary XHTML file (do not include DOCTYPE declaration) with some special elements:}
+
+\liststyleLxiv
+\begin{itemize}
+\item An element with the id \textstyleSourceText{content} is used to fill the text content. If no such element exists, the \textstyleSourceText{<body>} element is used. If there is no \textstyleSourceText{<body>} element in the template, the root element is used.
+\item Elements with the id \textstyleSourceText{header} or \textstyleSourceText{footer} (optional) will be filled with a simple navigation panel using a first/previous/next/last scheme (for spreadsheet documents, sheet names are used for navigation).
+\item An element with the id \textstyleSourceText{panel} (optional) will be filled with a simple navigation panel using a table of contens-like scheme.
+\end{itemize}
+{\mdseries
+You can change the names of the id attributes using the \textstyleSourceText{template\_ids} option.}
+
+{\mdseries
+A simple template including a header might look like this:}
+
+\begin{verbatim}
+<html>
+  <head>
+    <title/>
+  </head>
+  <body>
+    <div id='header' />
+    <div id='content' />
+  </body>
+</html>
+\end{verbatim}
+{\mdseries
+As the template does not include footer and panel nodes, these elements will not be included.}
+
+A template with all the elements, suitable for HTML5 might look like this:
+
+\begin{verbatim}
+<html>
+  <head>
+    <title/>
+  </head>
+  <body>
+    <header><nav id='header' /></header>
+    <aside><nav id='panel' /></aside>
+    <div id='content' />
+    <footer><nav id='footer' /></footer>
+  </body>
+</html>
+\end{verbatim}
+{\mdseries
+The absolute mininal template is this:}
+
+\begin{verbatim}
+<div/>
+\end{verbatim}
+{\mdseries
+The \textstyleSourceText{div}{}-element will be used as the content container. The generated document will not be a complete XHTML document (no \textstyleSourceText{<html>}, \textstyleSourceText{<head>} and \textstyleSourceText{<body>} nodes). It will however still be a well-formed XML file that can be handled with standard tools. The use case for this is that you can produce XHTML fragments suitable for inclusion in e.g. a CMS.}
+
+{\mdseries
+\emph{Note}: Make sure to set the option \textstyleSourceText{no\_doctype} to \textstyleSourceText{true} in this case!}
+
+\subsection{Using LibreOffice to create XHTML documents}
+\label{ref:xhtmlfrontend}{\mdseries
+The configuration file \textstyleSourceText{cleanxhtml.xml} that is distributed with Writer2LaTeX, can be used to create semantically rich XHTML content, which can be formatted with your own stylesheet (you should edit the file to add the URL to the stylesheet you want to use).}
+
+{\mdseries
+A subset of the built-in styles in Writer are mapped to XHTML elements (note that the style names are localized, so this is for the english version of LibreOffice):}
+
+\begin{flushleft}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\bfseries\itshape LO Writer style} & \multicolumn{1}{c|}{\bfseries\itshape LO Writer style family} & \multicolumn{1}{c|}{\bfseries\itshape XHTML element}\\\hline
+\mdseries Text body & \mdseries paragraph style & \mdseries \textstyleSourceText{p}\\\hline
+\mdseries Sender & \mdseries paragraph style & \mdseries \textstyleSourceText{address}\\\hline
+\mdseries Quotations & \mdseries paragraph style & \mdseries \textstyleSourceText{blockquote}\\\hline
+\mdseries Preformatted Text & \mdseries paragraph style & \mdseries \textstyleSourceText{pre}\\\hline
+\mdseries List Heading & \mdseries paragraph style & \mdseries \textstyleSourceText{dt} (in \textstyleSourceText{dl})\\\hline
+\mdseries List Contents & \mdseries paragraph style & \mdseries \textstyleSourceText{dd} (in \textstyleSourceText{dl})\\\hline
+\mdseries Horizontal Rule & \mdseries paragraph style & \mdseries \textstyleSourceText{hr}\\\hline
+\mdseries Citation & \mdseries text style & \mdseries \textstyleSourceText{cite}\\\hline
+\mdseries Definition & \mdseries text style & \mdseries \textstyleSourceText{dfn}\\\hline
+\mdseries Emphasis & \mdseries text style & \mdseries \textstyleSourceText{em}\\\hline
+\mdseries Example & \mdseries text style & \mdseries \textstyleSourceText{samp}\\\hline
+\mdseries Source Text & \mdseries text style & \mdseries \textstyleSourceText{code}\\\hline
+\mdseries Strong Emphasis & \mdseries text style & \mdseries \textstyleSourceText{strong}\\\hline
+\mdseries Teletype & \mdseries text style & \mdseries \textstyleSourceText{tt}\\\hline
+\mdseries User entry & \mdseries text style & \mdseries \textstyleSourceText{kbd}\\\hline
+\mdseries Variable & \mdseries text style & \mdseries \textstyleSourceText{var}\\\hline
+\mdseries bold & \mdseries hard formatting attribute & \mdseries \textstyleSourceText{b}\\\hline
+\mdseries italics & \mdseries hard formatting attribute & \mdseries \textstyleSourceText{i}\\\hline
+\mdseries fixed pitch font & \mdseries hard formatting attribute & \mdseries \textstyleSourceText{tt}\\\hline
+\mdseries superscript & \mdseries hard formatting attribute & \mdseries \textstyleSourceText{sup}\\\hline
+\mdseries subscript & \mdseries hard formatting attribute & \mdseries \textstyleSourceText{sub}\\\hline
+\end{tabular}
+\end{flushleft}
+{\mdseries
+So by using these styles only, you will create well-structured XHTML documents. See the document \textstyleSourceText{sample-xhtml.sxw} for an example of how to use this.}
+
+\subsubsection{Links}
+{\mdseries
+LO does not support all kind of XHTML link attributes, for example you cannot set \textstyleSourceText{title} or \textstyleSourceText{rel}. Writer2xhtml provides a solution for thus using the \textstyleSourceText{name} attribute: You can define values for all attributes by providing a semicolon separated list of names and values, eg.}
+
+\begin{verbatim}
+title=My title;rel=next
+\end{verbatim}
+{\mdseries
+will create an XHTML link like}
+
+\begin{verbatim}
+<a href="..." title="My title" rel="next">
+\end{verbatim}
+{\mdseries
+If the name attributes does not contain such a list, the value is used for the name and title attribute:}
+
+\begin{verbatim}
+My name
+\end{verbatim}
+{\mdseries
+will create an XHTML link like}
+
+\begin{verbatim}
+<a href="..." name="My name" title="My name">
+\end{verbatim}
+\section{Special features for the EPUB export}
+\subsection{Meta data}
+{\mdseries
+Writer2xhtml always exports the title of the document, and also the subject, keywords and description if they are non-empty.}
+
+{\mdseries
+The EPUB standard specifies a number of meta data elements not supported by ODF. Writer2xhtml supports these elements using user-defined meta data. To add user-defined meta data choose \textbf{File-Properties}, \textbf{User-defined properties}. (The export filter includes a custom editor for these.) The following properties are supported:}
+
+\liststyleLxv
+\begin{itemize}
+\item \textbf{Identifier}: Each EPUB document must have a unique ID. Normally Writer2xhtml generates a Universal Unique ID (UUID) for this purpose, but you may override this with your own ID.
+
+To do this add a new property, enter \textbf{Identifier} (case is not important) as name and the ID as value.
+
+An identifier may follow a specific identification scheme, e.g. ISBN. To specify an identification scheme, append this to the name separated by a period, e.g. \textbf{Identifier.ISBN}.
+
+It is possible to have several identifiers, in this case append a number to the name, e.g. \textbf{Identifier1.ISBN} and \textbf{Identifier2}. The first identifier is used as the unique ID.
+\item \textbf{Creator}: A primary creator or author of the publication.
+
+Enter \textbf{Creator} as name and the creator's name as value.
+
+A creator may have a special role, you can specify this with a three letter code after the word \textbf{creator}, e.g. \textbf{creator.aut} for the author or \textbf{creator.ill} for the illustrator. For the complete list of three letter codes see the EPUB specification (\textstyleInternetlink{http://www.idpf.org/2007/opf/OPF\_2.0\_final\_spec.html}).
+
+You can define several creators, in this case add a number to the word \textbf{creator}, e.g. \textbf{creator1.aut} and \textbf{creator2}. The creators will be sorted according to the numbers. Note that some readers may only present the first creator.
+
+If no creator is defined, Writer2xhtml will export the default creator given in the document (this is usually taken from LO's user settings).
+\item \textbf{Contributor}: A party whose contribution to the publication is secondary to those named in creator elements. Otherwise it is handled like Creator, and the same rules apply.
+\item \textbf{Date}: Date of publication. The date must be in the format YYYY-MM-DD (year-month-date) or more generally in the format specified in \textstyleInternetlink{http://www.w3.org/TR/NOTE-datetime}.
+
+A date may be associated with a special event such as \textbf{creation}, \textbf{publication} or \textbf{modification}. To define this, add the event after the word \textbf{date}, e.g. \textbf{date.publication}.
+
+You can give several dates, in this case add a number to the word date, e.g. \textbf{date1.creation}, \textbf{date2.modification}.
+
+If you don't define any dates, Writer2xhtml will include the date the document was last modified.
+\end{itemize}
+{\mdseries
+You can only have one instance of the remaining properties, hence they cannot be numbered. Also no additional data can be appended to the name.}
+
+\liststyleLxv
+\begin{itemize}
+\item \textbf{Publisher}: The publisher of the document.
+\item \textbf{Type}: Terms describing general categories, functions, genres, or aggregation levels for content.
+\item \textbf{Format}: The media type or dimensions of the resource.
+\item \textbf{Source}: Information regarding a prior resource from which the publication was derived.
+\item \textbf{Relation}: An identifier of an auxiliary resource and its relationship to the publication.
+\item \textbf{Coverage}: The extent or scope of the publication's content.
+\item \textbf{Rights}: A statement about rights, or a reference to one.
+\end{itemize}
+\subsection{Hidden hedings}
+{\mdseries
+If the entire text of a heading is striked out (using any strike-out style), this heading will be hidden in the text. It will however still be visible in the EPUB table of contents.}
+
+\section[The LaTeX package ooomath.sty]{The LaTeX package \textstyleSourceText{ooomath.sty}}
+\label{ref:writersty}\label{bkm:RefHeading45831948605489}{\mdseries
+LO/AOO Math has a few features that are not available in standard LaTeX packages. To support those features, Writer2LaTeX will insert definitions in the LaTeX preamble. As an alternative, Writer2LaTeX provides an optional package \textstyleSourceText{ooomath.sty\footnotemark{}}\footnotetext{This pakcage replaces \textstyleSourceText{writer.sty} used by older versions of Writer2LaTeX.}
+ which implements these constructions. This packages is only needed for documents containing formulas. Setting the option \textstyleSourceText{use\_ooomath} to true enables the use of this package (see section \ref{bkm:RefHeading45711948605489})}
+
+{\mdseries
+It is sufficient to put \textstyleSourceText{ooomath.sty} in the same directory as the converted LaTeX document. It will however be more convenient if you install it in your TeX distribution. The proper place will usually be the ``local texmf tree'', please see the documentation of your TeX distribution. Below are specific instructions for TeX Live on Linux and and MikTeX on Windows:}
+
+\subsubsection{Instructions for TeX Live (Linux)}
+{\mdseries
+If you use teTeX or TeX Live on Linux you can install \textstyleSourceText{ooomath.sty} as follows:}
+
+{\mdseries
+Open a shell and type}
+
+\begin{verbatim}
+texconfig conf
+\end{verbatim}
+{\mdseries
+This will list the configuration details for TeX. Under the heading ``Kpathsea'' you will see a list of directories searched by TeX. You can put \textstyleSourceText{ooomath.sty} in the subdirectory \textstyleSourceText{tex} of any of these directories. Usually the directory}
+
+\begin{verbatim}
+/home/<user name>/texmf/tex
+\end{verbatim}
+{\mdseries
+can be used for the local texmf tree (you can create it if it doesn't exist).}
+
+{\mdseries
+Next you should type}
+
+\begin{verbatim}
+texconfig rehash
+\end{verbatim}
+{\mdseries
+to make TeX refresh it's filename database.}
+
+\subsubsection{Instructions for MikTeX (Windows)}
+If you use MikTeX you can install \textstyleSourceText{ooomath.sty} as follows:
+
+First you should create a local texmf tree if it does note already exist. Start MikTeX settings (\textbf{All Programs -- MikTeX -- Maintenance -- Settings}). Choose the \textbf{admin} variants if you want to install for all users. If the list on the tab page \textbf{Roots} is empty, create a suitable directory such as \textstyleSourceText{C:{\textbackslash}localtexmf}, click \textbf{Add} and select this directory.
+
+Copy \textstyleSourceText{ooomath.sty} to the \textstyleSourceText{tex} subdirectory in the local texmf tree. If the subdirectory \textstyleSourceText{tex} does not exist, you can create it.
+
+{\mdseries
+Next you should start ``MikTeX Options''. On the tab page \textbf{General}, click the button \textbf{Refresh Now} to make MikTeX refresh it's filename database.}
+
+\section{Using Writer2LaTeX from another application}
+\subsection{Using Writer2LaTeX from a Java application}
+{\mdseries
+Writer2LaTeX features a simple API to convert documents from another Java application. Please see the javadoc for \textstyleSourceText{writer2latex.jar} (the package \textstyleSourceText{writer2latex.api}) for details.}
+
+{\mdseries
+The API offers a stream based as well as a file based interface for conversions.}
+
+{\mdseries
+Here's a simple example showing how to convert a file to LaTeX using a custom configuration (excluding exception handling) using the file based methods of the API.}
+
+\begin{verbatim}
+import java.io.File;
+import writer2latex.api.*;
+// Create a LaTeX converter
+Converter converter =
+    ConverterFactory.createConverter("application/x-latex");
+// Configure the converter
+Config config = converter.getConfig();
+config.read(new File("myconfig.xml"));
+config.setOption("inputencoding","latin1");
+// Convert the document
+ConverterResult result =
+    converter.convert(new File("mydocument.odt"),
+        "mydocument.tex");
+// Write the files
+result.write(new File("mydirectory"));
+\end{verbatim}
+{\mdseries
+Using the stream based methods the conversion may look like this (assuming the option \textstyleSourceText{save\_images\_in\_subdir} is set to false):}
+
+\begin{verbatim}
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+// Convert the document
+ConverterResult result =
+    converter.convert(new FileInputStream("mydocument.odt"),   
+    "mydocument.tex");
+// Write the files
+Iterator<OutputFile> docs = result.iterator();
+while (docs.hasNext()) {
+    OutputFile docOut = (OutputFile) docs.next();
+    FileOutputStream fos = 
+        new FileOutputStream("mydirectory/"+docOut.getFileName());
+    docOut.write(fos);
+    fos.flush();
+    fos.close();
+}
+\end{verbatim}
+{\mdseries
+Writer2LaTeX also offers an interface for batch conversion of a directory into XHTML. For at simple example, see the source of \textstyleSourceText{Application.java}.}
+
+\subsection{Using Writer2LaTeX from a Basic macro}
+{\mdseries
+You can also access Writer2LaTeX through LO's api. Here's an example using a Basic macro, but the principle is the same for any other language with a UNO binding.}
+
+{\mdseries
+Writer2LaTeX is used as any other filter in LO. Using the parameter \textstyleSourceText{FilterData}, you can provide specific options for Writer2LaTeX: You can give an URL for a configuration file to use and/or you can provide values for simple options (the order does not matter, the configuration file is always read first). In addition (XHTML export only), you can define a target template and an included style sheet.}
+
+{\mdseries
+This example exports a document to LaTeX using a specific configuration, but overriding the value of the option \textstyleSourceText{use\_colortbl}.}
+
+\begin{verbatim}
+Dim sUrl As String
+sUrl = <url to document>
+Dim sConfigUrl As String
+sConfigUrl = <url to config>
+Dim oFilterData(1) As New com.sun.star.beans.PropertyValue
+oFilterData(0).Name  = "ConfigURL"
+oFilterData(0).Value = sConfigUrl
+oFilterData(1).Name  = "use_colortbl"
+oFilterData(1).Value = "true"
+Dim oProps(2) As New com.sun.star.beans.PropertyValue
+oProps(0).Name  = "FilterName"
+oProps(0).Value = "org.openoffice.da.writer2latex"
+oProps(1).Name  = "Overwrite"
+oProps(1).Value = true
+oProps(2).Name  = "FilterData"
+oProps(2).Value = oFilterData
+ThisComponent.StoreToURL(sUrl, oProps())
+\end{verbatim}
+{\mdseries
+The table lists the names of the filters provided by Writer2LaTeX:}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+
+\hline
+\multicolumn{1}{|c|}{\bfseries\itshape Format} & \multicolumn{1}{c|}{\bfseries\itshape FilterName}\\\hline
+\mdseries LaTeX & \mdseries \textstyleSourceText{org.openoffice.da.writer2latex}\\\hline
+\mdseries BibTeX & \mdseries \textstyleSourceText{org.openoffice.da.writer2bibtex}\\\hline
+\mdseries XHTML (text document) & \mdseries \textstyleSourceText{org.openoffice.da.writer2xhtml}\\\hline
+\mdseries XHTML 1.1 (text document) & \mdseries \textstyleSourceText{org.openoffice.da.writer2xhtml11}\\\hline
+\mdseries XHTML (spreadsheet) & \mdseries \textstyleSourceText{org.openoffice.da.calc2xhtml}\\\hline
+\mdseries XHTML 1.1 (spreadsheet) & \mdseries \textstyleSourceText{org.openoffice.da.calc2xhtml11}\\\hline
+\mdseries XHTML + MathML & \mdseries \textstyleSourceText{org.openoffice.da.writer2xhtml.mathml}\\\hline
+\mdseries HTML5 (text document) & \mdseries \textstyleSourceText{org.openoffice.da.writer2xhtml5}\\\hline
+\mdseries HTML5 (spreadsheet) & \mdseries \textstyleSourceText{org.openoffice.da.calc2xhtml5}\\\hline
+\mdseries EPUB & \mdseries \textstyleSourceText{org.openoffice.da.writer2xhtml.epub}\\\hline
+EPUB 3 & \textstyleSourceText{org.openoffice.da.writer2xhtml.epub3}\\\hline
+\end{tabular}
+\end{center}
+{\mdseries
+This table lists the special properties available for the filter data (all are optional):}
+
+\begin{center}
+\begin{tabular}{|m{4.4570003cm}|m{12.156cm}|}
+
+\hline
+\centering{\bfseries\itshape Property} &
+\centering\arraybslash{\bfseries\itshape Purpose}\\\hline
+{\mdseries \textstyleSourceText{ConfigURL}} &
+{\mdseries Sets the URL for the configuration to use}\\\hline
+{\mdseries \textstyleSourceText{TargetTemplateURL}} &
+{\mdseries Sets the URL for an XHTML template to use (XHTML and EPUB only)}\\\hline
+{\mdseries \textstyleSourceText{StyleSheetURL}} &
+{\mdseries Sets the URL for a CSS style sheet to include (EPUB only)}\\\hline
+{\mdseries \textstyleSourceText{ResourceURL}} &
+{\mdseries Sets the URL for a folder containing resources (images and fonts) referred in the style sheet (EPUB only). All files contained in this folder will be included with the style sheet in the same directory as the style sheet. The media type will be determined from the file extension. If you want to define the media type yourself, use the more complex property \textstyleSourceText{Resources}.}\\\hline
+{\mdseries \textstyleSourceText{Resources}} &
+{\mdseries Sets a list of resources (images and fonts) referred in the style sheet (EPUB only). This property is a semicolon separated list. Each entry is of the form}
+
+{\mdseries \textstyleSourceText{URL[[::file name]::mime type]}}
+
+{\mdseries where the parts in square brackets are optional. For example}
+
+{\mdseries \textstyleSourceText{file://mycomputer/home/myself/images/bg.png::background.png::image/png}}
+
+{\mdseries to point to a png image which is referenced by the file name \textstyleSourceText{background.png} in the style sheet. The resource file will be placed in the same directory as the style sheet.}\\\hline
+\end{tabular}
+\end{center}
+{\mdseries
+The URLs can contain variables such as \textstyleSourceText{\$(user)} for the user installation of LO. Thus for example \textstyleSourceText{``\$(user)/myconfig.xml''} can be used to point to a configuration within the user installation. See}
+
+\textstyleInternetlink{http://api.libreoffice.org/docs/idl/ref/servicecom\_1\_1sun\_1\_1star\_1\_1util\_1\_1PathSubstitution.html}
+
+{\mdseries
+for a list of available variables.}
+
+{\mdseries
+As a special feature, you can require one of Writer2LaTeX's standard configurations. To do this, the URL should start with an asterisk, for example \textstyleSourceText{``*ultraclean.xml''}.}
+
+\subsection[Batch conversion with UNO]{Batch conversion with UNO}
+{\mdseries
+Writer2LaTeX also offers a uno service}
+
+{\centering
+\textstyleSourceText{org.openoffice.da.writer2xhtml.BatchConverter}
+\par}
+
+{\mdseries
+providing batch conversion of a complete directory into another format (usually XHTML) with index pages. This service implements the interface \textstyleSourceText{org.openoffice.da.writer2xhtml.XBatchConverter}, which provides a single method}
+
+\begin{verbatim}
+// method
+// org::openoffice::da::writer2xhtml::XBatchConverter::convert
+void convert ( [in] string sSourceURL,
+  [in] string sTargetURL,
+  [in] sequence<com::sun::star::beans::PropertyValue> lArguments, 
+  [in] XBatchHandler handler );
+\end{verbatim}
+\liststyleLxvi
+\begin{itemize}
+\item The \textstyleSourceText{sSourceURL} specifies the URL of the source directory
+\item The \textstyleSourceText{sTargetURL} specifies the URL of the target directory
+\item The \textstyleSourceText{handler} is an implementation of the call back interface \textstyleSourceText{org.openoffice.da.writer2xhtml.XBatchHandler}, which is used to provide user interaction during the conversion process. See the IDL definition for documentation. If you use the batch conversion from a Basic macro, the interface must be implemented using \textstyleSourceText{CreateUnoListener}.
+\end{itemize}
+{\mdseries
+The available arguments (for the parameter \textstyleSourceText{lArguments}) are specified in this table}
+
+\begin{center}
+\begin{tabular}{|m{4.4830003cm}|m{12.13cm}|}
+
+\hline
+\centering{\bfseries\itshape Argument} &
+\centering\arraybslash{\bfseries\itshape Description}\\\hline
+{\mdseries \textstyleSourceText{Recurse}} &
+{\mdseries Set to \textstyleSourceText{true} (default) if you want to convert subdirectories}\\\hline
+{\mdseries \textstyleSourceText{Uplink}} &
+{\mdseries You can set this to an URL, which will be used as an uplink on the index page for the top level directory}\\\hline
+{\mdseries \textstyleSourceText{DirectoryIcon}} &
+{\mdseries You can set this to an URL pointing to an image that represents a directory}\\\hline
+{\mdseries \textstyleSourceText{DocumentIcon}} &
+{\mdseries You can set this to an URL pointing to an image that represents a document}\\\hline
+{\mdseries \textstyleSourceText{TemplateURL}} &
+{\mdseries You can set this to an URL pointing to an XHTML template that should be used to generate the index page(s).}
+
+{\mdseries Note that if you want to provide an XHTML template for the documents as well, this must be done using the FilterData (and the templates may be different).}\\\hline
+{\mdseries \textstyleSourceText{IndcludePdf}} &
+{\mdseries Set this to \textstyleSourceText{true} (default) if you want to include a pdf version of each file in addition to the XHTML version}\\\hline
+{\mdseries \textstyleSourceText{UseTitle}} &
+{\mdseries Set this to \textstyleSourceText{true} (default) if you want to use the document title in the index page rather than the file name}\\\hline
+{\mdseries \textstyleSourceText{UseDescription}} &
+{\mdseries Set this to \textstyleSourceText{true} (default) if you want to include the description of the document in the index page.}\\\hline
+{\mdseries \textstyleSourceText{WriterFilterName}} &
+{\mdseries You can set this to the name of any Writer export filter you have available in your LO installation. The default is the XHTML export filter provided by Writer2xhtml (\textstyleSourceText{org.openoffice.da.writer2xhtml}).}\\\hline
+{\mdseries \textstyleSourceText{WriterFilterData}} &
+{\mdseries The structure of this argument depends on the filter, but for the default filter it is a sequence of \textstyleSourceText{PropertyValue}s to pass options to the filter (see above).}\\\hline
+{\mdseries \textstyleSourceText{CalcFilterName}} &
+{\mdseries You can set this to the name of any Calc export filter you have available in your LO installation. The default is the XHTML export filter provided by Writer2xhtml (\textstyleSourceText{org.openoffice.da.calc2xhtml}).}\\\hline
+{\mdseries \textstyleSourceText{CalcFilterData}} &
+{\mdseries The structure of this argument depends on the filter, but for the default filter it is a sequence of \textstyleSourceText{PropertyValue}s to pass options to the filter (see above).}\\\hline
+\end{tabular}
+\end{center}
+\subsection{Converting from StarMath with a Basic macro}
+{\mdseries
+In addition to converting a complete document, you can also convert a single formula from StarMath to LaTeX. To do this, the uno service}
+
+{\centering
+\textstyleSourceText{org.openoffice.da.writer2latex.W2LStarMathConverter}
+\par}
+
+{\mdseries
+is provided. This service supports two methods}
+
+\begin{verbatim}
+string convertFormula ( [in] string sStarMathFormula );
+string getPreamble ( );
+\end{verbatim}
+\liststyleLxvii
+\begin{itemize}
+\item The method \textstyleSourceText{convertFormula} converts a StarMath string to a LaTeX string
+\item The method \textstyleSourceText{getPreamble} returns a LaTeX preamble suitable for processing the converted formulas.
+\end{itemize}
+{\mdseries
+This small example is a Basic macro that converts a few formulas and displays the result. Note that the last conversion triggers a definition of the LaTeX macro \textstyleSourceText{{\textbackslash}defeq} in \textstyleSourceText{getPreamble()}.}
+
+\begin{verbatim}
+Dim smc As Object
+smc = CreateUnoService( _
+    "org.openoffice.da.writer2latex.W2LStarMathConverter")
+MsgBox smc.convertFormula("1 over 2")
+MsgBox smc.convertFormula("int from 1 to infty f(x)dx")
+MsgBox smc.convertFormula("sqrt 3")
+MsgBox smc.convertFormula("f(x) def x^2-1")
+MsgBox smc.getPreamble()
+\end{verbatim}
+\section{Troubleshooting}
+Writer2LaTeX can convert quite large files. But if you have a very large document, you could get the following error message : 
+
+\begin{verbatim}
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+\end{verbatim}
+{\mdseries
+In that case, you need to manually increase the memory available to the java virtual machine, for example using the following command to convert your document:}
+
+\begin{verbatim}
+java -Xmx512M -jar writer2latex.jar bigFile.sxw out.tex
+\end{verbatim}
+{\mdseries
+In the example, the heap size is set to 512 Megabyte of RAM. If you still get the ``heap space'' error,  try setting the available memory even higher (assuming that your computer has enough physical RAM).}
+
+{\mdseries
+If you are using Writer2LaTeX as an export filter in LO, this problem will result in a generic error message saying that that document could not be written. To increase the heap size in this case, choose \textbf{Tools -- Options -- LibreOffice -- Advanced}. Click \textbf{Parameters}, and add the parameter \textstyleSourceText{{}-Xmx512M} (or higher).}
+\end{document}
