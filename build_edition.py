@@ -79,12 +79,12 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
 
         if article['type'] == "skip":
             c_authors.add(article['author'])
+            f_files.append(f"skipped: {article['title']}")
 
             if verbose:
                 print(f"writing formatted {article['title']} text to {outfile}")
-                print(c_authors)
+                print(f"c_authors => {c_authors}")
 
-            f_files.append(f"skipped: {article['title']}")
             continue
             
         try:
@@ -97,14 +97,15 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
             print(f"article {article['title']}'s file {article['file']} doesn't exist!")
             continue
 
-        #generate outfile filename; test for existence
         try:
             (directory, a_file) = article['file'].split("/")
         except:
-            a_file = article
+            a_file = article['file']
 
         #the outfile is going to be .tex, even if the infile is an image
-        outfile = "/".join((directory, f"f_{a_file[:-4]}.tex"))
+        outfile = "/".join(
+            (directory, f"f_{a_file[:-4]}.tex")
+        )
         if path.isfile(outfile) and not force:
             if verbose:
                 print(f"{outfile} already exists. Skipping {article['title']}")
@@ -112,10 +113,10 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
             f_files.append(outfile[:-4])
             continue
 
-        #attach bio to author
         if article['author'] in bios.keys():
             article['bio'] = bios[article['author']]
 
+            
         #check if title has subtitle in it
         if "\n" in article['title']:
             try:
@@ -127,10 +128,10 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
 
         #find the correct module to use based on the type of article
         try:
+            #try to find the function within the file mb
             formatted_article = getattr(mb, article['type'])(text, meta=article, env=env, fill=fill)
         except AttributeError:
             module = globals().copy().get(article['type'])
-
             if not module:
                 print(article['type'])
                 print("if the file exists, make sure it's being imported")
@@ -151,6 +152,7 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
             print(c_authors)
 
         f_files.append(outfile[:-4])
+
     return {'c_authors': c_authors,
             'f_files':   f_files}
 
