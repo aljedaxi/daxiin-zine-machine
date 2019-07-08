@@ -1,1 +1,1 @@
-./w2l -daxiinclean doc/user-manual.odt ./
+./w2l -config config/daxiinclean.xml doc/user-manual.odt
