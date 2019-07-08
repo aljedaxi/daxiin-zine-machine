@@ -12,6 +12,7 @@ import  yaml
 
 from    types_and_settings import mb, poem, prose, image, custom, yml_prose, pdf
 from    bookletting import booklet
+from    LaTeXing import fill
 
 def test():
     GLOBAL_CONF = yaml.load(open('global_vars.yml').read())
@@ -55,17 +56,6 @@ def rename_texput(outfile):
     """renames autonamed LaTeX output"""
     call(("mv", "texput.pdf", f"{outfile}.pdf"))
 
-def fill(template_file, meta, env):
-    """
-        fills a given template with data.
-    """
-
-    template = env.get_template(template_file)
-
-    return template.render(
-        **meta,
-    )
-
 def format_articles(articles, env, force=False, verbose=False, bios={}, defaults="failed_formattings.tex"):
     """
         takes the list of articles---as defined in vars.yml---and
@@ -98,7 +88,8 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
             continue
 
         try:
-            (directory, a_file) = article['file'].split("/")
+            a_file = article['file'].split("/")[-1]
+            directory = "/".join(article['file'].split("/")[0:-1])
         except:
             a_file = article['file']
 
@@ -156,12 +147,12 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
     return {'c_authors': c_authors,
             'f_files':   f_files}
 
-def main(force=False, verbose=False, booklet_p=False):
+def main(force=False, verbose=False, booklet_p=False, varsfile="vars.yml", g_varsfile="global_vars.yml"):
     """
         exactly what you expect a main to do.
     """
-    CONF = yaml.load(open('vars.yml').read())
-    GLOBAL_CONF = yaml.load(open('global_vars.yml').read())
+    CONF = yaml.load(open(varsfile).read())
+    GLOBAL_CONF = yaml.load(open(g_varsfile).read())
     ENV = jinja2.Environment(
         **GLOBAL_CONF['jinja2_env'],
     )
@@ -204,6 +195,7 @@ def main(force=False, verbose=False, booklet_p=False):
     TEMPLATE_FILE = META['g_template']
     OUTFILE_CORE  = f"{GLOBAL_CONF['zine_title']}_zine_{META['g_edition']}"
     OUTFILE_TEX   = f"{OUTFILE_CORE}.tex"
+    OUTFILE_TEX   = "permeate_test.tex"
 
     open(OUTFILE_TEX, "w").write(
         fill(TEMPLATE_FILE,
@@ -215,7 +207,7 @@ def main(force=False, verbose=False, booklet_p=False):
 
     if booklet_p:
         booklet(OUTFILE_CORE,
-                f"{GLOBAL_CONF['zine_title']}_booklet_{META['edition']}")
+                f"{GLOBAL_CONF['zine_title']}_booklet_{META['g_edition']}")
 
 if __name__ == "__main__":
     import argparse
@@ -232,4 +224,5 @@ if __name__ == "__main__":
     main(force=ARGS.force,
        verbose=ARGS.verbose,
      booklet_p=ARGS.booklet,
+      varsfile="test_vars.yml",
           )
