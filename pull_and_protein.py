@@ -2,6 +2,7 @@ import yaml
 import pyaml
 import subprocess
 import re
+from subprocess import call
 from pulling import getter, gen_vars
 
 def cull(filename):
@@ -29,7 +30,11 @@ def main(EDITION="Zine Edition 0",
     if pull:
         getter.main(search_string=EDITION)
 
-    protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
+    try:
+        protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
+    except:
+        call(("mkdir", EDITION))
+        protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
 
     odt = (f for f in protein if f['type'] == 'odt')
     for article in odt:
