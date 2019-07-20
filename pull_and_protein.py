@@ -5,20 +5,32 @@ import re
 from subprocess import call
 from pulling import getter, gen_vars
 
-def cull(filename):
-    begun = 0
-    output = ""
-    for line in open(filename).readlines():
-        if begun:
-            if "\\end{document" not in line:
-                output += line
+def convert(infile, outfile="", verbose=False):
+    def strip_extension(filename):
+        name = infile.split(".")[:-1]
 
-        if "\\begin{document}" in line:
-            begun = 1
+        try:
+            name = "".join(name)
+        except:
+            pass
 
-    open(filename, "w").write(output)
+        return name
 
-    return True
+    name = strip_extension(infile)
+
+    if not outfile:
+        outfile = f"{name}.tex"
+
+    command = ("pandoc", infile, "-o", outfile, "-t", "latex")
+
+    if verbose:
+        print(command)
+
+    call(
+        command
+    )
+
+    return outfile
 
 def main(EDITION="Zine Edition 0",
     EXTRA_FOLDERS=("specials", "permeate"),
@@ -26,6 +38,8 @@ def main(EDITION="Zine Edition 0",
     W2L_CONFIG="config/daxiinclean.xml",
     LATEX_OUTDIR="./test/",
     PULL=False,
+    CONVERT=True,
+    VERBOSE=False,
 ):
     if PULL:
         pulled = getter.main(search_string=EDITION)
@@ -39,23 +53,18 @@ def main(EDITION="Zine Edition 0",
         call(("mkdir", EDITION))
         protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
 
-    odt = (f for f in protein if f['type'] == 'odt')
+    odt = [article for article in protein if article['type'] == 'odt']
+
     for article in odt:
-        command = (f"{W2L}/w2l",
-             "-config",
-            f"{W2L}/{W2L_CONFIG}",
-            f"""./{article["file"]}""",
-            LATEX_OUTDIR
+        outfile = convert(article['file'], verbose=VERBOSE)
+        protein.append({
+                "file"  : outfile,
+                "type"  : article['type'],
+                "author": "Anonymous",
+                "rights": "Peer Production License",
+                "title" : "prose",
+                }
         )
-        latex = subprocess.run(
-                   command,
-                   stdout=subprocess.PIPE
-                ).stdout.decode('utf-8')
-        article['type'] = "prose"
-        filename = f"{article['file'].split('/')[-1].split('.')[-2]}.tex"
-        path = f"{LATEX_OUTDIR}{filename}"
-        article['file'] = path
-        cull(path)
 
     conf = {
         "g_edition" : "0",
@@ -92,11 +101,14 @@ if __name__ == "__main__":
         action="store_true")
     parser.add_argument("-r", "--protein", 
         help="generate metadata from data", action="store_true")
+    parser.add_argument("-v", "--verbose", 
+        help="fucking guess", action="store_true")
     ARGS = parser.parse_args()
     print(
         pyaml.dump(
             main(
-                PULL=ARGS.pull
+                PULL=ARGS.pull,
+                VERBOSE=ARGS.verbose
             )
         )
     )

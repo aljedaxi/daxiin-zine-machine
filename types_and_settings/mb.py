@@ -64,6 +64,15 @@ def generic(template="default.tex",
         return lines_out
     return f
 
+def odt(text, 
+        meta={}, 
+        env="dong", 
+        fill=(lambda x, y, z : f"error with arguments {x} {y} {z}"), 
+        template="default.tex", 
+        preprocessor=None,
+        ):
+    return "fuck you"
+
 prose = generic(template="prose.tex")
 image = generic(template="image.tex")
 pdf   = generic(template="pdf.tex")
