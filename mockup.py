@@ -1,3 +1,4 @@
+import pyaml
 import pull_and_protein
 import build_edition
 
@@ -8,7 +9,9 @@ def main(
     build_config = pull_and_protein.main(
         PULL=PULL,
     )
-    open(VARS, w).write(build_config)
+    open(VARS, 'w').write(
+        pyaml.dump(build_config)
+    )
     build_edition.main(
         varsfile=VARS
     )
