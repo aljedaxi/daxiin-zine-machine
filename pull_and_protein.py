@@ -32,7 +32,7 @@ def convert(infile, outfile="", verbose=False):
 
     return outfile
 
-def main(EDITION="Zine Edition 0",
+def main(EDITION="ZineEdition0",
     EXTRA_FOLDERS=("specials", "permeate"),
     W2L="./w2l",
     W2L_CONFIG="config/daxiinclean.xml",
@@ -53,18 +53,18 @@ def main(EDITION="Zine Edition 0",
         call(("mkdir", EDITION))
         protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
 
-    odt = [article for article in protein if article['type'] == 'odt']
+    (positions, odt) = [p, article for p, article in enumerate(protein) 
+                        if article['type'] == 'odt']
 
-    for article in odt:
+    for position, article in zip(positions, odt):
         outfile = convert(article['file'], verbose=VERBOSE)
-        protein.append({
+        protein[position] = {
                 "file"  : outfile,
                 "type"  : article['type'],
                 "author": "Anonymous",
                 "rights": "Peer Production License",
                 "title" : "prose",
                 }
-        )
 
     conf = {
         "g_edition" : "0",
