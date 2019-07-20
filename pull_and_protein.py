@@ -53,10 +53,10 @@ def main(EDITION="ZineEdition0",
         call(("mkdir", EDITION))
         protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
 
-    (positions, odt) = [p, article for p, article in enumerate(protein) 
-                        if article['type'] == 'odt']
+    odt_enumerated = [(p,article) for p, article in enumerate(protein) 
+                      if article['type'] == 'odt']
 
-    for position, article in zip(positions, odt):
+    for position, article in odt_enumerated:
         outfile = convert(article['file'], verbose=VERBOSE)
         protein[position] = {
                 "file"  : outfile,

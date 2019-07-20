@@ -147,7 +147,13 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
     return {'c_authors': c_authors,
             'f_files':   f_files}
 
-def main(force=False, verbose=False, booklet_p=False, varsfile="vars.yml", g_varsfile="global_vars.yml"):
+def main(
+    force=False, 
+    verbose=False, 
+    booklet_p=False, 
+    varsfile="vars.yml", 
+    g_varsfile="global_vars.yml"
+):
     """
         exactly what you expect a main to do.
     """

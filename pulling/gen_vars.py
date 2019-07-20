@@ -29,7 +29,7 @@ def main(folders=("specials", "Zine Edition 0")):
             except:
                 types.append("other")
             paths.append(f"{folder}/{filename}")
-            titles.append(filename.split(".")[-2])
+            titles.append(filename.split(".")[-2].replace("_", " "))
 
     protein = [{"file"  : path,
                 "type"  : kind,
