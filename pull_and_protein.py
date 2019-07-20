@@ -25,10 +25,13 @@ def main(EDITION="Zine Edition 0",
     W2L="./w2l",
     W2L_CONFIG="config/daxiinclean.xml",
     LATEX_OUTDIR="./test/",
-    pull=False,
+    PULL=False,
 ):
-    if pull:
-        getter.main(search_string=EDITION)
+    if PULL:
+        pulled = getter.main(search_string=EDITION)
+        if not pulled:
+            print("pull failed")
+            exit()
 
     try:
         protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
@@ -83,8 +86,17 @@ def main(EDITION="Zine Edition 0",
     }
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-u", "--pull", help="pull data from google drive",
+        action="store_true")
+    parser.add_argument("-r", "--protein", 
+        help="generate metadata from data", action="store_true")
+    ARGS = parser.parse_args()
     print(
         pyaml.dump(
-            main()
+            main(
+                PULL=ARGS.pull
+            )
         )
     )
