@@ -38,69 +38,74 @@ def main(EDITION="ZineEdition0",
     W2L_CONFIG="config/daxiinclean.xml",
     LATEX_OUTDIR="./test/",
     PULL=False,
+    PROTEIN=True,
     CONVERT=True,
     VERBOSE=False,
 ):
+    pulled = False
     if PULL:
         pulled = getter.main(search_string=EDITION)
         if not pulled:
             print("pull failed")
             exit()
 
-    try:
-        protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
-    except:
-        call(("mkdir", EDITION))
-        protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
+    if PROTEIN:
+        try:
+            protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
+        except:
+            call(("mkdir", EDITION))
+            protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
 
-    odt_enumerated = [(p,article) for p, article in enumerate(protein) 
-                      if article['type'] == 'odt']
+        odt_enumerated = [(p,article) for p, article in enumerate(protein) 
+                          if article['type'] == 'odt']
 
-    for position, article in odt_enumerated:
-        outfile = convert(article['file'], verbose=VERBOSE)
-        protein[position] = {
-                "file"  : outfile,
-                "type"  : article['type'],
-                "author": "Anonymous",
-                "rights": "Peer Production License",
-                "title" : "prose",
+        for position, article in odt_enumerated:
+            outfile = convert(article['file'], verbose=VERBOSE)
+            protein[position] = {
+                    "file"  : outfile,
+                    "type"  : article['type'],
+                    "author": "Anonymous",
+                    "rights": "Peer Production License",
+                    "title" : "prose",
+                    }
+
+        conf = {
+            "g_edition" : "0",
+            "g_title"   : "The Anarchist Guide to: Home",
+            "g_author"  : "Permeate Calgary",
+            "g_font"    : "coelacanth",
+            "g_template": "edition_template.tex",
+            #"#backcover": "test/backcover.pdf"
+            #"#frontcover": "test/frontcover.pdf"
+            "special pages": {
+                "contributors": {
+                  "title": "contributors",
+                  "author": "Permeate",
+                  "template": "contributors.tex",
+                  "type": "skip",
+                  "rights": "Peer Production License",
                 }
+            },
+            "editorial team": {
+                "editor in chief": "aljedaxi",
+                "visual director": "[emberlynn]",
+                "ray of sunshine": "[valerie]",
+            },
+        }
+        return {
+            "protein": protein,
+            "conf": conf,
+        }
 
-    conf = {
-        "g_edition" : "0",
-        "g_title"   : "The Anarchist Guide to: Home",
-        "g_author"  : "Permeate Calgary",
-        "g_font"    : "coelacanth",
-        "g_template": "edition_template.tex",
-        #"#backcover": "test/backcover.pdf"
-        #"#frontcover": "test/frontcover.pdf"
-        "special pages": {
-            "contributors": {
-              "title": "contributors",
-              "author": "Permeate",
-              "template": "contributors.tex",
-              "type": "skip",
-              "rights": "Peer Production License",
-            }
-        },
-        "editorial team": {
-            "editor in chief": "aljedaxi",
-            "visual director": "[emberlynn]",
-            "ray of sunshine": "[valerie]",
-        },
-    }
-    return {
-        "protein": protein,
-        "conf": conf,
-    }
+    return pulled
 
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("-u", "--pull", help="pull data from google drive",
+    parser.add_argument("-p", "--pull", help="pull data from google drive",
         action="store_true")
-    parser.add_argument("-r", "--protein", 
-        help="generate metadata from data", action="store_true")
+    parser.add_argument("-dp", "--protein", 
+        help="*don't* generate metadata from data", action="store_false")
     parser.add_argument("-v", "--verbose", 
         help="fucking guess", action="store_true")
     ARGS = parser.parse_args()
@@ -108,6 +113,7 @@ if __name__ == "__main__":
         pyaml.dump(
             main(
                 PULL=ARGS.pull,
+                PROTEIN=ARGS.protein,
                 VERBOSE=ARGS.verbose
             )
         )
