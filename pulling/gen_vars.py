@@ -14,6 +14,7 @@ extensions = {
     "odt": "odt",
     "docx": "docx",
     "pdf": "pdf",
+    "yml": "yml_prose",
 }
 
 def main(folders=("specials", "Zine Edition 0")):
