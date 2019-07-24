@@ -43,6 +43,7 @@ def main(EDITION="ZineEdition0",
     CONVERT=True,
     VERBOSE=False,
 ):
+    CONVERTABLE = ('odt', 'docx')
     pulled = False
     if PULL:
         pulled = getter.main(search_string=EDITION)
@@ -57,10 +58,12 @@ def main(EDITION="ZineEdition0",
             call(("mkdir", EDITION))
             protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
 
-        odt_enumerated = [(p,article) for p, article in enumerate(protein) 
-                          if article['type'] == 'odt']
+        to_convert = [
+            (p,article) for p, article in enumerate(protein) 
+            if article['type'] in CONVERTABLE
+        ]
 
-        for position, article in odt_enumerated:
+        for position, article in to_convert:
             outfile = convert(article['file'], verbose=VERBOSE)
             protein[position] = {
                     "file"  : outfile,
