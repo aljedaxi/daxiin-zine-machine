@@ -16,6 +16,7 @@ def convert(infile, outfile="", verbose=False):
 
         return name
 
+    #TODO: test if already converted
     name = strip_extension(infile)
 
     if not outfile:

@@ -1,15 +1,5 @@
-\daxiincontent{\VAR{title}}{\VAR{author}}
+\BLOCK{extends 'skellyman.tex'}
 
-\articletitle{\VAR{title}}
-\BLOCK{if subtitle}
-\articlesubtitle{\VAR{subtitle}}
-\BLOCK{endif}
-
-\articleauthor{\VAR{author}}
-
+\BLOCK{block body}
 \VAR{text}
-
-\BLOCK{if bio}
-\articlebio{\VAR{bio}}
-\BLOCK{endif}
-\articlerights{\VAR{rights}}
+\BLOCK{block body}

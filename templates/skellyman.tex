@@ -1,0 +1,27 @@
+\BLOCK{block top}
+	\daxiincontent{\VAR{title}}{\VAR{author}}
+
+	\BLOCK{if title}
+	\articletitle{\VAR{title}}
+	\BLOCK{endif}
+	\BLOCK{if subtitle}
+	\articlesubtitle{\VAR{subtitle}}
+	\BLOCK{endif}
+
+	\BLOCK{if author}
+	\articleauthor{\VAR{author}}
+	\BLOCK{endif}
+\BLOCK{endblock}
+
+\BLOCK{block body}
+\VAR{text}
+\BLOCK{endblock}
+
+\BLOCK{block bottom}
+	\BLOCK{if bio}
+	\articlebio{\VAR{bio}}
+	\BLOCK{endif}
+	\BLOCK{if rights}
+	\articlerights{\VAR{rights}}
+	\BLOCK{if rights}
+\BLOCK{endblock}
