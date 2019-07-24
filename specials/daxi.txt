@@ -40,7 +40,7 @@ Geist is The Life,  that
         about       the unspeakable?
 [         thusly, we are cut.
           parsed by our cutting.
-        & ]
+        %& ]
           perhaps,  something mystical. 
 
                 6
@@ -65,7 +65,7 @@ down into,   headlong.
 
            i want to say “i
              love you” . to everyone.
-             everywhen       & where.
+             %everywhen       & where.
             hand them out like lilac, rose
            water. sugar, in tea; not
 
@@ -75,11 +75,11 @@ down into,   headlong.
                  1
 
                     but i cannot lie.
-❧ 
+%❧ 
 
            i want to be  in
-             love with you.& evryone.
-          through the cuts & care. 
+             %love with you.& evryone.
+          %through the cuts & care. 
        pour it forth like lavender
      a warm fountain , bathing the air
                        in
@@ -91,16 +91,16 @@ down into,   headlong.
            i want to.
 
 
-❧         
+%❧         
 
            i want to be   in
            i want to say “i   
        [am in] 
-             love with you.& evryone:
+             %love with you.& evryone:
        [   i ] 
              love you” . to everyone.
-          through the cuts & care. 
-             everywhen       & where.
+          %through the cuts & care. 
+             %everywhen       & where.
             hand them out like lilac, rose
        pour it forth like lavender;
            water. sugar, in tea;
@@ -127,7 +127,7 @@ soaked by the sun's blood and bile
 
 
     i try not to hate
- &  i try     to hate, it here. 
+ %&  i try     to hate, it here. 
     hangs on who i am. 
     this town grew from a dead seed:
     dead old terrible lizard(men).
@@ -166,7 +166,7 @@ each stepping cycling through the same.
  [quantum]states will keep collapsing
            even if you forget;
             to take a picture.
-                 ❧  London
+                 %❧  London
 
 
 
@@ -183,7 +183,7 @@ each stepping cycling through the same.
                      28
       » whither wander wild
  clouds?« „they clutch tight the cobble
-      stones“ ; & hang a hoary ,
+      %stones“ ; & hang a hoary ,
      holy hymn, ' pon this town,
     in the air of the throne .
                             28
@@ -209,26 +209,26 @@ each stepping cycling through the same.
                      cobble it clear;
    that i might know this city, your dear.
      «     „water wraps the city round
-           &under;&over;a bridge;;;;;;
+           %&under;&over;a bridge;;;;;;
   seek ye the wisdom of current-creek,
                                 cloud?
-        seek the sights—& the heights
+        %seek the sights—& the heights
                       —of the ridge.  “
-                                    ❦
+                                    %❦
                            28
    what they call—here—
-         cordial&kind   :
+         %cordial&kind   :
               ,    is commonly court'ous
                             in Canada. 
 
 
            13 the sun,is brown.teas
-             &trees&clinging leaves leave
+             %&trees&clinging leaves leave
            death with dignity.
-                 ❧ 
+                 %❧ 
        this tree,who sprouts,
    rings 'round my sight ; whose gnarls
-          & wrinkled lip ;
+          %& wrinkled lip ;
     sings sunny songs of winters sunken
       plunk!-èn  —  now  ,  a blip.
 
@@ -238,7 +238,7 @@ each stepping cycling through the same.
     —bleeding—white.  2   the snow
        seemed black; where you had led me
        the sun was black as night.
-         ❧ 
+         %❧ 
            the sun was gray, growing
      filling the sky; the cloud coat
        felt clearer than day.
