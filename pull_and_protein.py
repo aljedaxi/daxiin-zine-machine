@@ -37,6 +37,7 @@ def main(EDITION="ZineEdition0",
     W2L="./w2l",
     W2L_CONFIG="config/daxiinclean.xml",
     LATEX_OUTDIR="./test/",
+    DEFAULT_TEX_TYPE="prose",
     PULL=False,
     PROTEIN=True,
     CONVERT=True,
@@ -63,10 +64,10 @@ def main(EDITION="ZineEdition0",
             outfile = convert(article['file'], verbose=VERBOSE)
             protein[position] = {
                     "file"  : outfile,
-                    "type"  : article['type'],
+                    "type"  : DEFAULT_TEX_TYPE,
                     "author": "Anonymous",
                     "rights": "Peer Production License",
-                    "title" : "prose",
+                    "title" : article['title'],
                     }
 
         conf = {
