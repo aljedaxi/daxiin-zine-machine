@@ -56,7 +56,14 @@ def rename_texput(outfile):
     """renames autonamed LaTeX output"""
     call(("mv", "texput.pdf", f"{outfile}.pdf"))
 
-def format_articles(articles, env, force=False, verbose=False, bios={}, defaults="failed_formattings.tex"):
+def format_articles(
+    articles, 
+    env, 
+    force=False, 
+    verbose=False, 
+    bios={}, 
+    defaults="failed_formattings.tex",
+):
     """
         takes the list of articles---as defined in vars.yml---and
         if they haven't yet been formatted, formats them
@@ -152,7 +159,8 @@ def main(
     verbose=False, 
     booklet_p=False, 
     varsfile="vars.yml", 
-    g_varsfile="global_vars.yml"
+    g_varsfile="global_vars.yml",
+    outfile_tex="test_edition.tex",
 ):
     """
         exactly what you expect a main to do.
@@ -201,7 +209,7 @@ def main(
     TEMPLATE_FILE = META['g_template']
     OUTFILE_CORE  = f"{GLOBAL_CONF['zine_title']}_zine_{META['g_edition']}"
     OUTFILE_TEX   = f"{OUTFILE_CORE}.tex"
-    OUTFILE_TEX   = "permeate_test.tex"
+    OUTFILE_TEX   = outfile_tex
 
     open(OUTFILE_TEX, "w").write(
         fill(TEMPLATE_FILE,
@@ -221,14 +229,22 @@ if __name__ == "__main__":
     parser.add_argument("-v", "--verbose", help="increase output verbosity",    action="store_true")
     parser.add_argument("-f", "--force",   help="force recreation of articles", action="store_true")
     parser.add_argument("-b", "--booklet", help="also booklet the pdf",         action="store_true")
+    parser.add_argument("-vars", "--vars_file", 
+        help="yml file containing necessary metadata",
+    )
+    parser.add_argument("-o", "--out_file", 
+        help="name for file which will store output",
+    )
+
     ARGS = parser.parse_args()
 
     #if ARGS.test:
     #    test()
     #    exit()
 
-    main(force=ARGS.force,
-       verbose=ARGS.verbose,
-     booklet_p=ARGS.booklet,
-      varsfile="test_vars.yml",
-          )
+    main( force=ARGS.force,
+        verbose=ARGS.verbose,
+      booklet_p=ARGS.booklet,
+       varsfile=ARGS.vars_file,
+    outfile_tex=ARGS.outfile,
+    )
