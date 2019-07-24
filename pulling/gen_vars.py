@@ -12,6 +12,7 @@ extensions = {
     "png": "image",
     "jpg": "image",
     "odt": "odt",
+    "docx": "docx",
     "pdf": "pdf",
 }
 

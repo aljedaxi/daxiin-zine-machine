@@ -17,6 +17,7 @@ def convert(infile, outfile="", verbose=False):
         return name
 
     name = strip_extension(infile)
+    print(name)
 
     if not outfile:
         outfile = f"{name}.tex"
@@ -113,12 +114,12 @@ if __name__ == "__main__":
     parser.add_argument("-v", "--verbose", 
         help="fucking guess", action="store_true")
     ARGS = parser.parse_args()
-    print(
-        pyaml.dump(
-            main(
-                PULL=ARGS.pull,
-                PROTEIN=ARGS.protein,
-                VERBOSE=ARGS.verbose
-            )
+    #print(
+    pyaml.dump(
+        main(
+            PULL=ARGS.pull,
+            PROTEIN=ARGS.protein,
+            VERBOSE=ARGS.verbose
         )
     )
+    #)
