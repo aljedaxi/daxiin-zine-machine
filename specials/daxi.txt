@@ -173,7 +173,7 @@ each stepping cycling through the same.
     //D sides plays in background
      //Blackstar plays in background
       //Abby Road splays out on the street
-       ////////////////\、%draw an arrow
+       %////////////////\、%draw an arrow
         subliminal sings
     the background;who crones: — "might i
         capture ! " —  consciousness ————
