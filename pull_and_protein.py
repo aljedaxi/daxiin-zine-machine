@@ -59,6 +59,7 @@ def main(EDITION="ZineEdition0",
             call(("mkdir", EDITION))
             protein = gen_vars.main(folders=(EDITION, *EXTRA_FOLDERS))
 
+    if CONVERT:
         to_convert = [
             (p,article) for p, article in enumerate(protein) 
             if article['type'] in CONVERTABLE
@@ -74,6 +75,7 @@ def main(EDITION="ZineEdition0",
                     "title" : article['title'],
                     }
 
+    if PROTEIN:
         conf = {
             "g_edition" : "0",
             "g_title"   : "The Anarchist Guide to: Home",
@@ -84,11 +86,11 @@ def main(EDITION="ZineEdition0",
             #"#frontcover": "test/frontcover.pdf"
             "special pages": {
                 "contributors": {
-                  "title": "contributors",
-                  "author": "Permeate",
-                  "template": "contributors.tex",
-                  "type": "skip",
-                  "rights": "Peer Production License",
+                    "title": "contributors",
+                    "author": "Permeate",
+                    "template": "contributors.tex",
+                    "type": "skip",
+                    "rights": "Peer Production License",
                 }
             },
             "editorial team": {
@@ -113,7 +115,17 @@ if __name__ == "__main__":
         help="*don't* generate metadata from data", action="store_false")
     parser.add_argument("-v", "--verbose", 
         help="fucking guess", action="store_true")
+    parser.add_argument("-oc", "--only_convert",
+        help="only convert", action="store_true")
     ARGS = parser.parse_args()
+
+    if ARGS.only_convert:
+        main(
+           EXTRA_FOLDERS=None,
+            PULL=False,
+            PROTEIN=False,
+        )
+
     print(
     pyaml.dump(
         main(

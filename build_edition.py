@@ -111,8 +111,12 @@ def format_articles(
             f_files.append(outfile[:-4])
             continue
 
-        if article['author'] in bios.keys():
-            article['bio'] = bios[article['author']]
+        try:
+            article['bio'] = bios[articles['author']]
+        except TypeError:
+            pass
+        except KeyError:
+            pass
 
             
         #check if title has subtitle in it
@@ -143,7 +147,10 @@ def format_articles(
             print(f"writing to {outfile} failed. Writing to {defaults} instead.\n{e}\n")
             open(defaults, "a").write(formatted_article)
 
-        c_authors.add(article['author'])
+        try:
+            c_authors.add(article['author'])
+        except:
+            pass
 
         if verbose:
             print(f"writing formatted {article['title']} text to {outfile}")
