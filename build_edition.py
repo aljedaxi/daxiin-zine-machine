@@ -56,14 +56,7 @@ def rename_texput(outfile):
     """renames autonamed LaTeX output"""
     call(("mv", "texput.pdf", f"{outfile}.pdf"))
 
-def format_articles(
-    articles, 
-    env, 
-    force=False, 
-    verbose=False, 
-    bios={}, 
-    defaults="failed_formattings.tex",
-):
+def format_articles(articles, env, force=False, verbose=False, bios={}, defaults="failed_formattings.tex"):
     """
         takes the list of articles---as defined in vars.yml---and
         if they haven't yet been formatted, formats them
@@ -172,6 +165,11 @@ def main(
     """
         exactly what you expect a main to do.
     """
+    if not varsfile:
+        g_varsfile = "vars.yml",
+    if not outfile_tex:
+        outfile_tex = "test_edition.tex",
+        
     CONF = yaml.load(open(varsfile).read())
     GLOBAL_CONF = yaml.load(open(g_varsfile).read())
     ENV = jinja2.Environment(
@@ -216,7 +214,6 @@ def main(
     TEMPLATE_FILE = META['g_template']
     OUTFILE_CORE  = f"{GLOBAL_CONF['zine_title']}_zine_{META['g_edition']}"
     OUTFILE_TEX   = f"{OUTFILE_CORE}.tex"
-    OUTFILE_TEX   = outfile_tex
 
     open(OUTFILE_TEX, "w").write(
         fill(TEMPLATE_FILE,
@@ -252,6 +249,6 @@ if __name__ == "__main__":
     main( force=ARGS.force,
         verbose=ARGS.verbose,
       booklet_p=ARGS.booklet,
-       varsfile=ARGS.vars_file,
-    outfile_tex=ARGS.outfile,
+       varsfile="first_edition_vars.yml",
+    outfile_tex=ARGS.out_file,
     )

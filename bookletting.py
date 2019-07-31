@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
     this is the primary bookletting system.
 """
-_CONFILE = "config.yml"
+#_CONFILE = "config.yml"
 
 def booklet(title, out_file):
     """

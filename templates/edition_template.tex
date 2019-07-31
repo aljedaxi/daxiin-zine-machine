@@ -4,6 +4,8 @@
 	%\usepackage[paper=letter,DIV=10,BCOR=5mm]{typearea}
 	\usepackage[headinclude=false,footinclude=false,paper=letter,DIV=15]{typearea}
 	\usepackage{tocloft}
+	\usepackage{alltt}
+	\usepackage{courier}
 %fonts {
 	\usepackage[normalem]{ulem}
 	\usepackage{microtype}
@@ -13,6 +15,7 @@
 	\usepackage[T1]{fontenc}
 	%\usepackage{yfonts}
 %}
+
 
 %images {
 	\usepackage{graphicx}
@@ -50,10 +53,13 @@
 		}
 	}
 	\newcommand{\articletitle}[1]{
-		\section*{#1}
+		{\bf #1}
+	}
+	\newcommand{\articlesubtitle}[1]{
+		{\bf #1}
 	}
 	\newcommand{\articleauthor}[1]{
-		#1
+		---#1
 	}
 	\newcommand{\articlebio}[1]{
 		#1
@@ -61,6 +67,16 @@
 	\newcommand{\articlerights}[1]{
 
 		This article is released under #1.
+	}
+%}
+
+%header {
+	\leftheader{\VAR{g_title} --- \VAR{g_author}}
+
+	\newcommand{\daxiinhead}[1]{%2]{
+		\rightheader{
+			#1 %--- #2
+		}
 	}
 %}
 
