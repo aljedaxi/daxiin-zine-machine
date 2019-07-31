@@ -27,18 +27,17 @@ def booklet(title, out_file):
          f"{title}-book.pdf",
          f"{title}-book-rotated270.pdf"))
 
-
 if __name__ == "__main__":
-    from sys import argv
-    import yaml
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("infile")
 
-    CONF = yaml.load(open(_CONFILE).read())
-    EDITION = CONF["edition"]
+    ARGS = parser.parse_args()
 
-    IN_FILE = argv.pop()
+    IN_FILE = ARGS.infile
     #returns the part before the extension
     TITLE = IN_FILE.split(".")[0]
 
-    OUT_FILE = CONF[EDITION]["title"]
+    OUT_FILE = f"{TITLE}_booklet"
 
     booklet(TITLE, OUT_FILE)
