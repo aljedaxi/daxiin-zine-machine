@@ -2,7 +2,17 @@
     \usepackage[final]{pdfpages}
     \usepackage{newclude}
 	%\usepackage[paper=letter,DIV=10,BCOR=5mm]{typearea}
-	\usepackage[headinclude=false,footinclude=false,paper=letter,DIV=15]{typearea}
+	\BLOCK{if printing == 'booklet'}
+	\usepackage[
+		 headinclude=false
+		,footinclude=false
+		,pagesize
+		,twoside
+		,paper=letter
+		,DIV=15
+		,BCOR=5mm
+	]{typearea}
+	\BLOCK{endif}
 	\usepackage{tocloft}
 	\usepackage{alltt}
 	\usepackage{courier}

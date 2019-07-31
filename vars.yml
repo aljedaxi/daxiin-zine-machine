@@ -4,6 +4,7 @@ conf:
   g_author  : "Permeate Calgary"
   g_font    : coelacanth
   g_template: edition_template.tex
+  printing: booklet
   #backcover: test/backcover.pdf
   #frontcover: test/frontcover.pdf
   special pages:
