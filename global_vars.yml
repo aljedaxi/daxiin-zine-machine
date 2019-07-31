@@ -5,7 +5,6 @@ zine_author: *author ANONY MOOSE
 author_bios:
   Ralph Waldo Emerson: Ralph Waldo Emerson was a transcendentalist American poet, who lived from 1803 to 1882. A staunch opponent of the south in the civil war, Emerson championed a strong relationship with the land, in all its flora and fauna.
   Kathy Acker: Kathy Acker is an American novelist, most famous for her work ``Blood and Guts in High School''. She died in 1997.
-  aljedaxi: aljedaxi is an experimental poet and short storietist; the second incarnation of the wide valley; the editor in chief of the permeate zine. 
 
 jinja2_env:
   autoescape: false

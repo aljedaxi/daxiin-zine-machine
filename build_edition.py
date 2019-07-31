@@ -1,7 +1,6 @@
 #/usr/bin/env python3
 """
-    This is the code that's used to build the permeate zine,
-    but i'm working on making it totally transferable between zines.
+    This machine makes zines.
 """
 
 from	subprocess	import call

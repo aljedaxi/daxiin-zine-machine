@@ -34,9 +34,7 @@ def convert(infile, outfile="", verbose=False):
     return outfile
 
 def main(EDITION="ZineEdition0",
-    EXTRA_FOLDERS=("specials", "permeate"),
-    W2L="./w2l",
-    W2L_CONFIG="config/daxiinclean.xml",
+    EXTRA_FOLDERS=("specials",),
     LATEX_OUTDIR="./test/",
     DEFAULT_TEX_TYPE="prose",
     PULL=False,
@@ -44,8 +42,9 @@ def main(EDITION="ZineEdition0",
     CONVERT=True,
     VERBOSE=False,
 ):
-    CONVERTABLE = ('odt', 'docx')
+    CONVERTABLE = ('odt', 'docx', 'md')
     pulled = False
+
     if PULL:
         pulled = getter.main(search_string=EDITION)
         if not pulled:
