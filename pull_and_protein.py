@@ -5,6 +5,8 @@ import re
 from subprocess import call
 from pulling import getter, gen_vars
 
+DEFAULT_AUTHOR = "Kathy Acker
+
 def convert(infile, outfile="", verbose=False):
     def strip_extension(filename):
         name = infile.split(".")[:-1]
@@ -77,8 +79,8 @@ def main(EDITION="input",
     if PROTEIN:
         conf = {
             "g_edition" : "0",
-            "g_title"   : "The Anarchist Guide to: Home",
-            "g_author"  : "Permeate Calgary",
+            "g_title"   : "The Anarchist Guide to: Zine Making",
+            "g_author"  : DEFAULT_AUTHOR,
             "g_font"    : "coelacanth",
             "g_template": "edition_template.tex",
             #"#backcover": "test/backcover.pdf"
@@ -86,7 +88,7 @@ def main(EDITION="input",
             "special pages": {
                 "contributors": {
                     "title": "contributors",
-                    "author": "Permeate",
+                    "author": DEFAULT_AUTHOR,
                     "template": "contributors.tex",
                     "type": "skip",
                     "rights": "Peer Production License",
