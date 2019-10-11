@@ -2,6 +2,7 @@
 """
     This machine makes zines.
 """
+VARS_DEFAULT = "test_vars.yml"
 
 from	subprocess	import call
 from 	os			import path
@@ -157,15 +158,13 @@ def main(
     force=False, 
     verbose=False, 
     booklet_p=False, 
-    varsfile="vars.yml", 
+    varsfile=VARS_DEFAULT,
     g_varsfile="global_vars.yml",
     outfile_tex="test_edition.tex",
 ):
     """
         exactly what you expect a main to do.
     """
-    if not varsfile:
-        g_varsfile = "vars.yml",
     if not outfile_tex:
         outfile_tex = "test_edition.tex",
         
@@ -241,6 +240,9 @@ if __name__ == "__main__":
 
     ARGS = parser.parse_args()
 
+    if ARGS.vars_file == None:
+        ARGS.vars_file = VARS_DEFAULT
+
     #if ARGS.test:
     #    test()
     #    exit()
@@ -248,6 +250,6 @@ if __name__ == "__main__":
     main( force=ARGS.force,
         verbose=ARGS.verbose,
       booklet_p=ARGS.booklet,
-       varsfile="first_edition_vars.yml",
+       varsfile=ARGS.vars_file,
     outfile_tex=ARGS.out_file,
     )

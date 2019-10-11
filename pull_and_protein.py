@@ -33,7 +33,7 @@ def convert(infile, outfile="", verbose=False):
 
     return outfile
 
-def main(EDITION="ZineEdition0",
+def main(EDITION="input",
     EXTRA_FOLDERS=("specials",),
     LATEX_OUTDIR="./test/",
     DEFAULT_TEX_TYPE="prose",

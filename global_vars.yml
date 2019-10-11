@@ -1,6 +1,6 @@
 defaults: failed_formattings.tex
-zine_title: *title UNTITLED ZINE
-zine_author: *author ANONY MOOSE
+zine_title: UNTITLED ZINE
+zine_author: ANONY MOOSE
 
 author_bios:
   Ralph Waldo Emerson: Ralph Waldo Emerson was a transcendentalist American poet, who lived from 1803 to 1882. A staunch opponent of the south in the civil war, Emerson championed a strong relationship with the land, in all its flora and fauna.
