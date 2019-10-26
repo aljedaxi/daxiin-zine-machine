@@ -5,9 +5,13 @@ import re
 from subprocess import call
 from pulling import getter, gen_vars
 
-DEFAULT_AUTHOR = "Kathy Acker
+DEFAULT_AUTHOR = "Kathy Acker"
 
-def convert(infile, outfile="", verbose=False):
+DOCTYPES = {
+    'md': 'markdown'
+}
+
+def convert(infile, outfile="", verbose=False, doctype=""):
     def strip_extension(filename):
         name = infile.split(".")[:-1]
 
@@ -20,6 +24,9 @@ def convert(infile, outfile="", verbose=False):
 
     #TODO: test if already converted
     name = strip_extension(infile)
+
+    if doctype:
+        intype = ("-f", DOCTYPES[doctype])
 
     if not outfile:
         outfile = f"{name}.tex"
@@ -36,7 +43,7 @@ def convert(infile, outfile="", verbose=False):
     return outfile
 
 def main(EDITION="input",
-    EXTRA_FOLDERS=("specials",),
+    EXTRA_FOLDERS=(),
     LATEX_OUTDIR="./test/",
     DEFAULT_TEX_TYPE="prose",
     PULL=False,
@@ -67,14 +74,14 @@ def main(EDITION="input",
         ]
 
         for position, article in to_convert:
-            outfile = convert(article['file'], verbose=VERBOSE)
+            outfile = convert(article['file'], verbose=VERBOSE, doctype=article['type'])
             protein[position] = {
-                    "file"  : outfile,
-                    "type"  : DEFAULT_TEX_TYPE,
-                    "author": "Anonymous",
-                    "rights": "Peer Production License",
-                    "title" : article['title'],
-                    }
+                "file"  : outfile,
+                "type"  : DEFAULT_TEX_TYPE,
+                "author": "Anonymous",
+                "rights": "Peer Production License",
+                "title" : article['title'],
+            }
 
     if PROTEIN:
         conf = {
@@ -83,6 +90,7 @@ def main(EDITION="input",
             "g_author"  : DEFAULT_AUTHOR,
             "g_font"    : "coelacanth",
             "g_template": "edition_template.tex",
+            "TOC"       : True,
             #"#backcover": "test/backcover.pdf"
             #"#frontcover": "test/frontcover.pdf"
             "special pages": {
@@ -127,12 +135,12 @@ if __name__ == "__main__":
             PROTEIN=False,
         )
 
-    print(
-    pyaml.dump(
-        main(
+    app = lambda log: log(
+        pyaml.dump(main(
             PULL=ARGS.pull,
             PROTEIN=ARGS.protein,
             VERBOSE=ARGS.verbose
-        )
+        ))
     )
-    )
+
+    app(print)
