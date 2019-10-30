@@ -15,9 +15,10 @@ extensions = {
     "docx": "docx",
     "pdf": "pdf",
     "yml": "yml_prose",
+    "md" : "md",
 }
 
-def main(folders=("specials", "Zine Edition 0")):
+def main(folders=("input")):
     #folders: a list of folders to be searched through
     #extensions: a list of valid file extensions
     paths  = []
@@ -31,7 +32,10 @@ def main(folders=("specials", "Zine Edition 0")):
             except:
                 types.append("other")
             paths.append(f"{folder}/{filename}")
-            titles.append(filename.split(".")[-2].replace("_", " "))
+            try:
+                titles.append(filename.split(".")[-2].replace("_", " "))
+            except:
+                titles.append(filename.replace("_", " "))
 
     protein = [{"file"  : path,
                 "type"  : kind,
@@ -44,5 +48,5 @@ def main(folders=("specials", "Zine Edition 0")):
 
 if __name__ == "__main__":
     print(
-        main(folders=("Zine Edition 0",))
+        main(folders=("input",)) #TODO get from command line
     )

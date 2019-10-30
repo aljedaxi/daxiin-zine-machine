@@ -4,7 +4,7 @@
 """
 #_CONFILE = "config.yml"
 
-def booklet(title, out_file):
+def quarto_booklet(title, out_file):
     """
         this creates a printable booklet called f"{out_file}.pdf" from f"{title}.pdf".
         all of the buffer files made in the process are deleted.
@@ -26,6 +26,20 @@ def booklet(title, out_file):
     call(("rm",
          f"{title}-book.pdf",
          f"{title}-book-rotated270.pdf"))
+
+def folio_booklet(title, out_file, INNER_MARGIN=75):
+    """
+        this creates a printable booklet called f"{out_file}.pdf" from f"{title}.pdf".
+        all of the buffer files made in the process are deleted.
+    """
+    from subprocess import call
+    call(("pdfbook2",
+          "--paper=letter",
+         f"--inner-margin={INNER_MARGIN}",
+         f"{title}.pdf"))
+    call(("mv",
+         f"{title}-book.pdf",
+         f"{out_file}.pdf"))
 
 if __name__ == "__main__":
     import argparse

@@ -84,7 +84,7 @@
 %}
 
 %header {
-	\leftheader{\VAR{g_title} --- \VAR{g_author}}
+	\leftheader{\VAR{g_title} \VAR{g_subtitle} --- \VAR{g_author}}
 
 	\newcommand{\daxiinhead}[1]{%2]{
 		\rightheader{
@@ -100,20 +100,47 @@
 
 \begin{document}
 \frontmatter
+\BLOCK{if booklet.__name__ == 'folio_booklet'}
+\large
+\BLOCK{else}
 \Large
+\BLOCK{endif}
 
 \BLOCK{if frontcover}
 	\includepdf{\VAR{frontcover}}
 \BLOCK{else}
-	\maketitle
-\BLOCK{endif}
+	\begin{titlepage}
+		\centering\null
 
+		\vfill
+
+		{\huge\bfseries \VAR{g_title}}
+		\BLOCK{if g_subtitle}
+
+			{\huge\bfseries \VAR{g_subtitle}}
+		\BLOCK{endif}
+
+		\vfill
+
+		{\huge\bfseries ---\VAR{g_author}}
+
+		\vfill
+
+		\includegraphics[width=\textwidth]{templates/logo.jpg}\par\vspace{1cm} %TODO
+
+		\vfill
+
+		\vfill
+		\nopagebreak
+	\end{titlepage}
+\BLOCK{endif}
+\nopagebreak
 \BLOCK{if TOC}
 	\tableofcontents
 \BLOCK{endif}
-
+\nopagebreak
 \mainmatter
-
+\nopagebreak
 \BLOCK{for filename in files}
 	\include{\VAR{filename}}
 \BLOCK{endfor}

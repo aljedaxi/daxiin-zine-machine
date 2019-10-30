@@ -11,7 +11,7 @@ import	jinja2
 import  yaml
 
 from    types_and_settings import mb, poem, prose, image, custom, yml_prose, pdf
-from    bookletting import booklet
+from    bookletting import quarto_booklet, folio_booklet
 from    LaTeXing import fill
 
 def test():
@@ -113,13 +113,16 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
 
             
         #check if title has subtitle in it
-        if "\n" in article['title']:
-            try:
-                (meta['title'], meta['subtitle']) = meta['title'].split("\n")
-            except ValueError:
-                temp_title = meta['title'].split("\n")
-                meta['title'] = temp_title[0]
-                meta['subtitle'] = r"\\".join(temp_title[1:])
+        try:
+            if "\n" in article['title']:
+                try:
+                    (meta['title'], meta['subtitle']) = meta['title'].split("\n")
+                except ValueError:
+                    temp_title = meta['title'].split("\n")
+                    meta['title'] = temp_title[0]
+                    meta['subtitle'] = r"\\".join(temp_title[1:])
+        except:
+            pass
 
         #find the correct module to use based on the type of article
         try:
@@ -157,7 +160,7 @@ def format_articles(articles, env, force=False, verbose=False, bios={}, defaults
 def main(
     force=False, 
     verbose=False, 
-    booklet_p=False, 
+    booklet=None, 
     varsfile=VARS_DEFAULT,
     g_varsfile="global_vars.yml",
     outfile_tex="test_edition.tex",
@@ -175,6 +178,7 @@ def main(
     )
 
     META = CONF['conf']
+    META['booklet'] = booklet
 
     #compiles each article from txt into LaTeX,
     #using the templating systems defined in types_and_settings
@@ -214,23 +218,28 @@ def main(
     OUTFILE_TEX   = f"{OUTFILE_CORE}.tex"
 
     open(OUTFILE_TEX, "w").write(
-        fill(TEMPLATE_FILE,
-             META,
-             ENV)
+        fill(
+            TEMPLATE_FILE,
+            META,
+            ENV
+        )
     )
 
     call(("latexmk", "--pdf", OUTFILE_TEX))
 
-    if booklet_p:
+    if booklet:
         booklet(OUTFILE_CORE,
                 f"{GLOBAL_CONF['zine_title']}_booklet_{META['g_edition']}")
 
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("-v", "--verbose", help="increase output verbosity",    action="store_true")
-    parser.add_argument("-f", "--force",   help="force recreation of articles", action="store_true")
-    parser.add_argument("-b", "--booklet", help="also booklet the pdf",         action="store_true")
+    parser.add_argument("-v", "--verbose", 
+        help="increase output verbosity",    action="store_true")
+    parser.add_argument("-f", "--force",   
+        help="force recreation of articles", action="store_true")
+    parser.add_argument("-b", "--booklet", 
+        help="style of bookletting to use",)
     parser.add_argument("-vars", "--vars_file", 
         help="yml file containing necessary metadata",
     )
@@ -243,13 +252,20 @@ if __name__ == "__main__":
     if ARGS.vars_file == None:
         ARGS.vars_file = VARS_DEFAULT
 
-    #if ARGS.test:
-    #    test()
-    #    exit()
+    if ARGS.booklet:
+        try:
+            booklet_style = {
+                'quarto': quarto_booklet,
+                'folio' : folio_booklet,
+            }[ARGS.booklet]
+        except KeyError:
+            booklet_style = quarto_booklet
+    else:
+        booklet_style = None
 
     main( force=ARGS.force,
         verbose=ARGS.verbose,
-      booklet_p=ARGS.booklet,
+        booklet=booklet_style,
        varsfile=ARGS.vars_file,
     outfile_tex=ARGS.out_file,
     )
