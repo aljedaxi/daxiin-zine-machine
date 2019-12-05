@@ -26,7 +26,10 @@ def convert(infile, outfile="", verbose=False, doctype=""):
     name = strip_extension(infile)
 
     if doctype:
-        intype = ("-f", DOCTYPES[doctype])
+        try:
+            intype = ("-f", DOCTYPES[doctype])
+        except KeyError:
+            intype = doctype
 
     if not outfile:
         outfile = f"{name}.tex"

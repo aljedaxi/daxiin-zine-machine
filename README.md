@@ -1,10 +1,15 @@
 daxiin zine machine
 =================
-##abstract
+## Abstract
 the idea is that for each new edition of the zine, you simply clone this repo into a new dir, and populate it with the articles and art for the particular issue.
 
-##Files
-###vars.yml
+## Requirements
+	* python3 runtime
+	* pandoc
+	* latex installation with latexmk
+
+## Files
+### vars.yml
 List of all the articles that will make up the edition.
 Each type corresponds with a file in types_and_settings/; when build_edition comes upon it, it'll call <type>.main(text, meta, env), where 
 	* text is whatever's in the associated file
