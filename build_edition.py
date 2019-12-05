@@ -3,6 +3,7 @@
     This machine makes zines.
 """
 VARS_DEFAULT = "test_vars.yml"
+VARS_FALLBACKS = ("vars.yml", )
 
 from	subprocess	import call
 from 	os			import path
@@ -171,7 +172,21 @@ def main(
     if not outfile_tex:
         outfile_tex = "test_edition.tex",
         
-    CONF = yaml.load(open(varsfile).read())
+    CONF = ''
+    try:
+        CONF = yaml.load(open(varsfile).read())
+    except: 
+        for fallback_file in VARS_FALLBACKS:
+            try:
+                CONF = yaml.load(open(fallback_file).read())
+            except:
+                continue #TODO this is fucking hideous
+            break
+
+        if not CONF:
+            raise FileNotFoundError("Where's your vars file?")
+            
+
     GLOBAL_CONF = yaml.load(open(g_varsfile).read())
     ENV = jinja2.Environment(
         **GLOBAL_CONF['jinja2_env'],

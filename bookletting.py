@@ -54,4 +54,6 @@ if __name__ == "__main__":
 
     OUT_FILE = f"{TITLE}_booklet"
 
-    booklet(TITLE, OUT_FILE)
+    main = folio_booklet
+
+    main(TITLE, OUT_FILE)

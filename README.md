@@ -7,6 +7,12 @@ the idea is that for each new edition of the zine, you simply clone this repo in
 	* python3 runtime
 	* pandoc
 	* latex installation with latexmk
+	* ghostscript
+	* if you're using arch
+		```sh
+			sed -i 's,/usr/bin/env python,&2,' /usr/bin/pdfbook2
+		```
+		it assumes python points to python2
 
 ## Files
 ### vars.yml
